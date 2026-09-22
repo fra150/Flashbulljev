@@ -13,18 +13,19 @@ Inspired by:
 ## Test report (measured on this machine, Ollama Qwen 2B)
 
 ```
-pytest:              48 passed
+pytest:              50 passed
 [fake]               miss ~52ms   hit ~0.08ms
 [ollama+qwen2.5:1.5b] miss avg ~700ms (3 parallel questions, warm)  hit avg ~0.07ms
 [ollama cold load]   first call ~3s (one-time model load); keep_alive=30m avoids reloads
 live API:            /health, /v1/decisions, /v1/systemone, /v1/models — all OK, answers certified Q=0.99
-battery (208 cases): Qwen 166/208 = 0.798 @ ~300ms/reaction, contract 208/208
+battery (576 cases): Qwen 420/576 = 0.729 @ ~332ms/reaction, contract 576/576
 battery (0.5b):      Qwen-0.5b 89/208 = 0.428 @ 246ms — faster but useless, 1.5b stays default
-calibration (real):  fit n=120 T=3.0 (NLL 0.399/Brier 0.088/ECE 0.104)
-                     held-out n=56: T=1 (0.804/0.145/0.212/acc 0.786) vs T=3 (0.483/0.117/0.151/acc 0.786)
+calibration (real):  fit n=330 T=3.0 (NLL 0.560/Brier 0.121/ECE 0.128)
+                     held-out n=150: T=1 (1.147/0.160/0.211/acc 0.747) vs T=3 (0.544/0.125/0.139/acc 0.747)
 position bias:       0 flips / 12, acc 0.917 original and reversed — no bias found
-abstention:          0 / 12 vague inputs declined — confirmed weakness, never abstains
+abstention:          tuned rule tau=(0.6, 0.3) → 1/12 vague declined, battery cost -0.010 (band-aid, model overconfident)
 baseline:            logit-only 0.833 @ 337ms vs free-text JSON 0.727 @ 498ms (JSON needed repair, fenced markdown)
+parallel:            NUM_PARALLEL=4 → 3 concurrent in 123ms vs 367ms default (~3x, needs Ollama restart)
 ```
 
 The rule is confirmed:
@@ -54,10 +55,31 @@ The rule is confirmed:
 10. Versions aligned at 0.4.0 (`pyproject`, engine, API, README)
 11. Honest limits section (below) instead of hidden weaknesses
 
+## Abstention (tuned, honest limits)
+
+`python run.py react-tune ollama` grids (tau_abs, tau_margin) over clear vs vague
+(max, margin) distributions. The engine enforces the winner
+(`FLASHBULLJEV_ABSTAIN_TAU=0.6`, `FLASHBULLJEV_ABSTAIN_MARGIN=0.3`, env-overridable).
+Effect: vague 0/12 → 1/12 declined at a battery cost of -0.010. Thresholds are a
+band-aid — the model is overconfident at any temperature — the real fix is
+calibration-aware abstention or a better model.
+
+## Deploy (Windows production)
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/serve_production.ps1  # env defaults + logs/
+powershell -ExecutionPolicy Bypass -File scripts/backup_cache.ps1      # backups/, keeps newest 7
+```
+
+Measured serial capacity: single decision ~229ms → ~4.4/s, so the default
+`FLASHBULLJEV_RPS=2` is the conservative half. For concurrent load set
+`OLLAMA_NUM_PARALLEL=4` on the Ollama server (restart required) — measured
+3 concurrent in 123ms vs 367ms default.
+
 ## Honest limits
 
-- Qwen never abstains (0/12): `status: ok` means *formatted*, not *right*
-- Eval sets are still small (n=56 held-out, n=14 before): ECE numbers are noisy
+- Qwen abstains 1/12 after tuning (was 0/12): thresholds help little, overconfidence is structural
+- Held-out is now n=150 (was 56): ECE still noisy but NLL halved (1.15→0.54) is solid
 - One resident model, localhost by default; concurrent Ollama requests serialize (~sum of latencies)
 - Cross-request prefill sharing does not help on Ollama — multi-question cost stays ~N x single
 - `qwen2.5:0.5b` is ~20% faster but drops to 0.428 accuracy: not viable
@@ -108,7 +130,7 @@ Server:
 $env:FLASHBULLJEV_BACKEND="ollama"
 $env:FLASHBULLJEV_CACHE_DB="flashbulljev.db"  # persistent cache
 $env:FLASHBULLJEV_API_KEY="changeme"          # Bearer auth
-$env:FLASHBULLJEV_RPS="10"                    # per-IP rate limit
+$env:FLASHBULLJEV_RPS="2"                     # per-IP rate limit (measured: serial ~4.4/s)
 python run.py serve
 ```
 
@@ -121,6 +143,7 @@ python run.py serve
 - `FLASHBULLJEV_CACHE_DB=` (empty = memory only)
 - `FLASHBULLJEV_API_KEY=` (empty = auth off, localhost dev)
 - `FLASHBULLJEV_RPS=0` (0 = no rate limit)
+- `FLASHBULLJEV_ABSTAIN_TAU=0.6` + `FLASHBULLJEV_ABSTAIN_MARGIN=0.3` (tuned, env-overridable)
 
 ## Clean-code contract
 

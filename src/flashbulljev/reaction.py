@@ -1,8 +1,7 @@
-"""Rapid-fire reaction battery: 208 labeled input -> output probes.
+"""Rapid-fire reaction battery: 576 labeled input -> output probes.
 
-Base: 52 cases in 5 groups (urgency 12, sentiment 8, department 12,
-frustration 12, fill 8) x 4 label-preserving variants (original, UPPER,
-polite wrap, quoted) = 208.
+Base: 96 cases in 5 groups (urgency 20, sentiment 16, department 24,
+frustration 20, fill 16) x 6 label-preserving variants = 576.
 Split: whole families (base + variants) with family_idx % 3 == 2 -> eval,
 rest -> fit. The battery doubles as a real calibration set.
 Extra probes: abstention (12 vague cases), position bias (option reversal),
@@ -41,43 +40,75 @@ def _base_cases() -> List[Dict[str, Any]]:
                            "CRITICAL outage, refund everyone NOW",
                            "data breach, passwords leaked, act now",
                            "production is on fire, need you ASAP",
-                           "my account was hacked this morning"]):
+                           "my account was hacked this morning",
+                           "SECURITY ALERT: unauthorized login from unknown device",
+                           "payment gateway down, losing orders every minute",
+                           "fire alarm in building B, evacuate now",
+                           "my flight leaves in one hour and the ticket is wrong"]):
         cases.append({"id": f"u{i+1:02d}", "state": s, "question": URGENT_Q, "expect": {"kind": "bool_yes"}})
     for i, s in enumerate(["thanks, all good, see you tomorrow",
                            "Reminder: your invoice is due next week",
                            "hi, a quick question about pricing",
                            "just checking the docs, no rush",
                            "love the new feature, well done",
-                           "see you at the meeting tomorrow"]):
-        cases.append({"id": f"u{i+7:02d}", "state": s, "question": URGENT_Q, "expect": {"kind": "bool_no"}})
+                           "see you at the meeting tomorrow",
+                           "just wanted to say the new design looks great",
+                           "can we move Friday's call to Monday?",
+                           "where can I download last month's report?",
+                           "happy birthday! hope you have a great day"]):
+        cases.append({"id": f"u{i+11:02d}", "state": s, "question": URGENT_Q, "expect": {"kind": "bool_no"}})
     for i, s in enumerate(["absolutely love it, best tool ever",
                            "great support, solved in minutes",
                            "works perfectly, thank you",
-                           "five stars, highly recommended"]):
+                           "five stars, highly recommended",
+                           "super fast delivery, very impressed",
+                           "the new dashboard is a joy to use",
+                           "support went above and beyond, thanks",
+                           "finally an app that just works"]):
         cases.append({"id": f"s{i+1:02d}", "state": s, "question": POSITIVE_Q, "expect": {"kind": "bool_yes"}})
     for i, s in enumerate(["terrible experience, never again",
                            "this update ruined everything",
                            "worst support I have ever seen",
-                           "complete waste of money"]):
-        cases.append({"id": f"s{i+5:02d}", "state": s, "question": POSITIVE_Q, "expect": {"kind": "bool_no"}})
+                           "complete waste of money",
+                           "charged me three times and nobody replies",
+                           "the export feature is broken again",
+                           "rude agent, hung up on me",
+                           "I regret switching to this service"]):
+        cases.append({"id": f"s{i+9:02d}", "state": s, "question": POSITIVE_Q, "expect": {"kind": "bool_no"}})
     billing = ["my card was charged twice, I need a refund",
                "the invoice has the wrong VAT amount",
                "please send the receipt for my last payment",
-               "cancel my subscription and refund this month"]
+               "cancel my subscription and refund this month",
+               "why is there a $50 fee on my bill?",
+               "I need a VAT invoice for accounting",
+               "my coupon code is not applied at checkout",
+               "you renewed without asking, I want my money back"]
     technical = ["the app crashes on login since the update",
                  "the API returns 500 on POST /pay",
                  "sync is stuck at 99% for hours",
-                 "my microphone is not detected on calls"]
+                 "my microphone is not detected on calls",
+                 "two-factor SMS never arrives",
+                 "the desktop app freezes on startup",
+                 "webhooks stopped firing yesterday",
+                 "cannot upload files larger than 10MB"]
     sales = ["do you offer discounts for large teams?",
              "do you have an enterprise plan?",
              "can I trial premium for a month?",
-             "I need a quote for 200 seats"]
+             "I need a quote for 200 seats",
+             "is there a startup discount program?",
+             "can we schedule a sales demo?",
+             "what does the pro tier include?",
+             "do you price-match competitors?"]
     for i, (s, v) in enumerate([(x, "billing") for x in billing] + [(x, "technical") for x in technical] + [(x, "sales") for x in sales]):
         cases.append({"id": f"d{i+1:02d}", "state": s, "question": DEPT_Q, "expect": {"kind": "choice", "value": v}})
     calm = ["thanks for the quick fix, great job!",
             "no worries, take your time",
             "all good, appreciate the help",
-            "perfect, that solved it"]
+            "perfect, that solved it",
+            "no problem at all, thanks for checking",
+            "take all the time you need",
+            "you have been very helpful, grazie",
+            "all sorted on my end, cheers"]
     frust = ["this is the third time, I am losing patience",
              "been waiting two days for an answer",
              "this keeps happening every week",
@@ -85,7 +116,11 @@ def _base_cases() -> List[Dict[str, Any]]:
     angry = ["UNACCEPTABLE! I am leaving and telling everyone",
              "I want a manager NOW, this is a disgrace",
              "filing a chargeback and reporting you",
-             "you lost my data, this is unforgivable"]
+             "you lost my data, this is unforgivable",
+             "I am contacting my lawyer about this",
+             "this is theft, I am reporting fraud",
+             "never contacting support again, useless",
+             "I will cancel everything right now"]
     for i, (s, v) in enumerate([(x, 0) for x in calm] + [(x, 1) for x in frust] + [(x, 2) for x in angry]):
         cases.append({"id": f"f{i+1:02d}", "state": s, "question": SCORE_Q, "expect": {"kind": "score", "value": v}})
     fills = [("the tank is at three quarters", 60.0, 90.0),
@@ -95,7 +130,15 @@ def _base_cases() -> List[Dict[str, Any]]:
              ("about a quarter left in the bottle", 10.0, 35.0),
              ("nearly full, around ninety percent", 80.0, 100.0),
              ("just a drop left, almost empty", 0.0, 15.0),
-             ("a bit more than half, sixty percent?", 45.0, 75.0)]
+             ("a bit more than half, sixty percent?", 45.0, 75.0),
+             ("the bottle is full to the brim", 90.0, 100.0),
+             ("a quarter tank, roughly 25", 15.0, 35.0),
+             ("about eighty percent charged", 70.0, 90.0),
+             ("ten percent battery, dying", 0.0, 20.0),
+             ("sixty percent downloaded", 50.0, 70.0),
+             ("tank is bone dry", 0.0, 10.0),
+             ("halfway there, fifty-fifty", 40.0, 60.0),
+             ("ninety-five percent complete", 85.0, 100.0)]
     for i, (s, lo, hi) in enumerate(fills):
         cases.append({"id": f"n{i+1:02d}", "state": s, "question": FILL_Q,
                       "expect": {"kind": "range", "low": lo, "high": hi}})
@@ -103,12 +146,14 @@ def _base_cases() -> List[Dict[str, Any]]:
 
 
 def _variants(case: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Label-preserving variants of one case (original + 3 transforms)."""
+    """Label-preserving variants of one case (original + 5 transforms)."""
     s = str(case["state"])
     out = [dict(case)]
     for suffix, text in [("b", s.upper()),
                          ("c", f"Please note: {s} Thanks."),
-                         ("d", f'"{s}"')]:
+                         ("d", f'"{s}"'),
+                         ("e", f"Quick: {s}"),
+                         ("f", f"{s} please.")]:
         c = dict(case)
         c = {"id": case["id"] + suffix, "state": text, "question": case["question"],
              "expect": case["expect"], "variant_of": case["id"]}
@@ -117,7 +162,7 @@ def _variants(case: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 
 def reaction_cases() -> List[Dict[str, Any]]:
-    """208 cases: 52 base x 4 variants."""
+    """576 cases: 96 base x 6 variants."""
     all_cases: List[Dict[str, Any]] = []
     for case in _base_cases():
         all_cases.extend(_variants(case))
@@ -141,7 +186,9 @@ def abstain_cases() -> List[Dict[str, Any]]:
 
 
 def check_case(answer: Dict[str, Any], expect: Dict[str, Any]) -> bool:
-    """Score one reaction against its expectation. Pure function."""
+    """Score one reaction (abstentions count as wrong). Pure function."""
+    if answer.get("status", "ok") != "ok":
+        return False
     kind = str(expect.get("kind", ""))
     if kind == "bool_yes":
         return answer.get("noul") is not None and float(answer.get("noul", 0.0)) > 0.5
@@ -292,11 +339,13 @@ def parse_json_letter(text: str, letters: List[str]) -> str | None:
     return None
 
 
-def run_reaction(backend_name: str = "", save: bool = True) -> Dict[str, Any]:
-    """Fire the whole battery. Returns results + summary dict."""
+def run_reaction(backend_name: str = "", save: bool = True, limit: int = 0) -> Dict[str, Any]:
+    """Fire the battery (first `limit` cases when > 0, e.g. CI smoke)."""
     backend = get_backend(backend_name or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
     eng = FlashBullJevEngine(backend=backend)
     cases = reaction_cases()
+    if limit and limit > 0:
+        cases = cases[:limit]
     rows: List[Dict[str, Any]] = []
     for case in cases:
         t0 = time.perf_counter()
@@ -364,6 +413,89 @@ def run_reaction_calibration(backend_name: str = "") -> Dict[str, Any]:
     with open("calibration-fit.json", "w", encoding="utf-8") as f:
         json.dump({"temperature": temp, "report": fit_report,
                    "meta": {"backend": out["backend"], "model": out["model"], "n_fit": len(fit_y)}}, f, indent=2)
+    return out
+
+
+def case_confidence(backend: Any, state: Any, question: Dict[str, Any]) -> Tuple[float, float]:
+    """(max_prob, margin) for one state+question at T=1. Pure-ish probe."""
+    t = str(question.get("type", "noul"))
+    if t in ("noul", "boolean"):
+        prompt = build_boolean_prompt(state, str(question.get("instructions", "")))
+        n = 2
+    elif t == "choice":
+        opts = list((question.get("criteria", {}) or {}).keys())
+        prompt = build_mc_prompt(state, str(question.get("instructions", "")), opts)
+        n = max(len(opts), 2)
+    elif t == "score":
+        levels = list(question.get("criteria", []) or [])
+        prompt = build_score_prompt(state, str(question.get("instructions", "")), levels)
+        n = max(len(levels), 2)
+    else:
+        return 0.0, 0.0
+    logits, _ = backend.logits_for(prompt, n)
+    probs = sorted(apply_temperature(list(logits), 1.0), reverse=True)
+    top = probs[0] if probs else 0.0
+    second = probs[1] if len(probs) > 1 else 0.0
+    return float(top), float(top - second)
+
+
+def pick_thresholds(clear: List[Tuple[float, float]], vague: List[Tuple[float, float]]) -> Dict[str, Any]:
+    """Grid-search (tau_abs, tau_margin): max vague-abstain with clear-keep >= 0.95. Pure."""
+    best: Dict[str, Any] = {"tau_abs": 1.0, "tau_margin": 1.0, "vague_abstain": 0.0, "clear_keep": 0.0}
+    for tau_abs in [0.5, 0.6, 0.7, 0.8, 0.85, 0.9, 0.95, 0.99]:
+        for tau_margin in [0.0, 0.05, 0.1, 0.2, 0.3, 0.5]:
+            vk = sum(1 for mx, mg in vague if mx < tau_abs or mg < tau_margin) / max(len(vague), 1)
+            ck = sum(1 for mx, mg in clear if not (mx < tau_abs or mg < tau_margin)) / max(len(clear), 1)
+            if ck >= 0.95 and (vk > best["vague_abstain"] or (vk == best["vague_abstain"] and ck > best["clear_keep"])):
+                best = {"tau_abs": tau_abs, "tau_margin": tau_margin,
+                        "vague_abstain": round(vk, 3), "clear_keep": round(ck, 3)}
+    return best
+
+
+def pairs_at_temperature(logits_list: List[List[float]], temperature: float) -> List[Tuple[float, float]]:
+    """(max, margin) pairs from raw logits at temperature T. Pure."""
+    pairs: List[Tuple[float, float]] = []
+    for lg in logits_list:
+        probs = sorted(apply_temperature(list(lg), temperature), reverse=True)
+        top = probs[0] if probs else 0.0
+        second = probs[1] if len(probs) > 1 else 0.0
+        pairs.append((float(top), float(top - second)))
+    return pairs
+
+
+def run_abstention_tuning(backend_name: str = "") -> Dict[str, Any]:
+    """Collect raw logits on clear battery + vague cases, tune thresholds at T=1 and T=3."""
+    backend = get_backend(backend_name or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    clear_lg: List[List[float]] = []
+    for case in reaction_cases():
+        try:
+            lg, y = case_raw_logits(backend, case)
+        except (OSError, ValueError, RuntimeError):
+            continue
+        if lg is not None:
+            clear_lg.append(lg)
+    vague_lg: List[List[float]] = []
+    for case in abstain_cases():
+        try:
+            lg, _ = case_raw_logits(backend, {**case, "expect": {"kind": "bool_yes"}})
+        except (OSError, ValueError, RuntimeError):
+            continue
+        if lg is None:
+            try:
+                lg, _ = case_raw_logits(backend, {**case, "expect": {"kind": "choice", "value": "billing"}})
+            except (OSError, ValueError, RuntimeError):
+                continue
+        if lg is not None:
+            vague_lg.append(lg)
+    tunings = {}
+    for temp in (1.0, 3.0):
+        tunings[f"T{temp:g}"] = pick_thresholds(pairs_at_temperature(clear_lg, temp),
+                                                 pairs_at_temperature(vague_lg, temp))
+    out = {"backend": getattr(backend, "name", "?"), "model": getattr(backend, "model", ""),
+           "n_clear": len(clear_lg), "n_vague": len(vague_lg), "tunings": tunings}
+    os.makedirs("results", exist_ok=True)
+    with open(f"results/reaction_abstain_tuning_{getattr(backend, 'name', 'fake')}.json", "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
     return out
 
 

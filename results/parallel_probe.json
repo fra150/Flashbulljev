@@ -1,0 +1,23 @@
+{
+  "note": "OLLAMA_NUM_PARALLEL effect, 3 concurrent 1-token logprob calls, qwen2.5:1.5b",
+  "server_num_parallel_4_warmed": {
+    "base": "127.0.0.1:11435",
+    "total_ms": 123,
+    "individual_ms": [
+      79,
+      75,
+      121
+    ]
+  },
+  "server_default_main": {
+    "base": "127.0.0.1:11434",
+    "total_ms": 367,
+    "individual_ms": [
+      366,
+      84,
+      137
+    ]
+  },
+  "cold_load_ms": 4691,
+  "conclusion": "NUM_PARALLEL=4 gives ~3x on concurrent load; needs Ollama restart to apply on main server"
+}

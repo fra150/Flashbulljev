@@ -9,19 +9,21 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt pytest-cov
-      - run: python -m pytest -q --cov=flashbulljev --cov-report=xml --cov-report=term
-        working-directory: src
-        env:
-          PYTHONPATH: src
-      - run: python ../run.py react fake
+      - run: PYTHONPATH=src python -m pytest -q --cov=flashbulljev --cov-report=xml --cov-report=term
+      - run: python run.py react fake 12
       - uses: actions/upload-artifact@v4
         with:
           name: reaction-fake
           path: results/reaction_fake.json
   live-ollama:
     runs-on: ubuntu-latest
-    if: ${{ false }}  # enable when a self-hosted runner with Ollama exists
+    continue-on-error: true  # informational smoke: CPU Ollama is slow, never blocks merge
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
       - run: pip install -r requirements.txt
-      - run: python run.py react ollama
+      - run: curl -fsSL https://ollama.com/install.sh | sh
+      - run: ollama pull qwen2.5:0.5b
+      - run: FLASHBULLJEV_BACKEND=ollama FLASHBULLJEV_MODEL=qwen2.5:0.5b python run.py react ollama 6

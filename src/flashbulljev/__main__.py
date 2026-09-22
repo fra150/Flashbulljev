@@ -11,7 +11,7 @@ from .backends import get_backend
 from .calibration import fit_temperature, save_fit
 from .engine import FlashBullJevEngine
 from .pipeline import run_pipeline
-from .reaction import print_calibration, print_reaction, run_abstention, run_baseline, run_position_bias, run_reaction, run_reaction_calibration
+from .reaction import print_calibration, print_reaction, run_abstention, run_abstention_tuning, run_baseline, run_position_bias, run_reaction, run_reaction_calibration
 
 
 def demo_questions() -> Dict[str, Any]:
@@ -74,9 +74,9 @@ def cmd_decide(path: str) -> None:
     print(json.dumps({"answers": res.answers, "cache_hit": res.cache_hit, "latency_ms": res.latency_ms}, indent=2))
 
 
-def cmd_react(which: str = "") -> None:
+def cmd_react(which: str = "", limit: int = 0) -> None:
     """Rapid-fire reaction battery against fake or live backend."""
-    out = run_reaction(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    out = run_reaction(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"), limit=limit)
     print_reaction(out)
 
 
@@ -105,6 +105,12 @@ def cmd_react_abstain(which: str = "") -> None:
     """Abstention probe on vague inputs."""
     out = run_abstention(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
     print(f"abstention={out['abstained']}/{out['n']}={out['abstention_rate']}")
+
+
+def cmd_react_tune(which: str = "") -> None:
+    """Tune abstention thresholds on clear vs vague distributions."""
+    out = run_abstention_tuning(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    print(f"tuning tunings={out['tunings']} n_clear={out['n_clear']} n_vague={out['n_vague']}")
 
 
 def cmd_bench() -> None:
@@ -167,7 +173,10 @@ def main(argv: List[str] | None = None) -> None:
     elif cmd == "decide" and len(args) > 1:
         cmd_decide(args[1])
     elif cmd == "react":
-        cmd_react(args[1] if len(args) > 1 else "")
+        rest = [a for a in args[1:] if a]
+        backend_arg = next((a for a in rest if not a.isdigit()), "")
+        lim = next((int(a) for a in rest if a.isdigit()), 0)
+        cmd_react(backend_arg, lim)
     elif cmd == "react-calib":
         cmd_react_calib(args[1] if len(args) > 1 else "")
     elif cmd == "react-bias":
@@ -176,6 +185,8 @@ def main(argv: List[str] | None = None) -> None:
         cmd_react_base(args[1] if len(args) > 1 else "")
     elif cmd == "react-abstain":
         cmd_react_abstain(args[1] if len(args) > 1 else "")
+    elif cmd == "react-tune":
+        cmd_react_tune(args[1] if len(args) > 1 else "")
     elif cmd == "bench":
         cmd_bench()
     elif cmd == "calibrate":

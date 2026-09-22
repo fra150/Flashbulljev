@@ -124,6 +124,29 @@ def decide_many(state: Any, raw_questions: Dict[str, Any], max_workers: int = 4)
     return answers
 
 
+def _abstain_thresholds() -> Tuple[float, float]:
+    """(tau_abs, tau_margin) from env, defaults from live tuning grid."""
+    try:
+        tau_abs = float(os.getenv("FLASHBULLJEV_ABSTAIN_TAU", "0.6"))
+    except ValueError:
+        tau_abs = 0.6
+    try:
+        tau_margin = float(os.getenv("FLASHBULLJEV_ABSTAIN_MARGIN", "0.3"))
+    except ValueError:
+        tau_margin = 0.3
+    return tau_abs, tau_margin
+
+
+def _should_abstain(probs: List[float], allow: bool) -> bool:
+    """Unified rule: abstain when top prob or margin is below tuned thresholds."""
+    if not allow or not probs:
+        return False
+    tau_abs, tau_margin = _abstain_thresholds()
+    ordered = sorted(probs, reverse=True)
+    margin = ordered[0] - (ordered[1] if len(ordered) > 1 else 0.0)
+    return bool(ordered[0] < tau_abs or margin < tau_margin)
+
+
 def decide_one_real(qkey: str, qobj: Any, state: Any, backend: Any, temperature: float = 1.0) -> Tuple[str, Dict[str, Any], float]:
     """Single decision with a real logit-only backend. Returns (key, answer, latency)."""
     if isinstance(qobj, BooleanQuestion):
@@ -150,17 +173,22 @@ def decide_one_real(qkey: str, qobj: Any, state: Any, backend: Any, temperature:
     idx = int(np.argmax(np.array(probs)))
     if isinstance(qobj, BooleanQuestion):
         p_true = float(probs[0])
-        if qobj.allow_abstain and max(probs) < 0.55:
+        if _should_abstain(probs, qobj.allow_abstain):
             return qkey, {"type": "noul", "noul": None, "status": "insufficient_evidence", "confidence": 0.0, "backend": getattr(backend, "name", "unk")}, lat
         return qkey, {"type": "noul", "noul": p_true, "status": "ok", "confidence": conf, "backend": getattr(backend, "name", "unk")}, lat
     if isinstance(qobj, ChoiceQuestion):
         opts2: List[str] = qobj.option_ids() or ["a", "b"]
         prob_dict = {opts2[i]: float(probs[i]) for i in range(len(opts2))}
-        if qobj.allow_abstain and max(probs) < 0.45:
+        if _should_abstain(probs, qobj.allow_abstain):
             return qkey, {"type": "choice", "choice": None, "probabilities": prob_dict, "status": "uncertain", "confidence": 0.0, "backend": getattr(backend, "name", "unk")}, lat
         return qkey, {"type": "choice", "choice": opts2[idx], "probabilities": prob_dict, "status": "ok", "confidence": conf, "backend": getattr(backend, "name", "unk")}, lat
     if isinstance(qobj, ScoreQuestion):
         levels2: List[str] = list(qobj.levels) or ["low", "high"]
+        if _should_abstain(probs, qobj.allow_abstain):
+            return qkey, {"type": "score", "score": None, "normalized_score": None,
+                          "probabilities": {str(i): float(probs[i]) for i in range(len(levels2))},
+                          "legend": {str(i): levels2[i] for i in range(len(levels2))},
+                          "status": "uncertain", "confidence": 0.0, "backend": getattr(backend, "name", "unk")}, lat
         score = float(sum(i * p for i, p in enumerate(probs)))
         norm = float(score / max(len(levels2) - 1, 1))
         return qkey, {"type": "score", "score": score, "normalized_score": norm,

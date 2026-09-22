@@ -2,8 +2,8 @@
   "backend": "ollama",
   "model": "qwen2.5:1.5b",
   "n": 12,
-  "abstained": 0,
-  "abstention_rate": 0.0,
+  "abstained": 1,
+  "abstention_rate": 0.083,
   "rows": [
     {
       "id": "a01",
@@ -63,9 +63,9 @@
     },
     {
       "id": "a09",
-      "abstained": false,
-      "confidence": 0.12779928557391962,
-      "status": "ok",
+      "abstained": true,
+      "confidence": 0.0,
+      "status": "insufficient_evidence",
       "state": "as per my last email"
     },
     {

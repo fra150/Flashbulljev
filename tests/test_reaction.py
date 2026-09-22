@@ -17,23 +17,23 @@ from src.flashbulljev.reaction import (
 )
 
 
-def test_battery_has_208_cases():
+def test_battery_has_576_cases():
     cases = reaction_cases()
-    assert len(cases) == 208
+    assert len(cases) == 576
     ids = [c["id"] for c in cases]
-    assert len(set(ids)) == 208
+    assert len(set(ids)) == 576
     for c in cases:
         assert "state" in c and "question" in c and "expect" in c
     groups = {}
     for c in cases:
         groups[c["id"][:1]] = groups.get(c["id"][:1], 0) + 1
-    assert groups == {"u": 48, "s": 32, "d": 48, "f": 48, "n": 32}
+    assert groups == {"u": 120, "s": 96, "d": 144, "f": 120, "n": 96}
 
 
 def test_split_family_no_leakage():
     fit, ev = split_cases(reaction_cases())
-    assert len(fit) + len(ev) == 208
-    assert len(ev) == 16 + 8 + 16 + 16 + 8  # whole families, every 3rd
+    assert len(fit) + len(ev) == 576
+    assert len(ev) == 36 + 30 + 48 + 36 + 30  # whole families, every 3rd
     fam = lambda c: c["id"][:3]
     assert not ({fam(c) for c in fit} & {fam(c) for c in ev})
 
@@ -41,11 +41,11 @@ def test_split_family_no_leakage():
 def test_label_index_mapping():
     cases = {c["id"]: c for c in reaction_cases()}
     assert case_label_index(cases["u01"]) == 0
-    assert case_label_index(cases["u07"]) == 1
+    assert case_label_index(cases["u11"]) == 1
     assert case_label_index(cases["d01"]) == 0  # billing first
-    assert case_label_index(cases["d05"]) == 1  # technical second
-    assert case_label_index(cases["d09"]) == 2  # sales third
-    assert case_label_index(cases["f09"]) == 2
+    assert case_label_index(cases["d09"]) == 1  # technical second
+    assert case_label_index(cases["d17"]) == 2  # sales third
+    assert case_label_index(cases["f13"]) == 2
     assert case_label_index(cases["n01"]) is None
 
 
@@ -60,6 +60,7 @@ def test_check_case_unit_logic():
     assert check_case({"noul": 0.9}, {"kind": "bool_yes"}) is True
     assert check_case({"noul": 0.9}, {"kind": "bool_no"}) is False
     assert check_case({"noul": None}, {"kind": "bool_yes"}) is False
+    assert check_case({"noul": None, "status": "insufficient_evidence"}, {"kind": "bool_yes"}) is False
     assert check_case({"choice": "billing"}, {"kind": "choice", "value": "billing"}) is True
     assert check_case({"choice": "sales"}, {"kind": "choice", "value": "billing"}) is False
     assert check_case({"probabilities": {"0": 0.1, "1": 0.8, "2": 0.1}}, {"kind": "score", "value": 1}) is True
@@ -101,6 +102,23 @@ def test_parse_json_letter():
     assert parse_json_letter('{"answer": "B"}', ["A", "B", "C"]) == "B"
     assert parse_json_letter("Answer: c", ["A", "B", "C"]) == "C"
     assert parse_json_letter("no letters here 123", ["A", "B"]) is None
+
+
+def test_should_abstain_rule(monkeypatch):
+    from src.flashbulljev.engine import _should_abstain
+    assert _should_abstain([0.99, 0.01], True) is False
+    assert _should_abstain([0.5, 0.5], True) is True  # low top + zero margin
+    assert _should_abstain([0.5, 0.5], False) is False  # abstain disabled
+    monkeypatch.setenv("FLASHBULLJEV_ABSTAIN_TAU", "0.999")
+    monkeypatch.setenv("FLASHBULLJEV_ABSTAIN_MARGIN", "0.999")
+    assert _should_abstain([0.99, 0.01], True) is True  # env override works
+
+
+def test_react_limit_flag():
+    from src.flashbulljev.reaction import run_reaction
+    out = run_reaction("fake", save=False, limit=6)
+    assert out["summary"]["n"] == 6
+    assert out["summary"]["contract_ok"] == 6
 
 
 def test_live_ollama_reaction_shape():

@@ -1,0 +1,20 @@
+{
+  "backend": "ollama",
+  "model": "qwen2.5:1.5b",
+  "n_clear": 176,
+  "n_vague": 12,
+  "tunings": {
+    "T1": {
+      "tau_abs": 0.6,
+      "tau_margin": 0.3,
+      "vague_abstain": 0.083,
+      "clear_keep": 0.96
+    },
+    "T3": {
+      "tau_abs": 0.5,
+      "tau_margin": 0.05,
+      "vague_abstain": 0.083,
+      "clear_keep": 0.955
+    }
+  }
+}

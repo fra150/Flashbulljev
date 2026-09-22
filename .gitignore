@@ -3,4 +3,6 @@ __pycache__/
 .pytest_cache/
 output/
 *.pyc
+**/node_modules/
+diario.md
 .opencode/
