@@ -13,11 +13,12 @@ Inspired by:
 ## Test report (measured on this machine, Ollama Qwen 2B)
 
 ```
-pytest:              33 passed
+pytest:              38 passed
 [fake]               miss ~52ms   hit ~0.08ms
 [ollama+qwen2.5:1.5b] miss avg ~715ms (3 parallel questions, warm)  hit avg ~0.07ms
 [ollama cold load]   first call ~3.1s (one-time model load), then warm timings above
 live API:            /health, /v1/decisions, /v1/systemone, /v1/models — all OK, answers certified Q=0.99
+reaction battery:    Qwen 13/16 = 0.812 @ ~358ms/reaction, contract 16/16 (fake baseline 4/16 random)
 ```
 
 The rule is confirmed:
@@ -49,7 +50,7 @@ bulla-jev/
     pipeline.py      # ingest -> route -> decide -> certify -> emit
     api.py           # FastAPI /v1/decisions /v1/systemone /health
   tests/
-    test_memory_gf.py test_engine.py test_api_pipeline.py test_real.py test_extra.py
+    test_memory_gf.py test_engine.py test_api_pipeline.py test_real.py test_extra.py test_reaction.py
   Dockerfile
   docker-compose.yml
   requirements.txt
@@ -66,6 +67,7 @@ python run.py demo
 $env:FLASHBULLJEV_BACKEND="ollama"; $env:FLASHBULLJEV_MODEL="qwen2.5:1.5b"
 python run.py demo
 python run.py demo-real   # fake vs ollama side by side
+python run.py react ollama  # 16-case rapid-fire Q&A battery (also: react fake)
 python run.py bench       # 5 states x2 rounds (miss vs hit)
 python run.py calibrate   # fit temperature on the demo set
 $env:FLASHBULLJEV_BACKEND="fake"; python -m pytest -q
@@ -80,6 +82,21 @@ $env:FLASHBULLJEV_BACKEND="ollama"; python run.py serve
 # POST /v1/systemone (Jev-compatible)
 # GET  /health, GET /v1/models
 ```
+
+## Reaction battery (rapid Q&A)
+
+`src/flashbulljev/reaction.py` fires 16 labeled one-question probes — urgency yes/no,
+department routing, frustration score, fill-level reading — and scores reaction vs expectation
+plus output-contract checks (type/status/confidence ranges, probabilities summing to 1).
+
+```
+Qwen 2B: 13/16 = 0.812 @ ~358ms/reaction, contract 16/16
+fake:     4/16 = 0.25  @ ~51ms/reaction,  contract 16/16  (hash-random baseline)
+```
+
+Honest misses: invoice-reminder flagged urgent (debatable), one thanks scored 0.78
+near-tie, one all-caps rage scored 1.01 instead of 2 (hedged). Two of three are
+near-ties, not confident errors.
 
 ## Calibration note
 

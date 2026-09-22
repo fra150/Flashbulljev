@@ -15,6 +15,7 @@ from .memory_gf import (
 )
 from .pipeline import run_pipeline, PipelineResult
 from .prompts import build_boolean_prompt, build_mc_prompt
+from .reaction import check_case, check_contract, reaction_cases, run_reaction
 from .schemas import (
     BooleanQuestion,
     ChoiceQuestion,
@@ -52,4 +53,8 @@ __all__ = [
     "ece",
     "build_mc_prompt",
     "build_boolean_prompt",
+    "reaction_cases",
+    "run_reaction",
+    "check_case",
+    "check_contract",
 ]
