@@ -8,7 +8,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -r requirements.txt
-      - run: pytest -q
-      - run: python -m flashbulljev demo
+      - run: pip install -r requirements.txt pytest-cov
+      - run: python -m pytest -q --cov=flashbulljev --cov-report=xml --cov-report=term
         working-directory: src
+        env:
+          PYTHONPATH: src
+      - run: python ../run.py react fake
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reaction-fake
+          path: results/reaction_fake.json
+  live-ollama:
+    runs-on: ubuntu-latest
+    if: ${{ false }}  # enable when a self-hosted runner with Ollama exists
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -r requirements.txt
+      - run: python run.py react ollama

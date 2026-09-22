@@ -1,0 +1,106 @@
+{
+  "backend": "ollama",
+  "model": "qwen2.5:1.5b",
+  "n": 12,
+  "acc_logit": 0.833,
+  "avg_ms_logit": 337.2,
+  "avg_ms_json": 497.6,
+  "rows": [
+    {
+      "id": "u01",
+      "ok_logit": true,
+      "ms_logit": 263.4,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 453.5
+    },
+    {
+      "id": "u04",
+      "ok_logit": true,
+      "ms_logit": 299.9,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 502.7
+    },
+    {
+      "id": "u07",
+      "ok_logit": true,
+      "ms_logit": 327.4,
+      "json_text": "```json\n{\"answer\": \"B\"}\n```",
+      "json_letter": "B",
+      "ms_json": 512.1
+    },
+    {
+      "id": "d01",
+      "ok_logit": true,
+      "ms_logit": 417.8,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 530.3
+    },
+    {
+      "id": "d05",
+      "ok_logit": true,
+      "ms_logit": 318.0,
+      "json_text": "```json\n{\"answer\": \"B\"}\n```",
+      "json_letter": "B",
+      "ms_json": 462.9
+    },
+    {
+      "id": "d09",
+      "ok_logit": true,
+      "ms_logit": 304.5,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 460.3
+    },
+    {
+      "id": "f01",
+      "ok_logit": false,
+      "ms_logit": 348.5,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 465.3
+    },
+    {
+      "id": "f05",
+      "ok_logit": true,
+      "ms_logit": 377.5,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 459.4
+    },
+    {
+      "id": "f09",
+      "ok_logit": false,
+      "ms_logit": 377.8,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 466.4
+    },
+    {
+      "id": "s01",
+      "ok_logit": true,
+      "ms_logit": 285.9,
+      "json_text": "```json\n{\"answer\": \"A\"}\n```",
+      "json_letter": "A",
+      "ms_json": 474.1
+    },
+    {
+      "id": "s05",
+      "ok_logit": true,
+      "ms_logit": 274.1,
+      "json_text": "```json\n{\"answer\": \"B\"}\n```",
+      "json_letter": "B",
+      "ms_json": 472.0
+    },
+    {
+      "id": "n01",
+      "ok_logit": true,
+      "ms_logit": 451.6,
+      "json_text": "```json\n{\n  \"answer\": \"A\"\n}\n```",
+      "json_letter": null,
+      "ms_json": 711.8
+    }
+  ]
+}

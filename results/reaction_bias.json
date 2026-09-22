@@ -1,0 +1,95 @@
+{
+  "backend": "ollama",
+  "model": "qwen2.5:1.5b",
+  "n": 12,
+  "flips": 0,
+  "flip_rate": 0.0,
+  "acc_orig": 0.917,
+  "acc_rev": 0.917,
+  "rows": [
+    {
+      "id": "d01",
+      "orig": "billing",
+      "rev": "billing",
+      "expected": "billing",
+      "flip": false
+    },
+    {
+      "id": "d02",
+      "orig": "billing",
+      "rev": "billing",
+      "expected": "billing",
+      "flip": false
+    },
+    {
+      "id": "d03",
+      "orig": "billing",
+      "rev": "billing",
+      "expected": "billing",
+      "flip": false
+    },
+    {
+      "id": "d04",
+      "orig": "billing",
+      "rev": "billing",
+      "expected": "billing",
+      "flip": false
+    },
+    {
+      "id": "d05",
+      "orig": "technical",
+      "rev": "technical",
+      "expected": "technical",
+      "flip": false
+    },
+    {
+      "id": "d06",
+      "orig": "technical",
+      "rev": "technical",
+      "expected": "technical",
+      "flip": false
+    },
+    {
+      "id": "d07",
+      "orig": "technical",
+      "rev": "technical",
+      "expected": "technical",
+      "flip": false
+    },
+    {
+      "id": "d08",
+      "orig": "technical",
+      "rev": "technical",
+      "expected": "technical",
+      "flip": false
+    },
+    {
+      "id": "d09",
+      "orig": "sales",
+      "rev": "sales",
+      "expected": "sales",
+      "flip": false
+    },
+    {
+      "id": "d10",
+      "orig": "billing",
+      "rev": "billing",
+      "expected": "sales",
+      "flip": false
+    },
+    {
+      "id": "d11",
+      "orig": "sales",
+      "rev": "sales",
+      "expected": "sales",
+      "flip": false
+    },
+    {
+      "id": "d12",
+      "orig": "sales",
+      "rev": "sales",
+      "expected": "sales",
+      "flip": false
+    }
+  ]
+}

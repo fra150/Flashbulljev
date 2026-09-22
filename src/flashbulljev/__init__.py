@@ -15,7 +15,7 @@ from .memory_gf import (
 )
 from .pipeline import run_pipeline, PipelineResult
 from .prompts import build_boolean_prompt, build_mc_prompt
-from .reaction import check_case, check_contract, reaction_cases, run_reaction, run_reaction_calibration, split_cases
+from .reaction import check_case, check_contract, reaction_cases, run_abstention, run_baseline, run_position_bias, run_reaction, run_reaction_calibration, split_cases
 from .schemas import (
     BooleanQuestion,
     ChoiceQuestion,
@@ -59,4 +59,7 @@ __all__ = [
     "check_contract",
     "split_cases",
     "run_reaction_calibration",
+    "run_abstention",
+    "run_position_bias",
+    "run_baseline",
 ]

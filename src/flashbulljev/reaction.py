@@ -1,15 +1,19 @@
-"""Rapid-fire reaction battery: 52 labeled input -> output probes.
+"""Rapid-fire reaction battery: 208 labeled input -> output probes.
 
-Groups: urgency (12), sentiment (8), department (12), frustration (12),
-fill level (8). Each case fires ONE question (fast) and checks the reaction.
-Split: every 3rd case per group -> eval, rest -> fit (real calibration set).
-Used by `python run.py react` and `python run.py react-calib`.
+Base: 52 cases in 5 groups (urgency 12, sentiment 8, department 12,
+frustration 12, fill 8) x 4 label-preserving variants (original, UPPER,
+polite wrap, quoted) = 208.
+Split: whole families (base + variants) with family_idx % 3 == 2 -> eval,
+rest -> fit. The battery doubles as a real calibration set.
+Extra probes: abstention (12 vague cases), position bias (option reversal),
+JSON baseline (free-text generation vs logit-only).
 """
 from __future__ import annotations
 
 import datetime
 import json
 import os
+import re
 import time
 from typing import Any, Dict, List, Tuple
 
@@ -29,10 +33,9 @@ URGENT_Q = {"type": "noul", "instructions": "Does this convey urgency?"}
 POSITIVE_Q = {"type": "noul", "instructions": "Is the sentiment positive?"}
 
 
-def reaction_cases() -> List[Dict[str, Any]]:
-    """52 labeled rapid-fire cases. Pure data, lists only."""
+def _base_cases() -> List[Dict[str, Any]]:
+    """52 curated base cases."""
     cases: List[Dict[str, Any]] = []
-    # urgency: 6 yes / 6 no
     for i, s in enumerate(["URGENT: server down, all payments failing!",
                            "HELP! database deleted, customers are furious",
                            "CRITICAL outage, refund everyone NOW",
@@ -47,7 +50,6 @@ def reaction_cases() -> List[Dict[str, Any]]:
                            "love the new feature, well done",
                            "see you at the meeting tomorrow"]):
         cases.append({"id": f"u{i+7:02d}", "state": s, "question": URGENT_Q, "expect": {"kind": "bool_no"}})
-    # sentiment: 4 positive / 4 negative
     for i, s in enumerate(["absolutely love it, best tool ever",
                            "great support, solved in minutes",
                            "works perfectly, thank you",
@@ -58,7 +60,6 @@ def reaction_cases() -> List[Dict[str, Any]]:
                            "worst support I have ever seen",
                            "complete waste of money"]):
         cases.append({"id": f"s{i+5:02d}", "state": s, "question": POSITIVE_Q, "expect": {"kind": "bool_no"}})
-    # department: 4 billing / 4 technical / 4 sales
     billing = ["my card was charged twice, I need a refund",
                "the invoice has the wrong VAT amount",
                "please send the receipt for my last payment",
@@ -73,7 +74,6 @@ def reaction_cases() -> List[Dict[str, Any]]:
              "I need a quote for 200 seats"]
     for i, (s, v) in enumerate([(x, "billing") for x in billing] + [(x, "technical") for x in technical] + [(x, "sales") for x in sales]):
         cases.append({"id": f"d{i+1:02d}", "state": s, "question": DEPT_Q, "expect": {"kind": "choice", "value": v}})
-    # frustration: 4 calm / 4 frustrated / 4 angry
     calm = ["thanks for the quick fix, great job!",
             "no worries, take your time",
             "all good, appreciate the help",
@@ -88,7 +88,6 @@ def reaction_cases() -> List[Dict[str, Any]]:
              "you lost my data, this is unforgivable"]
     for i, (s, v) in enumerate([(x, 0) for x in calm] + [(x, 1) for x in frust] + [(x, 2) for x in angry]):
         cases.append({"id": f"f{i+1:02d}", "state": s, "question": SCORE_Q, "expect": {"kind": "score", "value": v}})
-    # fill level: 8 ranges
     fills = [("the tank is at three quarters", 60.0, 90.0),
              ("the glass is half full", 30.0, 70.0),
              ("empty tank, zero fuel left", 0.0, 20.0),
@@ -101,6 +100,44 @@ def reaction_cases() -> List[Dict[str, Any]]:
         cases.append({"id": f"n{i+1:02d}", "state": s, "question": FILL_Q,
                       "expect": {"kind": "range", "low": lo, "high": hi}})
     return cases
+
+
+def _variants(case: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Label-preserving variants of one case (original + 3 transforms)."""
+    s = str(case["state"])
+    out = [dict(case)]
+    for suffix, text in [("b", s.upper()),
+                         ("c", f"Please note: {s} Thanks."),
+                         ("d", f'"{s}"')]:
+        c = dict(case)
+        c = {"id": case["id"] + suffix, "state": text, "question": case["question"],
+             "expect": case["expect"], "variant_of": case["id"]}
+        out.append(c)
+    return out
+
+
+def reaction_cases() -> List[Dict[str, Any]]:
+    """208 cases: 52 base x 4 variants."""
+    all_cases: List[Dict[str, Any]] = []
+    for case in _base_cases():
+        all_cases.extend(_variants(case))
+    return all_cases
+
+
+def abstain_cases() -> List[Dict[str, Any]]:
+    """12 vague cases where abstaining is the right reaction."""
+    states = ["the thing is stuff", "hello", "???", "update", "it depends",
+              "maybe later", "hmm", "see attached (no attachment)",
+              "as per my last email", "ping", "test test", "n/a"]
+    questions = [
+        {"type": "noul", "instructions": "Does this convey urgency?"},
+        {"type": "choice", "instructions": "Which team should handle this?",
+         "criteria": DEPT_CRITERIA},
+    ]
+    out: List[Dict[str, Any]] = []
+    for i, s in enumerate(states):
+        out.append({"id": f"a{i+1:02d}", "state": s, "question": questions[i % 2]})
+    return out
 
 
 def check_case(answer: Dict[str, Any], expect: Dict[str, Any]) -> bool:
@@ -143,6 +180,17 @@ def check_contract(answer: Dict[str, Any]) -> List[str]:
         if abs(s - 1.0) > 1e-4:
             problems.append(f"probabilities sum to {s}")
     return problems
+
+
+def is_abstained(answer: Dict[str, Any]) -> bool:
+    """True when the model declined to decide. Pure function."""
+    if answer.get("status") not in ("ok",):
+        return True
+    if "noul" in answer and answer.get("noul") is None:
+        return True
+    if "choice" in answer and answer.get("choice") is None:
+        return True
+    return False
 
 
 def case_label_index(case: Dict[str, Any]) -> int | None:
@@ -189,16 +237,31 @@ def case_raw_logits(backend: Any, case: Dict[str, Any]) -> Tuple[List[float] | N
     return list(logits), label
 
 
+def _family(case: Dict[str, Any]) -> str:
+    """Family id: base id without variant suffix (u01b -> u01)."""
+    cid = str(case.get("id", "x"))
+    return cid[:3]
+
+
 def split_cases(cases: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """Per-group split: every 3rd case -> eval, rest -> fit."""
+    """Family split: whole families with family_idx % 3 == 2 -> eval, rest -> fit."""
     fit: List[Dict[str, Any]] = []
     ev: List[Dict[str, Any]] = []
-    counters: Dict[str, int] = {}
+    seen: List[str] = []
     for case in cases:
-        g = str(case.get("id", "x"))[:1]
-        i = counters.get(g, 0)
-        counters[g] = i + 1
-        (ev if i % 3 == 2 else fit).append(case)
+        fam = _family(case)
+        if fam not in seen:
+            seen.append(fam)
+    groups: Dict[str, List[str]] = {}
+    for fam in seen:
+        groups.setdefault(fam[:1], []).append(fam)
+    eval_fams = set()
+    for g, fams in groups.items():
+        for i, fam in enumerate(fams):
+            if i % 3 == 2:
+                eval_fams.add(fam)
+    for case in cases:
+        (ev if _family(case) in eval_fams else fit).append(case)
     return fit, ev
 
 
@@ -212,6 +275,21 @@ def eval_metrics(logits_list: List[List[float]], labels: List[int], temperature:
     return {"temperature": temperature, "nll": round(nll(probs, labels), 4),
             "brier": round(brier(probs, labels), 4), "ece": round(ece(probs, labels), 4),
             "accuracy": round(acc, 3), "n": len(labels)}
+
+
+def parse_json_letter(text: str, letters: List[str]) -> str | None:
+    """Extract the answer letter from free text. Prefers quoted (JSON) and standalone letters."""
+    allowed = [L.upper() for L in letters]
+    m = re.search(r'"([A-Za-z])"', text)
+    if m and m.group(1).upper() in allowed:
+        return m.group(1).upper()
+    for m in re.finditer(r"\b([A-Za-z])\b", text):
+        if m.group(1).upper() in allowed:
+            return m.group(1).upper()
+    for m in re.finditer(r"[A-Za-z]", text):
+        if m.group(0).upper() in allowed:
+            return m.group(0).upper()
+    return None
 
 
 def run_reaction(backend_name: str = "", save: bool = True) -> Dict[str, Any]:
@@ -289,14 +367,120 @@ def run_reaction_calibration(backend_name: str = "") -> Dict[str, Any]:
     return out
 
 
+def run_abstention(backend_name: str = "") -> Dict[str, Any]:
+    """Fire vague cases; abstaining is correct. Returns rates + rows."""
+    backend = get_backend(backend_name or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    eng = FlashBullJevEngine(backend=backend)
+    rows: List[Dict[str, Any]] = []
+    for case in abstain_cases():
+        res = run_pipeline(eng, case["state"], {"q": case["question"]})
+        ans = dict(res.answers.get("q", {}))
+        rows.append({"id": case["id"], "abstained": is_abstained(ans),
+                     "confidence": ans.get("confidence"), "status": ans.get("status"),
+                     "state": case["state"]})
+    n_abs = sum(1 for r in rows if r["abstained"])
+    out = {"backend": getattr(backend, "name", "?"), "model": getattr(backend, "model", ""),
+           "n": len(rows), "abstained": n_abs,
+           "abstention_rate": round(n_abs / max(len(rows), 1), 3), "rows": rows}
+    os.makedirs("results", exist_ok=True)
+    with open(f"results/reaction_abstain_{getattr(backend, 'name', 'fake')}.json", "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+    return out
+
+
+def run_position_bias(backend_name: str = "") -> Dict[str, Any]:
+    """Original vs reversed option order on base dept cases. Fresh engine per call (no cache)."""
+    from .prompts import letters_for as _lf  # noqa: F401 (keeps import graph explicit)
+
+    backend = get_backend(backend_name or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    bases = [c for c in _base_cases() if c["id"].startswith("d")]
+    flips = 0
+    ok_orig = 0
+    ok_rev = 0
+    rows: List[Dict[str, Any]] = []
+    for case in bases:
+        q = dict(case["question"])
+        crit = dict(q.get("criteria", {}))
+        rev_q = dict(q)
+        rev_q["criteria"] = dict(reversed(list(crit.items())))
+        eng1 = FlashBullJevEngine(backend=backend)
+        eng2 = FlashBullJevEngine(backend=backend)
+        a1 = run_pipeline(eng1, case["state"], {"q": q}).answers["q"]
+        a2 = run_pipeline(eng2, case["state"], {"q": rev_q}).answers["q"]
+        c1, c2 = a1.get("choice"), a2.get("choice")
+        exp = case["expect"]["value"]
+        if c1 != c2:
+            flips += 1
+        if c1 == exp:
+            ok_orig += 1
+        if c2 == exp:
+            ok_rev += 1
+        rows.append({"id": case["id"], "orig": c1, "rev": c2, "expected": exp, "flip": c1 != c2})
+    out = {"backend": getattr(backend, "name", "?"), "model": getattr(backend, "model", ""),
+           "n": len(bases), "flips": flips, "flip_rate": round(flips / max(len(bases), 1), 3),
+           "acc_orig": round(ok_orig / max(len(bases), 1), 3),
+           "acc_rev": round(ok_rev / max(len(bases), 1), 3), "rows": rows}
+    os.makedirs("results", exist_ok=True)
+    with open("results/reaction_bias.json", "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+    return out
+
+
+def run_baseline(backend_name: str = "") -> Dict[str, Any]:
+    """Logit-only vs free-text JSON generation on 12 base cases."""
+    from .prompts import build_boolean_prompt as _bb, build_mc_prompt as _mc, build_score_prompt as _sc
+
+    backend = get_backend(backend_name or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    if not hasattr(backend, "answer_json"):
+        return {"skipped": "backend has no free-text generation (fake)"}
+    picks = ["u01", "u04", "u07", "d01", "d05", "d09", "f01", "f05", "f09", "s01", "s05", "n01"]
+    by_id = {c["id"]: c for c in _base_cases()}
+    rows: List[Dict[str, Any]] = []
+    for pid in picks:
+        case = by_id[pid]
+        q = dict(case["question"])
+        t = str(q.get("type", "noul"))
+        if t in ("noul", "boolean"):
+            prompt = build_boolean_prompt(case["state"], str(q.get("instructions", "")))
+            letters = ["A", "B"]
+        elif t == "choice":
+            opts = list((q.get("criteria", {}) or {}).keys())
+            prompt = build_mc_prompt(case["state"], str(q.get("instructions", "")), opts)
+            letters = ["A", "B", "C"][: len(opts)]
+        elif t == "score":
+            levels = list(q.get("criteria", []) or [])
+            prompt = build_score_prompt(case["state"], str(q.get("instructions", "")), levels)
+            letters = ["A", "B", "C"][: len(levels)]
+        else:
+            prompt = f"State: {case['state']}\nReply with JSON only: {{\"answer\": \"<value>\"}}"
+            letters = []
+        eng = FlashBullJevEngine(backend=backend)
+        t0 = time.perf_counter()
+        ans = run_pipeline(eng, case["state"], {"q": q}).answers["q"]
+        ms_logit = (time.perf_counter() - t0) * 1000.0
+        ok_logit = check_case(ans, dict(case["expect"]))
+        text, ms_json = backend.answer_json(prompt + '\nReply with JSON only: {"answer": "A"}')
+        letter = parse_json_letter(text, letters) if letters else None
+        rows.append({"id": pid, "ok_logit": ok_logit, "ms_logit": round(ms_logit, 1),
+                     "json_text": text[:120], "json_letter": letter, "ms_json": round(ms_json, 1)})
+    n = len(rows)
+    out = {"backend": getattr(backend, "name", "?"), "model": getattr(backend, "model", ""),
+           "n": n, "acc_logit": round(sum(1 for r in rows if r["ok_logit"]) / n, 3),
+           "avg_ms_logit": round(sum(r["ms_logit"] for r in rows) / n, 1),
+           "avg_ms_json": round(sum(r["ms_json"] for r in rows) / n, 1), "rows": rows}
+    os.makedirs("results", exist_ok=True)
+    with open("results/reaction_baseline.json", "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2)
+    return out
+
+
 def print_reaction(out: Dict[str, Any]) -> None:
     """Print the rapid-fire table."""
     s = out["summary"]
     print(f"backend={s['backend']} model={s['model']} accuracy={s['correct']}/{s['n']}={s['accuracy']} avg={s['avg_ms']}ms contract={s['contract_ok']}/{s['n']}")
-    for r in out["rows"]:
-        mark = "OK " if r["ok"] else "KO "
-        cmark = "" if r["contract_ok"] else f" CONTRACT:{r['contract']}"
-        print(f"{mark} {r['id']} {r['ms']:>8}ms {str(r['answer'].get('noul', r['answer'].get('choice', r['answer'].get('score', r['answer'].get('value'))))):>10}{cmark}  <- {r['state'][:48]}")
+    bad = [r for r in out["rows"] if not r["ok"]][:12]
+    for r in bad:
+        print(f"KO  {r['id']} {r['ms']:>8}ms  <- {r['state'][:60]}")
 
 
 def print_calibration(out: Dict[str, Any]) -> None:

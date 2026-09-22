@@ -1,12 +1,12 @@
 {
   "summary": {
     "backend": "ollama",
-    "model": "qwen2.5:1.5b",
+    "model": "qwen2.5:0.5b",
     "n": 208,
-    "correct": 166,
-    "accuracy": 0.798,
+    "correct": 89,
+    "accuracy": 0.428,
     "contract_ok": 208,
-    "avg_ms": 295.5,
+    "avg_ms": 246.2,
     "cache": {
       "hits": 0,
       "misses": 208,
@@ -20,14 +20,14 @@
     {
       "id": "u01",
       "ok": true,
-      "ms": 121.4,
+      "ms": 1559.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999981800073615,
+        "noul": 0.986816044341235,
         "status": "ok",
-        "confidence": 0.999996360014723,
+        "confidence": 0.9736320886824701,
         "backend": "ollama"
       },
       "expect": {
@@ -38,14 +38,14 @@
     {
       "id": "u01b",
       "ok": true,
-      "ms": 307.4,
+      "ms": 181.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999978211402804,
+        "noul": 0.9865316103777355,
         "status": "ok",
-        "confidence": 0.9999956422805607,
+        "confidence": 0.973063220755471,
         "backend": "ollama"
       },
       "expect": {
@@ -56,14 +56,14 @@
     {
       "id": "u01c",
       "ok": true,
-      "ms": 347.9,
+      "ms": 226.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.999988596104478,
+        "noul": 0.9120577956455385,
         "status": "ok",
-        "confidence": 0.999977192208956,
+        "confidence": 0.8241155912910769,
         "backend": "ollama"
       },
       "expect": {
@@ -74,14 +74,14 @@
     {
       "id": "u01d",
       "ok": true,
-      "ms": 336.9,
+      "ms": 204.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999981957569039,
+        "noul": 0.9857701184443793,
         "status": "ok",
-        "confidence": 0.9999963915138077,
+        "confidence": 0.9715402368887587,
         "backend": "ollama"
       },
       "expect": {
@@ -92,14 +92,14 @@
     {
       "id": "u02",
       "ok": true,
-      "ms": 283.5,
+      "ms": 186.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999573142939302,
+        "noul": 0.9846873208110618,
         "status": "ok",
-        "confidence": 0.9999146285878604,
+        "confidence": 0.9693746416221236,
         "backend": "ollama"
       },
       "expect": {
@@ -110,14 +110,14 @@
     {
       "id": "u02b",
       "ok": true,
-      "ms": 289.5,
+      "ms": 191.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999377376899083,
+        "noul": 0.982730179139617,
         "status": "ok",
-        "confidence": 0.9998754753798167,
+        "confidence": 0.965460358279234,
         "backend": "ollama"
       },
       "expect": {
@@ -128,14 +128,14 @@
     {
       "id": "u02c",
       "ok": true,
-      "ms": 298.4,
+      "ms": 215.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999727878019209,
+        "noul": 0.9642233462155956,
         "status": "ok",
-        "confidence": 0.9999455756038418,
+        "confidence": 0.9284466924311912,
         "backend": "ollama"
       },
       "expect": {
@@ -146,14 +146,14 @@
     {
       "id": "u02d",
       "ok": true,
-      "ms": 305.0,
+      "ms": 201.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.999968351750228,
+        "noul": 0.9843232285025667,
         "status": "ok",
-        "confidence": 0.999936703500456,
+        "confidence": 0.9686464570051334,
         "backend": "ollama"
       },
       "expect": {
@@ -164,14 +164,14 @@
     {
       "id": "u03",
       "ok": true,
-      "ms": 285.2,
+      "ms": 190.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9976347107710161,
+        "noul": 0.9741241137193021,
         "status": "ok",
-        "confidence": 0.9952694215420321,
+        "confidence": 0.9482482274386042,
         "backend": "ollama"
       },
       "expect": {
@@ -182,14 +182,14 @@
     {
       "id": "u03b",
       "ok": true,
-      "ms": 313.6,
+      "ms": 199.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9968280114030983,
+        "noul": 0.9845784320576297,
         "status": "ok",
-        "confidence": 0.9936560228061966,
+        "confidence": 0.9691568641152595,
         "backend": "ollama"
       },
       "expect": {
@@ -200,14 +200,14 @@
     {
       "id": "u03c",
       "ok": true,
-      "ms": 387.9,
+      "ms": 220.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9998351861388545,
+        "noul": 0.9532581320964633,
         "status": "ok",
-        "confidence": 0.9996703722777089,
+        "confidence": 0.9065162641929265,
         "backend": "ollama"
       },
       "expect": {
@@ -218,14 +218,14 @@
     {
       "id": "u03d",
       "ok": true,
-      "ms": 311.4,
+      "ms": 209.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9992209444527755,
+        "noul": 0.979577600144184,
         "status": "ok",
-        "confidence": 0.9984418889055511,
+        "confidence": 0.9591552002883681,
         "backend": "ollama"
       },
       "expect": {
@@ -236,14 +236,14 @@
     {
       "id": "u04",
       "ok": true,
-      "ms": 298.7,
+      "ms": 204.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999728336476335,
+        "noul": 0.9877505571935176,
         "status": "ok",
-        "confidence": 0.9999456672952669,
+        "confidence": 0.9755011143870351,
         "backend": "ollama"
       },
       "expect": {
@@ -254,14 +254,14 @@
     {
       "id": "u04b",
       "ok": true,
-      "ms": 327.4,
+      "ms": 237.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999525445234863,
+        "noul": 0.9899716700662277,
         "status": "ok",
-        "confidence": 0.9999050890469725,
+        "confidence": 0.9799433401324553,
         "backend": "ollama"
       },
       "expect": {
@@ -272,14 +272,14 @@
     {
       "id": "u04c",
       "ok": true,
-      "ms": 302.9,
+      "ms": 261.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999815567117446,
+        "noul": 0.9638198700819584,
         "status": "ok",
-        "confidence": 0.9999631134234892,
+        "confidence": 0.9276397401639167,
         "backend": "ollama"
       },
       "expect": {
@@ -290,14 +290,14 @@
     {
       "id": "u04d",
       "ok": true,
-      "ms": 283.2,
+      "ms": 220.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999862017596336,
+        "noul": 0.9883498054711788,
         "status": "ok",
-        "confidence": 0.9999724035192672,
+        "confidence": 0.9766996109423576,
         "backend": "ollama"
       },
       "expect": {
@@ -308,14 +308,14 @@
     {
       "id": "u05",
       "ok": true,
-      "ms": 288.8,
+      "ms": 199.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999873404292802,
+        "noul": 0.9950829058617375,
         "status": "ok",
-        "confidence": 0.9999746808585603,
+        "confidence": 0.9901658117234751,
         "backend": "ollama"
       },
       "expect": {
@@ -326,14 +326,14 @@
     {
       "id": "u05b",
       "ok": true,
-      "ms": 301.4,
+      "ms": 193.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999819210874201,
+        "noul": 0.9941122199563198,
         "status": "ok",
-        "confidence": 0.9999638421748402,
+        "confidence": 0.9882244399126396,
         "backend": "ollama"
       },
       "expect": {
@@ -344,14 +344,14 @@
     {
       "id": "u05c",
       "ok": true,
-      "ms": 319.2,
+      "ms": 209.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999507098197071,
+        "noul": 0.9846073923082275,
         "status": "ok",
-        "confidence": 0.9999014196394143,
+        "confidence": 0.9692147846164549,
         "backend": "ollama"
       },
       "expect": {
@@ -362,14 +362,14 @@
     {
       "id": "u05d",
       "ok": true,
-      "ms": 286.7,
+      "ms": 191.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999265965447854,
+        "noul": 0.9919680621003467,
         "status": "ok",
-        "confidence": 0.9998531930895709,
+        "confidence": 0.9839361242006934,
         "backend": "ollama"
       },
       "expect": {
@@ -380,14 +380,14 @@
     {
       "id": "u06",
       "ok": true,
-      "ms": 264.1,
+      "ms": 179.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9998038469541871,
+        "noul": 0.9930444865810012,
         "status": "ok",
-        "confidence": 0.9996076939083742,
+        "confidence": 0.9860889731620024,
         "backend": "ollama"
       },
       "expect": {
@@ -398,14 +398,14 @@
     {
       "id": "u06b",
       "ok": true,
-      "ms": 278.7,
+      "ms": 192.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9997785918291244,
+        "noul": 0.9844116929025631,
         "status": "ok",
-        "confidence": 0.9995571836582489,
+        "confidence": 0.9688233858051263,
         "backend": "ollama"
       },
       "expect": {
@@ -416,14 +416,14 @@
     {
       "id": "u06c",
       "ok": true,
-      "ms": 286.3,
+      "ms": 204.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9996731256829458,
+        "noul": 0.985889059574268,
         "status": "ok",
-        "confidence": 0.9993462513658915,
+        "confidence": 0.971778119148536,
         "backend": "ollama"
       },
       "expect": {
@@ -434,14 +434,14 @@
     {
       "id": "u06d",
       "ok": true,
-      "ms": 267.4,
+      "ms": 182.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9996400089151278,
+        "noul": 0.9837197577930061,
         "status": "ok",
-        "confidence": 0.9992800178302557,
+        "confidence": 0.9674395155860123,
         "backend": "ollama"
       },
       "expect": {
@@ -451,15 +451,15 @@
     },
     {
       "id": "u07",
-      "ok": true,
-      "ms": 273.1,
+      "ok": false,
+      "ms": 193.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0038973535090440587,
+        "noul": 0.8900609641149947,
         "status": "ok",
-        "confidence": 0.9922052929799197,
+        "confidence": 0.7801219282299894,
         "backend": "ollama"
       },
       "expect": {
@@ -469,15 +469,15 @@
     },
     {
       "id": "u07b",
-      "ok": true,
-      "ms": 302.3,
+      "ok": false,
+      "ms": 228.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.004029717098679275,
+        "noul": 0.9509120506669707,
         "status": "ok",
-        "confidence": 0.9919405658006495,
+        "confidence": 0.9018241013339414,
         "backend": "ollama"
       },
       "expect": {
@@ -487,15 +487,15 @@
     },
     {
       "id": "u07c",
-      "ok": true,
-      "ms": 312.8,
+      "ok": false,
+      "ms": 211.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.006463138540448246,
+        "noul": 0.9257111895327539,
         "status": "ok",
-        "confidence": 0.987073722917116,
+        "confidence": 0.8514223790655078,
         "backend": "ollama"
       },
       "expect": {
@@ -505,15 +505,15 @@
     },
     {
       "id": "u07d",
-      "ok": true,
-      "ms": 300.0,
+      "ok": false,
+      "ms": 193.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0010062876454052258,
+        "noul": 0.9370905887178359,
         "status": "ok",
-        "confidence": 0.9979874247071912,
+        "confidence": 0.8741811774356718,
         "backend": "ollama"
       },
       "expect": {
@@ -524,14 +524,14 @@
     {
       "id": "u08",
       "ok": false,
-      "ms": 278.0,
+      "ms": 190.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9972691134975225,
+        "noul": 0.966989235934578,
         "status": "ok",
-        "confidence": 0.9945382269950449,
+        "confidence": 0.933978471869156,
         "backend": "ollama"
       },
       "expect": {
@@ -542,14 +542,14 @@
     {
       "id": "u08b",
       "ok": false,
-      "ms": 300.8,
+      "ms": 205.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.99722809012037,
+        "noul": 0.9744074953168356,
         "status": "ok",
-        "confidence": 0.9944561802407399,
+        "confidence": 0.9488149906336711,
         "backend": "ollama"
       },
       "expect": {
@@ -560,14 +560,14 @@
     {
       "id": "u08c",
       "ok": false,
-      "ms": 317.4,
+      "ms": 210.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9681933464852461,
+        "noul": 0.9470872329675589,
         "status": "ok",
-        "confidence": 0.9363866929704923,
+        "confidence": 0.8941744659351178,
         "backend": "ollama"
       },
       "expect": {
@@ -578,14 +578,14 @@
     {
       "id": "u08d",
       "ok": false,
-      "ms": 285.1,
+      "ms": 199.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9970635069346103,
+        "noul": 0.9713007929560761,
         "status": "ok",
-        "confidence": 0.9941270138692206,
+        "confidence": 0.9426015859121522,
         "backend": "ollama"
       },
       "expect": {
@@ -595,15 +595,15 @@
     },
     {
       "id": "u09",
-      "ok": true,
-      "ms": 259.3,
+      "ok": false,
+      "ms": 186.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.418852898494601,
+        "noul": 0.9381974866801338,
         "status": "ok",
-        "confidence": 0.16229420300963548,
+        "confidence": 0.8763949733602676,
         "backend": "ollama"
       },
       "expect": {
@@ -614,14 +614,14 @@
     {
       "id": "u09b",
       "ok": false,
-      "ms": 286.4,
+      "ms": 212.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.7524437761151533,
+        "noul": 0.9158991689358446,
         "status": "ok",
-        "confidence": 0.5048875522303067,
+        "confidence": 0.8317983378716891,
         "backend": "ollama"
       },
       "expect": {
@@ -632,14 +632,14 @@
     {
       "id": "u09c",
       "ok": false,
-      "ms": 297.4,
+      "ms": 207.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": null,
-        "status": "insufficient_evidence",
-        "confidence": 0.0,
+        "noul": 0.9466966622202706,
+        "status": "ok",
+        "confidence": 0.8933933244405412,
         "backend": "ollama"
       },
       "expect": {
@@ -650,14 +650,14 @@
     {
       "id": "u09d",
       "ok": false,
-      "ms": 324.1,
+      "ms": 194.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": null,
-        "status": "insufficient_evidence",
-        "confidence": 0.0,
+        "noul": 0.968108771221573,
+        "status": "ok",
+        "confidence": 0.936217542443146,
         "backend": "ollama"
       },
       "expect": {
@@ -667,15 +667,15 @@
     },
     {
       "id": "u10",
-      "ok": true,
-      "ms": 266.9,
+      "ok": false,
+      "ms": 185.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0010416514037936834,
+        "noul": 0.9617320457511046,
         "status": "ok",
-        "confidence": 0.9979166971904145,
+        "confidence": 0.9234640915022092,
         "backend": "ollama"
       },
       "expect": {
@@ -685,15 +685,15 @@
     },
     {
       "id": "u10b",
-      "ok": true,
-      "ms": 283.5,
+      "ok": false,
+      "ms": 193.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0008979481755815325,
+        "noul": 0.9208608650930082,
         "status": "ok",
-        "confidence": 0.9982041036468388,
+        "confidence": 0.8417217301860165,
         "backend": "ollama"
       },
       "expect": {
@@ -703,15 +703,15 @@
     },
     {
       "id": "u10c",
-      "ok": true,
-      "ms": 298.1,
+      "ok": false,
+      "ms": 209.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0008391809405573016,
+        "noul": 0.9538186230765953,
         "status": "ok",
-        "confidence": 0.9983216381168869,
+        "confidence": 0.9076372461531905,
         "backend": "ollama"
       },
       "expect": {
@@ -721,15 +721,15 @@
     },
     {
       "id": "u10d",
-      "ok": true,
-      "ms": 269.5,
+      "ok": false,
+      "ms": 191.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.002345050212827238,
+        "noul": 0.9375884342338596,
         "status": "ok",
-        "confidence": 0.9953098995723502,
+        "confidence": 0.8751768684677192,
         "backend": "ollama"
       },
       "expect": {
@@ -739,15 +739,15 @@
     },
     {
       "id": "u11",
-      "ok": true,
-      "ms": 261.5,
+      "ok": false,
+      "ms": 190.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.002562513522697949,
+        "noul": 0.9562048993113403,
         "status": "ok",
-        "confidence": 0.9948749729526092,
+        "confidence": 0.9124097986226807,
         "backend": "ollama"
       },
       "expect": {
@@ -757,15 +757,15 @@
     },
     {
       "id": "u11b",
-      "ok": true,
-      "ms": 261.7,
+      "ok": false,
+      "ms": 185.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.06141502646442875,
+        "noul": 0.9740657344476908,
         "status": "ok",
-        "confidence": 0.8771699470692651,
+        "confidence": 0.9481314688953817,
         "backend": "ollama"
       },
       "expect": {
@@ -775,15 +775,15 @@
     },
     {
       "id": "u11c",
-      "ok": true,
-      "ms": 295.7,
+      "ok": false,
+      "ms": 202.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0011060464465694184,
+        "noul": 0.9102916901411264,
         "status": "ok",
-        "confidence": 0.9977879071048634,
+        "confidence": 0.8205833802822529,
         "backend": "ollama"
       },
       "expect": {
@@ -793,15 +793,15 @@
     },
     {
       "id": "u11d",
-      "ok": true,
-      "ms": 277.7,
+      "ok": false,
+      "ms": 186.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.004545857861176408,
+        "noul": 0.9699155825908738,
         "status": "ok",
-        "confidence": 0.990908284275656,
+        "confidence": 0.9398311651817477,
         "backend": "ollama"
       },
       "expect": {
@@ -811,15 +811,15 @@
     },
     {
       "id": "u12",
-      "ok": true,
-      "ms": 260.4,
+      "ok": false,
+      "ms": 178.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.3135232265295391,
+        "noul": 0.9324062002010919,
         "status": "ok",
-        "confidence": 0.37295354693954863,
+        "confidence": 0.8648124004021838,
         "backend": "ollama"
       },
       "expect": {
@@ -830,14 +830,14 @@
     {
       "id": "u12b",
       "ok": false,
-      "ms": 296.0,
+      "ms": 197.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9193847805383891,
+        "noul": 0.9554229004769511,
         "status": "ok",
-        "confidence": 0.8387695610767782,
+        "confidence": 0.9108458009539022,
         "backend": "ollama"
       },
       "expect": {
@@ -847,15 +847,15 @@
     },
     {
       "id": "u12c",
-      "ok": true,
-      "ms": 287.2,
+      "ok": false,
+      "ms": 201.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.02595301988069526,
+        "noul": 0.9255856998442072,
         "status": "ok",
-        "confidence": 0.9480939602366614,
+        "confidence": 0.8511713996884145,
         "backend": "ollama"
       },
       "expect": {
@@ -866,14 +866,14 @@
     {
       "id": "u12d",
       "ok": false,
-      "ms": 264.5,
+      "ms": 186.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.7357061839301913,
+        "noul": 0.937082705920537,
         "status": "ok",
-        "confidence": 0.47141236786038254,
+        "confidence": 0.874165411841074,
         "backend": "ollama"
       },
       "expect": {
@@ -884,14 +884,14 @@
     {
       "id": "s01",
       "ok": true,
-      "ms": 272.1,
+      "ms": 199.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999998017301908,
+        "noul": 0.9799383469609316,
         "status": "ok",
-        "confidence": 0.9999996034603815,
+        "confidence": 0.9598766939218633,
         "backend": "ollama"
       },
       "expect": {
@@ -902,14 +902,14 @@
     {
       "id": "s01b",
       "ok": true,
-      "ms": 301.0,
+      "ms": 198.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999997543102874,
+        "noul": 0.9906355556390422,
         "status": "ok",
-        "confidence": 0.9999995086205749,
+        "confidence": 0.9812711112780843,
         "backend": "ollama"
       },
       "expect": {
@@ -920,14 +920,14 @@
     {
       "id": "s01c",
       "ok": true,
-      "ms": 326.1,
+      "ms": 236.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999991298408248,
+        "noul": 0.9640296562916006,
         "status": "ok",
-        "confidence": 0.9999982596816497,
+        "confidence": 0.9280593125832013,
         "backend": "ollama"
       },
       "expect": {
@@ -938,14 +938,14 @@
     {
       "id": "s01d",
       "ok": true,
-      "ms": 319.6,
+      "ms": 212.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999999160339437,
+        "noul": 0.993920721675317,
         "status": "ok",
-        "confidence": 0.9999998320678873,
+        "confidence": 0.987841443350634,
         "backend": "ollama"
       },
       "expect": {
@@ -956,14 +956,14 @@
     {
       "id": "s02",
       "ok": true,
-      "ms": 328.8,
+      "ms": 175.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999966376624418,
+        "noul": 0.9675389406162611,
         "status": "ok",
-        "confidence": 0.9999932753248837,
+        "confidence": 0.9350778812325222,
         "backend": "ollama"
       },
       "expect": {
@@ -974,14 +974,14 @@
     {
       "id": "s02b",
       "ok": true,
-      "ms": 327.6,
+      "ms": 184.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999969995439222,
+        "noul": 0.9677373552604038,
         "status": "ok",
-        "confidence": 0.9999939990878444,
+        "confidence": 0.9354747105208077,
         "backend": "ollama"
       },
       "expect": {
@@ -992,14 +992,14 @@
     {
       "id": "s02c",
       "ok": true,
-      "ms": 345.5,
+      "ms": 222.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999966702155915,
+        "noul": 0.9515781447096437,
         "status": "ok",
-        "confidence": 0.9999933404311829,
+        "confidence": 0.9031562894192875,
         "backend": "ollama"
       },
       "expect": {
@@ -1010,14 +1010,14 @@
     {
       "id": "s02d",
       "ok": true,
-      "ms": 310.5,
+      "ms": 188.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999964976418555,
+        "noul": 0.986912106863819,
         "status": "ok",
-        "confidence": 0.999992995283711,
+        "confidence": 0.973824213727638,
         "backend": "ollama"
       },
       "expect": {
@@ -1028,14 +1028,14 @@
     {
       "id": "s03",
       "ok": true,
-      "ms": 271.4,
+      "ms": 175.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999826264817075,
+        "noul": 0.9472123016619335,
         "status": "ok",
-        "confidence": 0.9999652529634151,
+        "confidence": 0.894424603323867,
         "backend": "ollama"
       },
       "expect": {
@@ -1046,14 +1046,14 @@
     {
       "id": "s03b",
       "ok": true,
-      "ms": 283.0,
+      "ms": 191.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999967630336407,
+        "noul": 0.8807886730854086,
         "status": "ok",
-        "confidence": 0.9999935260672814,
+        "confidence": 0.7615773461708173,
         "backend": "ollama"
       },
       "expect": {
@@ -1064,14 +1064,14 @@
     {
       "id": "s03c",
       "ok": true,
-      "ms": 295.7,
+      "ms": 193.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9998461503993124,
+        "noul": 0.9037041363655726,
         "status": "ok",
-        "confidence": 0.9996923007986247,
+        "confidence": 0.8074082727311451,
         "backend": "ollama"
       },
       "expect": {
@@ -1082,14 +1082,14 @@
     {
       "id": "s03d",
       "ok": true,
-      "ms": 254.8,
+      "ms": 178.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999966594474963,
+        "noul": 0.9635061017333552,
         "status": "ok",
-        "confidence": 0.9999933188949925,
+        "confidence": 0.9270122034667103,
         "backend": "ollama"
       },
       "expect": {
@@ -1100,14 +1100,14 @@
     {
       "id": "s04",
       "ok": true,
-      "ms": 294.4,
+      "ms": 177.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999990008728973,
+        "noul": 0.9662363247844213,
         "status": "ok",
-        "confidence": 0.9999980017457946,
+        "confidence": 0.9324726495688427,
         "backend": "ollama"
       },
       "expect": {
@@ -1118,14 +1118,14 @@
     {
       "id": "s04b",
       "ok": true,
-      "ms": 295.7,
+      "ms": 196.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999753436791398,
+        "noul": 0.9760452008214162,
         "status": "ok",
-        "confidence": 0.9999506873582795,
+        "confidence": 0.9520904016428324,
         "backend": "ollama"
       },
       "expect": {
@@ -1136,14 +1136,14 @@
     {
       "id": "s04c",
       "ok": true,
-      "ms": 291.5,
+      "ms": 198.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999782915020158,
+        "noul": 0.9324542764844702,
         "status": "ok",
-        "confidence": 0.9999565830040316,
+        "confidence": 0.8649085529689404,
         "backend": "ollama"
       },
       "expect": {
@@ -1154,14 +1154,14 @@
     {
       "id": "s04d",
       "ok": true,
-      "ms": 261.7,
+      "ms": 196.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.9999985528196003,
+        "noul": 0.9615751322608197,
         "status": "ok",
-        "confidence": 0.9999971056392005,
+        "confidence": 0.9231502645216394,
         "backend": "ollama"
       },
       "expect": {
@@ -1171,15 +1171,15 @@
     },
     {
       "id": "s05",
-      "ok": true,
-      "ms": 269.5,
+      "ok": false,
+      "ms": 185.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 5.329031156355214e-05,
+        "noul": 0.9271465099900774,
         "status": "ok",
-        "confidence": 0.999893419374873,
+        "confidence": 0.8542930199801548,
         "backend": "ollama"
       },
       "expect": {
@@ -1189,15 +1189,15 @@
     },
     {
       "id": "s05b",
-      "ok": true,
-      "ms": 268.5,
+      "ok": false,
+      "ms": 191.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 2.4296712776269104e-05,
+        "noul": 0.9234450659618904,
         "status": "ok",
-        "confidence": 0.9999514065724475,
+        "confidence": 0.8468901319237807,
         "backend": "ollama"
       },
       "expect": {
@@ -1207,15 +1207,15 @@
     },
     {
       "id": "s05c",
-      "ok": true,
-      "ms": 281.9,
+      "ok": false,
+      "ms": 206.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 2.6273160171257934e-05,
+        "noul": 0.7501107793460574,
         "status": "ok",
-        "confidence": 0.9999474536776574,
+        "confidence": 0.5002215586921148,
         "backend": "ollama"
       },
       "expect": {
@@ -1225,15 +1225,15 @@
     },
     {
       "id": "s05d",
-      "ok": true,
-      "ms": 261.0,
+      "ok": false,
+      "ms": 206.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 7.888078390720234e-05,
+        "noul": 0.8849160700704731,
         "status": "ok",
-        "confidence": 0.9998422384301855,
+        "confidence": 0.7698321401409463,
         "backend": "ollama"
       },
       "expect": {
@@ -1243,15 +1243,15 @@
     },
     {
       "id": "s06",
-      "ok": true,
-      "ms": 262.8,
+      "ok": false,
+      "ms": 182.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 3.391989852388104e-05,
+        "noul": 0.8269390165779015,
         "status": "ok",
-        "confidence": 0.9999321602009521,
+        "confidence": 0.653878033155803,
         "backend": "ollama"
       },
       "expect": {
@@ -1261,15 +1261,15 @@
     },
     {
       "id": "s06b",
-      "ok": true,
-      "ms": 251.7,
+      "ok": false,
+      "ms": 191.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 7.391886437175781e-05,
+        "noul": 0.9190953492940729,
         "status": "ok",
-        "confidence": 0.9998521622692567,
+        "confidence": 0.8381906985881458,
         "backend": "ollama"
       },
       "expect": {
@@ -1279,15 +1279,15 @@
     },
     {
       "id": "s06c",
-      "ok": true,
-      "ms": 290.1,
+      "ok": false,
+      "ms": 204.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 2.7086845550227313e-05,
+        "noul": 0.7457887462989913,
         "status": "ok",
-        "confidence": 0.9999458263068992,
+        "confidence": 0.49157749259798256,
         "backend": "ollama"
       },
       "expect": {
@@ -1297,15 +1297,15 @@
     },
     {
       "id": "s06d",
-      "ok": true,
-      "ms": 274.8,
+      "ok": false,
+      "ms": 203.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.00011105570943806245,
+        "noul": 0.6643251147056949,
         "status": "ok",
-        "confidence": 0.9997778885791238,
+        "confidence": 0.32865022941138977,
         "backend": "ollama"
       },
       "expect": {
@@ -1315,15 +1315,15 @@
     },
     {
       "id": "s07",
-      "ok": true,
-      "ms": 251.2,
+      "ok": false,
+      "ms": 223.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 2.4817349591734314e-05,
+        "noul": 0.6164448529454275,
         "status": "ok",
-        "confidence": 0.9999503652988166,
+        "confidence": 0.232889705890855,
         "backend": "ollama"
       },
       "expect": {
@@ -1333,15 +1333,15 @@
     },
     {
       "id": "s07b",
-      "ok": true,
-      "ms": 299.9,
+      "ok": false,
+      "ms": 236.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 7.565425031106006e-06,
+        "noul": 0.7141415766300125,
         "status": "ok",
-        "confidence": 0.9999848691479378,
+        "confidence": 0.4282831532600251,
         "backend": "ollama"
       },
       "expect": {
@@ -1351,15 +1351,15 @@
     },
     {
       "id": "s07c",
-      "ok": true,
-      "ms": 295.0,
+      "ok": false,
+      "ms": 226.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.00010197668126856984,
+        "noul": 0.7184181073591819,
         "status": "ok",
-        "confidence": 0.9997960466354627,
+        "confidence": 0.43683621471836376,
         "backend": "ollama"
       },
       "expect": {
@@ -1369,15 +1369,15 @@
     },
     {
       "id": "s07d",
-      "ok": true,
-      "ms": 280.8,
+      "ok": false,
+      "ms": 219.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 0.0001791685221105866,
+        "noul": 0.9085098300271726,
         "status": "ok",
-        "confidence": 0.999641662953779,
+        "confidence": 0.8170196600543451,
         "backend": "ollama"
       },
       "expect": {
@@ -1387,15 +1387,15 @@
     },
     {
       "id": "s08",
-      "ok": true,
-      "ms": 265.7,
+      "ok": false,
+      "ms": 193.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 1.2645664793004219e-05,
+        "noul": 0.8956052698899244,
         "status": "ok",
-        "confidence": 0.9999747086684139,
+        "confidence": 0.7912105397798488,
         "backend": "ollama"
       },
       "expect": {
@@ -1405,15 +1405,15 @@
     },
     {
       "id": "s08b",
-      "ok": true,
-      "ms": 275.1,
+      "ok": false,
+      "ms": 186.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 1.291122251668906e-05,
+        "noul": 0.923015313976626,
         "status": "ok",
-        "confidence": 0.9999741775529667,
+        "confidence": 0.8460306279532519,
         "backend": "ollama"
       },
       "expect": {
@@ -1423,15 +1423,15 @@
     },
     {
       "id": "s08c",
-      "ok": true,
-      "ms": 279.0,
+      "ok": false,
+      "ms": 199.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 6.499766545157949e-05,
+        "noul": 0.7284043237231933,
         "status": "ok",
-        "confidence": 0.999870004667097,
+        "confidence": 0.4568086474463866,
         "backend": "ollama"
       },
       "expect": {
@@ -1441,15 +1441,15 @@
     },
     {
       "id": "s08d",
-      "ok": true,
-      "ms": 276.3,
+      "ok": false,
+      "ms": 184.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "noul",
-        "noul": 6.142151616260022e-05,
+        "noul": 0.7554555653073187,
         "status": "ok",
-        "confidence": 0.9998771569656748,
+        "confidence": 0.5109111306146374,
         "backend": "ollama"
       },
       "expect": {
@@ -1459,20 +1459,20 @@
     },
     {
       "id": "d01",
-      "ok": true,
-      "ms": 339.6,
+      "ok": false,
+      "ms": 237.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9997694213730636,
-          "technical": 0.00022673365213639438,
-          "sales": 3.844973800132869e-06
+          "billing": 0.2934919606390707,
+          "technical": 0.06960761412483989,
+          "sales": 0.6369004252354525
         },
         "status": "ok",
-        "confidence": 0.9996541320595953,
+        "confidence": 0.45535063785317886,
         "backend": "ollama"
       },
       "expect": {
@@ -1483,20 +1483,20 @@
     },
     {
       "id": "d01b",
-      "ok": true,
-      "ms": 51.7,
+      "ok": false,
+      "ms": 243.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9993913502644675,
-          "technical": 0.0005873608707175507,
-          "sales": 2.1288863815372395e-05
+          "billing": 0.30730896910783534,
+          "technical": 0.03241967486379786,
+          "sales": 0.6602713560277065
         },
         "status": "ok",
-        "confidence": 0.9990870253967012,
+        "confidence": 0.4904070340415597,
         "backend": "ollama"
       },
       "expect": {
@@ -1507,20 +1507,20 @@
     },
     {
       "id": "d01c",
-      "ok": true,
-      "ms": 360.4,
+      "ok": false,
+      "ms": 249.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9999293125337013,
-          "technical": 6.290385528566855e-05,
-          "sales": 7.78361001296433e-06
+          "billing": 0.20388431361536247,
+          "technical": 0.1117240870905677,
+          "sales": 0.6843915992933853
         },
         "status": "ok",
-        "confidence": 0.9998939688005519,
+        "confidence": 0.526587398940078,
         "backend": "ollama"
       },
       "expect": {
@@ -1531,20 +1531,20 @@
     },
     {
       "id": "d01d",
-      "ok": true,
-      "ms": 347.6,
+      "ok": false,
+      "ms": 250.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9997169275032404,
-          "technical": 0.0002729637916229945,
-          "sales": 1.0108704136953797e-05
+          "billing": 0.3909115442314956,
+          "technical": 0.07698061715019332,
+          "sales": 0.5321078386177789
         },
         "status": "ok",
-        "confidence": 0.9995753912548606,
+        "confidence": 0.2981617579266683,
         "backend": "ollama"
       },
       "expect": {
@@ -1555,20 +1555,20 @@
     },
     {
       "id": "d02",
-      "ok": true,
-      "ms": 322.0,
+      "ok": false,
+      "ms": 221.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9883721846718265,
-          "technical": 0.009608533713209506,
-          "sales": 0.002019281613975388
+          "billing": 0.29997970580211264,
+          "technical": 0.02542889369184766,
+          "sales": 0.674591400505365
         },
         "status": "ok",
-        "confidence": 0.9825582770077399,
+        "confidence": 0.5118871007580474,
         "backend": "ollama"
       },
       "expect": {
@@ -1579,20 +1579,20 @@
     },
     {
       "id": "d02b",
-      "ok": true,
-      "ms": 320.3,
+      "ok": false,
+      "ms": 224.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9788100074120258,
-          "technical": 0.019968425251693258,
-          "sales": 0.0012215673353020407
+          "billing": 0.2704362970271749,
+          "technical": 0.02560560494913676,
+          "sales": 0.7039580980229844
         },
         "status": "ok",
-        "confidence": 0.9682150111180388,
+        "confidence": 0.5559371470344765,
         "backend": "ollama"
       },
       "expect": {
@@ -1603,20 +1603,20 @@
     },
     {
       "id": "d02c",
-      "ok": true,
-      "ms": 356.8,
+      "ok": false,
+      "ms": 256.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9994682496571953,
-          "technical": 0.00016973301612230703,
-          "sales": 0.0003620173256830735
+          "billing": 0.13852826447267577,
+          "technical": 0.02323019026779141,
+          "sales": 0.8382415452586944
         },
         "status": "ok",
-        "confidence": 0.999202374485793,
+        "confidence": 0.7573623178880418,
         "backend": "ollama"
       },
       "expect": {
@@ -1627,20 +1627,20 @@
     },
     {
       "id": "d02d",
-      "ok": true,
-      "ms": 327.1,
+      "ok": false,
+      "ms": 225.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9744741268535119,
-          "technical": 0.02253065672295918,
-          "sales": 0.0029952164225544612
+          "billing": 0.3197477868247778,
+          "technical": 0.0247177057960989,
+          "sales": 0.6555345073784677
         },
         "status": "ok",
-        "confidence": 0.9617111902802677,
+        "confidence": 0.4833017610677016,
         "backend": "ollama"
       },
       "expect": {
@@ -1651,20 +1651,20 @@
     },
     {
       "id": "d03",
-      "ok": true,
-      "ms": 335.9,
+      "ok": false,
+      "ms": 230.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9999966305029715,
-          "technical": 2.3300085574209785e-06,
-          "sales": 1.0394874709079304e-06
+          "billing": 0.18885611127234833,
+          "technical": 0.04624817763536021,
+          "sales": 0.7648957110915265
         },
         "status": "ok",
-        "confidence": 0.9999949457544572,
+        "confidence": 0.6473435666372898,
         "backend": "ollama"
       },
       "expect": {
@@ -1675,20 +1675,20 @@
     },
     {
       "id": "d03b",
-      "ok": true,
-      "ms": 341.1,
+      "ok": false,
+      "ms": 236.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.999990534309315,
-          "technical": 6.3984962813557125e-06,
-          "sales": 3.0671934034561356e-06
+          "billing": 0.15762400501516916,
+          "technical": 0.042589637959793,
+          "sales": 0.7997863570242381
         },
         "status": "ok",
-        "confidence": 0.9999858014639724,
+        "confidence": 0.6996795355363572,
         "backend": "ollama"
       },
       "expect": {
@@ -1699,20 +1699,20 @@
     },
     {
       "id": "d03c",
-      "ok": true,
-      "ms": 325.6,
+      "ok": false,
+      "ms": 227.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.999982243474435,
-          "technical": 8.476330697354884e-06,
-          "sales": 9.28019386757786e-06
+          "billing": 0.3517545484502899,
+          "technical": 0.12202518556298578,
+          "sales": 0.5262202659861981
         },
         "status": "ok",
-        "confidence": 0.9999733652116525,
+        "confidence": 0.28933039897929713,
         "backend": "ollama"
       },
       "expect": {
@@ -1723,20 +1723,20 @@
     },
     {
       "id": "d03d",
-      "ok": true,
-      "ms": 336.9,
+      "ok": false,
+      "ms": 225.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9999942998584859,
-          "technical": 3.2262516506896628e-06,
-          "sales": 2.473888863378628e-06
+          "billing": 0.42271320241600957,
+          "technical": 0.03227363856116838,
+          "sales": 0.545013159022277
         },
         "status": "ok",
-        "confidence": 0.9999914497877289,
+        "confidence": 0.3175197385334154,
         "backend": "ollama"
       },
       "expect": {
@@ -1747,20 +1747,20 @@
     },
     {
       "id": "d04",
-      "ok": true,
-      "ms": 348.6,
+      "ok": false,
+      "ms": 222.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.998589397090292,
-          "technical": 0.0008403372688043021,
-          "sales": 0.0005702656399049469
+          "billing": 0.0956180070824098,
+          "technical": 0.026236463442434178,
+          "sales": 0.8781455294742777
         },
         "status": "ok",
-        "confidence": 0.997884095635438,
+        "confidence": 0.8172182942114166,
         "backend": "ollama"
       },
       "expect": {
@@ -1771,20 +1771,20 @@
     },
     {
       "id": "d04b",
-      "ok": true,
-      "ms": 384.8,
+      "ok": false,
+      "ms": 230.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.976937597804586,
-          "technical": 0.0036679106559287804,
-          "sales": 0.019394491538508096
+          "billing": 0.3073405333163596,
+          "technical": 0.07048683796809899,
+          "sales": 0.6221726287149192
         },
         "status": "ok",
-        "confidence": 0.9654063967068791,
+        "confidence": 0.4332589430723788,
         "backend": "ollama"
       },
       "expect": {
@@ -1795,20 +1795,20 @@
     },
     {
       "id": "d04c",
-      "ok": true,
-      "ms": 403.5,
+      "ok": false,
+      "ms": 228.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9998060497454385,
-          "technical": 0.00014392670751960104,
-          "sales": 5.0023546041879964e-05
+          "billing": 0.098493224940581,
+          "technical": 0.06800288572533736,
+          "sales": 0.833503889333248
         },
         "status": "ok",
-        "confidence": 0.9997090746181578,
+        "confidence": 0.750255833999872,
         "backend": "ollama"
       },
       "expect": {
@@ -1819,20 +1819,20 @@
     },
     {
       "id": "d04d",
-      "ok": true,
-      "ms": 367.4,
+      "ok": false,
+      "ms": 221.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.9984733090955072,
-          "technical": 0.0003540367603406814,
-          "sales": 0.0011726541431535044
+          "billing": 0.2803519516958047,
+          "technical": 0.03727143938649753,
+          "sales": 0.6823766089170153
         },
         "status": "ok",
-        "confidence": 0.9977099636432609,
+        "confidence": 0.5235649133755231,
         "backend": "ollama"
       },
       "expect": {
@@ -1844,19 +1844,19 @@
     {
       "id": "d05",
       "ok": true,
-      "ms": 382.9,
+      "ms": 224.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 5.562712837505363e-07,
-          "technical": 0.9999987922018339,
-          "sales": 6.515258824153186e-07
+          "billing": 0.04449518683773104,
+          "technical": 0.9522893364712431,
+          "sales": 0.00321547669007345
         },
         "status": "ok",
-        "confidence": 0.9999981883027509,
+        "confidence": 0.9284340047068647,
         "backend": "ollama"
       },
       "expect": {
@@ -1868,19 +1868,19 @@
     {
       "id": "d05b",
       "ok": true,
-      "ms": 362.1,
+      "ms": 240.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 1.686856212900761e-07,
-          "technical": 0.9999991117394206,
-          "sales": 7.195739581564653e-07
+          "billing": 0.08465356955544913,
+          "technical": 0.8829757813174309,
+          "sales": 0.03237064912623689
         },
         "status": "ok",
-        "confidence": 0.9999986676091308,
+        "confidence": 0.8244636719761465,
         "backend": "ollama"
       },
       "expect": {
@@ -1892,19 +1892,19 @@
     {
       "id": "d05c",
       "ok": true,
-      "ms": 336.6,
+      "ms": 220.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 5.472409211067129e-07,
-          "technical": 0.9999986821763727,
-          "sales": 7.705817062232048e-07
+          "billing": 0.049840991321542946,
+          "technical": 0.9173882149030214,
+          "sales": 0.03277079377451814
         },
         "status": "ok",
-        "confidence": 0.9999980232645589,
+        "confidence": 0.876082322354532,
         "backend": "ollama"
       },
       "expect": {
@@ -1916,19 +1916,19 @@
     {
       "id": "d05d",
       "ok": true,
-      "ms": 336.3,
+      "ms": 224.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 3.0126586527202863e-07,
-          "technical": 0.999999094149688,
-          "sales": 6.045834465456112e-07
+          "billing": 0.04005509397067975,
+          "technical": 0.9549105924180081,
+          "sales": 0.005034313610357098
         },
         "status": "ok",
-        "confidence": 0.9999986412245321,
+        "confidence": 0.9323658886270123,
         "backend": "ollama"
       },
       "expect": {
@@ -1939,20 +1939,20 @@
     },
     {
       "id": "d06",
-      "ok": true,
-      "ms": 364.4,
+      "ok": false,
+      "ms": 258.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 6.204253343888684e-05,
-          "technical": 0.9999314469541403,
-          "sales": 6.510511420829451e-06
+          "billing": 0.16687225619036478,
+          "technical": 0.030699636086110135,
+          "sales": 0.8024281077227226
         },
         "status": "ok",
-        "confidence": 0.9998971704312103,
+        "confidence": 0.7036421615840838,
         "backend": "ollama"
       },
       "expect": {
@@ -1963,20 +1963,20 @@
     },
     {
       "id": "d06b",
-      "ok": true,
-      "ms": 54.3,
+      "ok": false,
+      "ms": 232.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 3.194527864804867e-05,
-          "technical": 0.9999617786313096,
-          "sales": 6.2760890421450355e-06
+          "billing": 0.1241059777443965,
+          "technical": 0.010817029911815762,
+          "sales": 0.8650769923429225
         },
         "status": "ok",
-        "confidence": 0.9999426679469645,
+        "confidence": 0.7976154885143836,
         "backend": "ollama"
       },
       "expect": {
@@ -1987,20 +1987,20 @@
     },
     {
       "id": "d06c",
-      "ok": true,
-      "ms": 383.1,
+      "ok": false,
+      "ms": 234.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 9.889882189173333e-05,
-          "technical": 0.9998929730275717,
-          "sales": 8.128149536415757e-06
+          "billing": 0.13158303886398853,
+          "technical": 0.10861778368043286,
+          "sales": 0.7597991774548187
         },
         "status": "ok",
-        "confidence": 0.9998394595413576,
+        "confidence": 0.639698766182228,
         "backend": "ollama"
       },
       "expect": {
@@ -2011,20 +2011,20 @@
     },
     {
       "id": "d06d",
-      "ok": true,
-      "ms": 355.6,
+      "ok": false,
+      "ms": 230.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.00016262751833122488,
-          "technical": 0.9998302478117873,
-          "sales": 7.124668881492834e-06
+          "billing": 0.24002726710118444,
+          "technical": 0.026111809807229252,
+          "sales": 0.7338609230908524
         },
         "status": "ok",
-        "confidence": 0.999745371717681,
+        "confidence": 0.6007913846362785,
         "backend": "ollama"
       },
       "expect": {
@@ -2035,20 +2035,20 @@
     },
     {
       "id": "d07",
-      "ok": true,
-      "ms": 200.7,
+      "ok": false,
+      "ms": 229.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 5.5263788299740686e-05,
-          "technical": 0.9999333238758421,
-          "sales": 1.1412334858034381e-05
+          "billing": 0.24009637915948054,
+          "technical": 0.1408076693263698,
+          "sales": 0.6190959515135306
         },
         "status": "ok",
-        "confidence": 0.9998999858137632,
+        "confidence": 0.4286439272702959,
         "backend": "ollama"
       },
       "expect": {
@@ -2059,20 +2059,20 @@
     },
     {
       "id": "d07b",
-      "ok": true,
-      "ms": 53.9,
+      "ok": false,
+      "ms": 242.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 5.7137381575806534e-05,
-          "technical": 0.9999295164251197,
-          "sales": 1.3346192304524598e-05
+          "billing": 0.12520164763681693,
+          "technical": 0.20534314060994258,
+          "sales": 0.6694552117525709
         },
         "status": "ok",
-        "confidence": 0.9998942746376795,
+        "confidence": 0.5041828176288563,
         "backend": "ollama"
       },
       "expect": {
@@ -2084,19 +2084,19 @@
     {
       "id": "d07c",
       "ok": true,
-      "ms": 352.5,
+      "ms": 257.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 4.303076618879576e-05,
-          "technical": 0.9999477661909545,
-          "sales": 9.203041856586402e-06
+          "billing": 0.18432418021643837,
+          "technical": 0.4526332149837278,
+          "sales": 0.36304260479938116
         },
         "status": "ok",
-        "confidence": 0.9999216492864318,
+        "confidence": 0.17894982247559177,
         "backend": "ollama"
       },
       "expect": {
@@ -2107,20 +2107,20 @@
     },
     {
       "id": "d07d",
-      "ok": true,
-      "ms": 339.7,
+      "ok": false,
+      "ms": 228.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": null,
         "probabilities": {
-          "billing": 0.00012195417142878565,
-          "technical": 0.99985018381991,
-          "sales": 2.7862007661245907e-05
+          "billing": 0.27460400616143876,
+          "technical": 0.2909033666997557,
+          "sales": 0.43449262713837106
         },
-        "status": "ok",
-        "confidence": 0.999775275729865,
+        "status": "uncertain",
+        "confidence": 0.0,
         "backend": "ollama"
       },
       "expect": {
@@ -2131,20 +2131,20 @@
     },
     {
       "id": "d08",
-      "ok": true,
-      "ms": 322.0,
+      "ok": false,
+      "ms": 217.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 4.22419830103158e-06,
-          "technical": 0.9999942074839892,
-          "sales": 1.5683167097926643e-06
+          "billing": 0.08426919269352592,
+          "technical": 0.23101600740061268,
+          "sales": 0.6847147999051767
         },
         "status": "ok",
-        "confidence": 0.9999913112259837,
+        "confidence": 0.527072199857765,
         "backend": "ollama"
       },
       "expect": {
@@ -2155,20 +2155,20 @@
     },
     {
       "id": "d08b",
-      "ok": true,
-      "ms": 356.9,
+      "ok": false,
+      "ms": 243.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 4.75448942548864e-06,
-          "technical": 0.9999909043926437,
-          "sales": 4.3411169306205796e-06
+          "billing": 0.07468701736478076,
+          "technical": 0.18931159782753804,
+          "sales": 0.736001384806945
         },
         "status": "ok",
-        "confidence": 0.9999863565889655,
+        "confidence": 0.6040020772104175,
         "backend": "ollama"
       },
       "expect": {
@@ -2179,20 +2179,20 @@
     },
     {
       "id": "d08c",
-      "ok": true,
-      "ms": 367.9,
+      "ok": false,
+      "ms": 221.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 6.1011091755457466e-06,
-          "technical": 0.9999905157822652,
-          "sales": 3.3831075594167477e-06
+          "billing": 0.06432787768524273,
+          "technical": 0.18159613454981435,
+          "sales": 0.7540759877641888
         },
         "status": "ok",
-        "confidence": 0.9999857736733977,
+        "confidence": 0.6311139816462832,
         "backend": "ollama"
       },
       "expect": {
@@ -2204,19 +2204,19 @@
     {
       "id": "d08d",
       "ok": true,
-      "ms": 321.5,
+      "ms": 210.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "technical",
         "probabilities": {
-          "billing": 2.162628808619877e-06,
-          "technical": 0.9999960269073639,
-          "sales": 1.8104628273976902e-06
+          "billing": 0.11585273729815529,
+          "technical": 0.6100439547592535,
+          "sales": 0.2741033079419811
         },
         "status": "ok",
-        "confidence": 0.9999940403610459,
+        "confidence": 0.4150659321388803,
         "backend": "ollama"
       },
       "expect": {
@@ -2228,19 +2228,19 @@
     {
       "id": "d09",
       "ok": true,
-      "ms": 315.2,
+      "ms": 216.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.20405023163378436,
-          "technical": 0.015088421380860365,
-          "sales": 0.7808613469845743
+          "billing": 0.09297887386998695,
+          "technical": 0.04177272465412966,
+          "sales": 0.865248401475018
         },
         "status": "ok",
-        "confidence": 0.6712920204768615,
+        "confidence": 0.7978726022125271,
         "backend": "ollama"
       },
       "expect": {
@@ -2251,20 +2251,20 @@
     },
     {
       "id": "d09b",
-      "ok": false,
-      "ms": 346.0,
+      "ok": true,
+      "ms": 231.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": null,
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.39511483847218365,
-          "technical": 0.18117231170450593,
-          "sales": 0.4237128498228867
+          "billing": 0.023042353748838715,
+          "technical": 0.016681426062858568,
+          "sales": 0.9602762201873423
         },
-        "status": "uncertain",
-        "confidence": 0.0,
+        "status": "ok",
+        "confidence": 0.9404143302810133,
         "backend": "ollama"
       },
       "expect": {
@@ -2275,20 +2275,20 @@
     },
     {
       "id": "d09c",
-      "ok": false,
-      "ms": 328.1,
+      "ok": true,
+      "ms": 227.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.7362407648456696,
-          "technical": 0.0023546995789151095,
-          "sales": 0.26140453557467913
+          "billing": 0.07698987278879356,
+          "technical": 0.042073986792588315,
+          "sales": 0.880936140417737
         },
         "status": "ok",
-        "confidence": 0.6043611472685044,
+        "confidence": 0.8214042106266055,
         "backend": "ollama"
       },
       "expect": {
@@ -2300,19 +2300,19 @@
     {
       "id": "d09d",
       "ok": true,
-      "ms": 346.6,
+      "ms": 220.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.1449998542101412,
-          "technical": 0.007024648838700398,
-          "sales": 0.8479754969503103
+          "billing": 0.08035623175056243,
+          "technical": 0.04518258235283633,
+          "sales": 0.8744611858957267
         },
         "status": "ok",
-        "confidence": 0.7719632454254655,
+        "confidence": 0.8116917788435902,
         "backend": "ollama"
       },
       "expect": {
@@ -2323,20 +2323,20 @@
     },
     {
       "id": "d10",
-      "ok": false,
-      "ms": 308.3,
+      "ok": true,
+      "ms": 213.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.6978573839196238,
-          "technical": 0.254050676502413,
-          "sales": 0.048091939577265326
+          "billing": 0.19572977155506543,
+          "technical": 0.0786448663634075,
+          "sales": 0.7256253620808013
         },
         "status": "ok",
-        "confidence": 0.5467860758794356,
+        "confidence": 0.588438043121202,
         "backend": "ollama"
       },
       "expect": {
@@ -2347,20 +2347,20 @@
     },
     {
       "id": "d10b",
-      "ok": false,
-      "ms": 346.2,
+      "ok": true,
+      "ms": 229.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "technical",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.0035548560882197344,
-          "technical": 0.9879270947926311,
-          "sales": 0.008518049118160967
+          "billing": 0.08771173748734629,
+          "technical": 0.06959723612057557,
+          "sales": 0.8426910263912355
         },
         "status": "ok",
-        "confidence": 0.9818906421889466,
+        "confidence": 0.7640365395868534,
         "backend": "ollama"
       },
       "expect": {
@@ -2372,19 +2372,19 @@
     {
       "id": "d10c",
       "ok": true,
-      "ms": 380.2,
+      "ms": 236.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.021679511505434113,
-          "technical": 0.007271137425628539,
-          "sales": 0.9710493510679663
+          "billing": 0.1673491669459472,
+          "technical": 0.08659171344726121,
+          "sales": 0.7460591196060454
         },
         "status": "ok",
-        "confidence": 0.9565740266019493,
+        "confidence": 0.6190886794090682,
         "backend": "ollama"
       },
       "expect": {
@@ -2395,20 +2395,20 @@
     },
     {
       "id": "d10d",
-      "ok": false,
-      "ms": 343.2,
+      "ok": true,
+      "ms": 274.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
-        "choice": "billing",
+        "choice": "sales",
         "probabilities": {
-          "billing": 0.6889711451563181,
-          "technical": 0.12912415135107888,
-          "sales": 0.18190470349191384
+          "billing": 0.2526149486150471,
+          "technical": 0.06807058951383604,
+          "sales": 0.6793144618704375
         },
         "status": "ok",
-        "confidence": 0.5334567177344771,
+        "confidence": 0.5189716928056562,
         "backend": "ollama"
       },
       "expect": {
@@ -2420,19 +2420,19 @@
     {
       "id": "d11",
       "ok": true,
-      "ms": 336.5,
+      "ms": 211.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.011280647676954827,
-          "technical": 0.0003489848967228876,
-          "sales": 0.9883703674253338
+          "billing": 0.1452409977840198,
+          "technical": 0.0534950120403534,
+          "sales": 0.8012639901748254
         },
         "status": "ok",
-        "confidence": 0.9825555511380006,
+        "confidence": 0.7018959852622382,
         "backend": "ollama"
       },
       "expect": {
@@ -2444,19 +2444,19 @@
     {
       "id": "d11b",
       "ok": true,
-      "ms": 371.4,
+      "ms": 239.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.1901864884395884,
-          "technical": 0.00406730558413906,
-          "sales": 0.8057462059754669
+          "billing": 0.10731330251889094,
+          "technical": 0.027100777876903247,
+          "sales": 0.8655859196033402
         },
         "status": "ok",
-        "confidence": 0.7086193089632002,
+        "confidence": 0.7983788794050102,
         "backend": "ollama"
       },
       "expect": {
@@ -2468,19 +2468,19 @@
     {
       "id": "d11c",
       "ok": true,
-      "ms": 350.0,
+      "ms": 248.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.015902329872658688,
-          "technical": 0.00048824285517026956,
-          "sales": 0.9836094272711874
+          "billing": 0.10655049296447548,
+          "technical": 0.10056318810006548,
+          "sales": 0.7928863189346661
         },
         "status": "ok",
-        "confidence": 0.9754141409067811,
+        "confidence": 0.6893294784019992,
         "backend": "ollama"
       },
       "expect": {
@@ -2492,19 +2492,19 @@
     {
       "id": "d11d",
       "ok": true,
-      "ms": 345.6,
+      "ms": 239.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.0034281082213639194,
-          "technical": 0.00035637285672965557,
-          "sales": 0.9962155189209102
+          "billing": 0.10515964054303478,
+          "technical": 0.03299553122902014,
+          "sales": 0.8618448282270832
         },
         "status": "ok",
-        "confidence": 0.9943232783813654,
+        "confidence": 0.7927672423406249,
         "backend": "ollama"
       },
       "expect": {
@@ -2516,19 +2516,19 @@
     {
       "id": "d12",
       "ok": true,
-      "ms": 356.3,
+      "ms": 252.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.0004413139804033766,
-          "technical": 0.0022904382708403867,
-          "sales": 0.9972682477477588
+          "billing": 0.05348996729648515,
+          "technical": 0.044463142277106786,
+          "sales": 0.902046890425506
         },
         "status": "ok",
-        "confidence": 0.9959023716216382,
+        "confidence": 0.853070335638259,
         "backend": "ollama"
       },
       "expect": {
@@ -2540,19 +2540,19 @@
     {
       "id": "d12b",
       "ok": true,
-      "ms": 431.6,
+      "ms": 271.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.009800116820876588,
-          "technical": 0.10455878136534458,
-          "sales": 0.885641101812893
+          "billing": 0.04919272995952463,
+          "technical": 0.09166602907134962,
+          "sales": 0.8591412409682666
         },
         "status": "ok",
-        "confidence": 0.8284616527193396,
+        "confidence": 0.7887118614523998,
         "backend": "ollama"
       },
       "expect": {
@@ -2564,19 +2564,19 @@
     {
       "id": "d12c",
       "ok": true,
-      "ms": 425.5,
+      "ms": 268.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.00031797090372280833,
-          "technical": 0.00022397835538510362,
-          "sales": 0.9994580507398925
+          "billing": 0.08832926165086818,
+          "technical": 0.1051650622814924,
+          "sales": 0.8065056760668329
         },
         "status": "ok",
-        "confidence": 0.9991870761098387,
+        "confidence": 0.7097585141002494,
         "backend": "ollama"
       },
       "expect": {
@@ -2588,19 +2588,19 @@
     {
       "id": "d12d",
       "ok": true,
-      "ms": 433.2,
+      "ms": 258.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "choice",
         "choice": "sales",
         "probabilities": {
-          "billing": 0.00044803210094326515,
-          "technical": 0.0011183847458530994,
-          "sales": 0.9984335831522051
+          "billing": 0.08172501232909808,
+          "technical": 0.029401509948424866,
+          "sales": 0.8888734777215881
         },
         "status": "ok",
-        "confidence": 0.9976503747283076,
+        "confidence": 0.8333102165823822,
         "backend": "ollama"
       },
       "expect": {
@@ -2612,17 +2612,17 @@
     {
       "id": "f01",
       "ok": false,
-      "ms": 104.0,
+      "ms": 264.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.8789070112199212,
-        "normalized_score": 0.4394535056099606,
+        "score": 1.7026768300126705,
+        "normalized_score": 0.8513384150063352,
         "probabilities": {
-          "0": 0.12117412430458507,
-          "1": 0.8787447401691514,
-          "2": 8.11355253848872e-05
+          "0": 0.058691859746640124,
+          "1": 0.17993945049252658,
+          "2": 0.7613686897600719
         },
         "legend": {
           "0": "Calm",
@@ -2630,7 +2630,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.818117110253727,
+        "confidence": 0.6420530346401079,
         "backend": "ollama"
       },
       "expect": {
@@ -2642,17 +2642,17 @@
     {
       "id": "f01b",
       "ok": false,
-      "ms": 62.6,
+      "ms": 268.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9570780372955706,
-        "normalized_score": 0.4785390186477853,
+        "score": 1.821717884629632,
+        "normalized_score": 0.910858942314816,
         "probabilities": {
-          "0": 0.04320754315780389,
-          "1": 0.9565068763869085,
-          "2": 0.00028558045433108953
+          "0": 0.04639011336232567,
+          "1": 0.08550188864398026,
+          "2": 0.8681079979928259
         },
         "legend": {
           "0": "Calm",
@@ -2660,7 +2660,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9347603145803627,
+        "confidence": 0.8021619969892388,
         "backend": "ollama"
       },
       "expect": {
@@ -2671,18 +2671,18 @@
     },
     {
       "id": "f01c",
-      "ok": true,
-      "ms": 492.9,
+      "ok": false,
+      "ms": 264.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.26814806054903345,
-        "normalized_score": 0.13407403027451673,
+        "score": 1.5299528276834051,
+        "normalized_score": 0.7649764138417026,
         "probabilities": {
-          "0": 0.7323016173792044,
-          "1": 0.26724870469109313,
-          "2": 0.0004496779289701734
+          "0": 0.0872869444528804,
+          "1": 0.2954732834095993,
+          "2": 0.617239772136903
         },
         "legend": {
           "0": "Calm",
@@ -2690,7 +2690,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.5984524260688067,
+        "confidence": 0.42585965820535443,
         "backend": "ollama"
       },
       "expect": {
@@ -2701,18 +2701,18 @@
     },
     {
       "id": "f01d",
-      "ok": true,
-      "ms": 464.8,
+      "ok": false,
+      "ms": 254.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.33606396719541926,
-        "normalized_score": 0.16803198359770963,
+        "score": 1.190430055040693,
+        "normalized_score": 0.5952150275203465,
         "probabilities": {
-          "0": 0.6640180004339331,
-          "1": 0.33590003193538653,
-          "2": 8.196763001636099e-05
+          "0": 0.1931709064261438,
+          "1": 0.42322813210617305,
+          "2": 0.38360096146726
         },
         "legend": {
           "0": "Calm",
@@ -2720,7 +2720,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.49602700065089966,
+        "confidence": 0.13484219815925957,
         "backend": "ollama"
       },
       "expect": {
@@ -2731,18 +2731,18 @@
     },
     {
       "id": "f02",
-      "ok": true,
-      "ms": 72.6,
+      "ok": false,
+      "ms": 235.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.04155095172058612,
-        "normalized_score": 0.02077547586029306,
+        "score": 1.9035376651633686,
+        "normalized_score": 0.9517688325816843,
         "probabilities": {
-          "0": 0.9587780367910761,
-          "1": 0.04089297469534388,
-          "2": 0.0003289885126211208
+          "0": 0.03341137183163871,
+          "1": 0.029639591171479882,
+          "2": 0.9369490369959443
         },
         "legend": {
           "0": "Calm",
@@ -2750,7 +2750,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9381670551866141,
+        "confidence": 0.9054235554939165,
         "backend": "ollama"
       },
       "expect": {
@@ -2761,18 +2761,18 @@
     },
     {
       "id": "f02b",
-      "ok": true,
-      "ms": 68.8,
+      "ok": false,
+      "ms": 256.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.07249215670999394,
-        "normalized_score": 0.03624607835499697,
+        "score": 1.8951054235292688,
+        "normalized_score": 0.9475527117646344,
         "probabilities": {
-          "0": 0.9279635437795145,
-          "1": 0.07158075572912088,
-          "2": 0.0004557004904365277
+          "0": 0.039833804663435696,
+          "1": 0.025226967141989857,
+          "2": 0.9349392281936395
         },
         "legend": {
           "0": "Calm",
@@ -2780,7 +2780,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.8919453156692718,
+        "confidence": 0.9024088422904593,
         "backend": "ollama"
       },
       "expect": {
@@ -2791,18 +2791,18 @@
     },
     {
       "id": "f02c",
-      "ok": true,
-      "ms": 481.8,
+      "ok": false,
+      "ms": 250.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.22970799758589247,
-        "normalized_score": 0.11485399879294624,
+        "score": 1.8670065506660407,
+        "normalized_score": 0.9335032753330204,
         "probabilities": {
-          "0": 0.7706765711659275,
-          "1": 0.228938860080711,
-          "2": 0.0003845687525907364
+          "0": 0.03620387739445693,
+          "1": 0.060585694543238734,
+          "2": 0.903210428061401
         },
         "legend": {
           "0": "Calm",
@@ -2810,7 +2810,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.6560148567488913,
+        "confidence": 0.8548156420921014,
         "backend": "ollama"
       },
       "expect": {
@@ -2821,18 +2821,18 @@
     },
     {
       "id": "f02d",
-      "ok": true,
-      "ms": 476.8,
+      "ok": false,
+      "ms": 247.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.26851924428096074,
-        "normalized_score": 0.13425962214048037,
+        "score": 1.8333604018890344,
+        "normalized_score": 0.9166802009445172,
         "probabilities": {
-          "0": 0.731791519697752,
-          "1": 0.2678977163220715,
-          "2": 0.00031076397944461946
+          "0": 0.06275541208049869,
+          "1": 0.04112877394817599,
+          "2": 0.8961158139704292
         },
         "legend": {
           "0": "Calm",
@@ -2840,7 +2840,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.5976872795466281,
+        "confidence": 0.8441737209556437,
         "backend": "ollama"
       },
       "expect": {
@@ -2851,18 +2851,18 @@
     },
     {
       "id": "f03",
-      "ok": true,
-      "ms": 60.9,
+      "ok": false,
+      "ms": 240.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.020523339700445977,
-        "normalized_score": 0.010261669850222989,
+        "score": 1.3407290418310138,
+        "normalized_score": 0.6703645209155069,
         "probabilities": {
-          "0": 0.9800442356033578,
-          "1": 0.01938818909087822,
-          "2": 0.0005675753047838773
+          "0": 0.30596775941991616,
+          "1": 0.04733543932786037,
+          "2": 0.6466968012515767
         },
         "legend": {
           "0": "Calm",
@@ -2870,7 +2870,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9700663534050369,
+        "confidence": 0.4700452018773651,
         "backend": "ollama"
       },
       "expect": {
@@ -2881,18 +2881,18 @@
     },
     {
       "id": "f03b",
-      "ok": true,
-      "ms": 65.3,
+      "ok": false,
+      "ms": 259.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.2480992743484598,
-        "normalized_score": 0.1240496371742299,
+        "score": 1.6246824171270289,
+        "normalized_score": 0.8123412085635144,
         "probabilities": {
-          "0": 0.7521070203856055,
-          "1": 0.2476866848788245,
-          "2": 0.0002062947348176525
+          "0": 0.1331655274160563,
+          "1": 0.10898652803934261,
+          "2": 0.7578479445438432
         },
         "legend": {
           "0": "Calm",
@@ -2900,7 +2900,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.6281605305784081,
+        "confidence": 0.6367719168157648,
         "backend": "ollama"
       },
       "expect": {
@@ -2911,18 +2911,18 @@
     },
     {
       "id": "f03c",
-      "ok": true,
-      "ms": 432.4,
+      "ok": false,
+      "ms": 249.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.4548094182563252,
-        "normalized_score": 0.2274047091281626,
+        "score": 1.7454106478056002,
+        "normalized_score": 0.8727053239028001,
         "probabilities": {
-          "0": 0.5454975092938528,
-          "1": 0.4541955631548782,
-          "2": 0.00030692755072351266
+          "0": 0.0985258197268125,
+          "1": 0.057537712739086665,
+          "2": 0.8439364675332568
         },
         "legend": {
           "0": "Calm",
@@ -2930,7 +2930,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.31824626394077915,
+        "confidence": 0.7659047012998852,
         "backend": "ollama"
       },
       "expect": {
@@ -2941,18 +2941,18 @@
     },
     {
       "id": "f03d",
-      "ok": true,
-      "ms": 396.3,
+      "ok": false,
+      "ms": 237.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.07298619905061395,
-        "normalized_score": 0.03649309952530697,
+        "score": 1.304924094984472,
+        "normalized_score": 0.652462047492236,
         "probabilities": {
-          "0": 0.9271884664423727,
-          "1": 0.07263686806278605,
-          "2": 0.0001746654939139505
+          "0": 0.3167672829663401,
+          "1": 0.0615413390816041,
+          "2": 0.6216913779514339
         },
         "legend": {
           "0": "Calm",
@@ -2960,7 +2960,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.890782699663559,
+        "confidence": 0.4325370669271509,
         "backend": "ollama"
       },
       "expect": {
@@ -2972,17 +2972,17 @@
     {
       "id": "f04",
       "ok": false,
-      "ms": 55.1,
+      "ms": 234.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.959988920546326,
-        "normalized_score": 0.479994460273163,
+        "score": 1.1233989156236355,
+        "normalized_score": 0.5616994578118177,
         "probabilities": {
-          "0": 0.04160906036893162,
-          "1": 0.956792958713897,
-          "2": 0.0015979809162145163
+          "0": 0.3503761294390877,
+          "1": 0.17584882549724154,
+          "2": 0.473775045063197
         },
         "legend": {
           "0": "Calm",
@@ -2990,7 +2990,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9351894380708456,
+        "confidence": 0.2106625675947955,
         "backend": "ollama"
       },
       "expect": {
@@ -3002,17 +3002,17 @@
     {
       "id": "f04b",
       "ok": false,
-      "ms": 52.5,
+      "ms": 237.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9333522570585094,
-        "normalized_score": 0.4666761285292547,
+        "score": 1.3958403352662212,
+        "normalized_score": 0.6979201676331106,
         "probabilities": {
-          "0": 0.06783483817247998,
-          "1": 0.9309780665946685,
-          "2": 0.0011870952319204696
+          "0": 0.22158441694453215,
+          "1": 0.16099083084347954,
+          "2": 0.6174247522113708
         },
         "legend": {
           "0": "Calm",
@@ -3020,7 +3020,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.8964670998920028,
+        "confidence": 0.4261371283170563,
         "backend": "ollama"
       },
       "expect": {
@@ -3032,17 +3032,17 @@
     {
       "id": "f04c",
       "ok": false,
-      "ms": 373.5,
+      "ms": 240.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9457965770759623,
-        "normalized_score": 0.47289828853798116,
+        "score": 1.8739799204740772,
+        "normalized_score": 0.9369899602370386,
         "probabilities": {
-          "0": 0.055018343084840104,
-          "1": 0.9441667367524692,
-          "2": 0.0008149201617465349
+          "0": 0.03731924816385503,
+          "1": 0.051381583196389594,
+          "2": 0.9112991686388439
         },
         "legend": {
           "0": "Calm",
@@ -3050,7 +3050,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9162501051287038,
+        "confidence": 0.8669487529582658,
         "backend": "ollama"
       },
       "expect": {
@@ -3062,17 +3062,17 @@
     {
       "id": "f04d",
       "ok": false,
-      "ms": 359.7,
+      "ms": 233.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.6606563765678533,
-        "normalized_score": 0.3303281882839266,
+        "score": 1.6781450911012978,
+        "normalized_score": 0.8390725455506489,
         "probabilities": {
-          "0": 0.3407724171692752,
-          "1": 0.6577987890922805,
-          "2": 0.001428793737786375
+          "0": 0.12913895486604934,
+          "1": 0.06357699916498868,
+          "2": 0.8072840459681546
         },
         "legend": {
           "0": "Calm",
@@ -3080,7 +3080,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.48669818363842077,
+        "confidence": 0.7109260689522319,
         "backend": "ollama"
       },
       "expect": {
@@ -3091,18 +3091,18 @@
     },
     {
       "id": "f05",
-      "ok": true,
-      "ms": 93.1,
+      "ok": false,
+      "ms": 258.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0000809053939956,
-        "normalized_score": 0.5000404526969978,
+        "score": 1.882188406297872,
+        "normalized_score": 0.941094203148936,
         "probabilities": {
-          "0": 1.7983858923638096e-05,
-          "1": 0.9998831268861568,
-          "2": 9.888925391937932e-05
+          "0": 0.036291788937418475,
+          "1": 0.045228015825454236,
+          "2": 0.9184801952362088
         },
         "legend": {
           "0": "Calm",
@@ -3110,7 +3110,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9998246903292352,
+        "confidence": 0.8777202928543133,
         "backend": "ollama"
       },
       "expect": {
@@ -3121,18 +3121,18 @@
     },
     {
       "id": "f05b",
-      "ok": true,
-      "ms": 64.4,
+      "ok": false,
+      "ms": 265.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0000540796223611,
-        "normalized_score": 0.5000270398111806,
+        "score": 1.8488451084758297,
+        "normalized_score": 0.9244225542379149,
         "probabilities": {
-          "0": 2.040536346590513e-05,
-          "1": 0.9999051096487072,
-          "2": 7.44849868269843e-05
+          "0": 0.04558635945321334,
+          "1": 0.05998217261595476,
+          "2": 0.8944314679299374
         },
         "legend": {
           "0": "Calm",
@@ -3140,7 +3140,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9998576644730608,
+        "confidence": 0.8416472018949062,
         "backend": "ollama"
       },
       "expect": {
@@ -3151,18 +3151,18 @@
     },
     {
       "id": "f05c",
-      "ok": true,
-      "ms": 400.0,
+      "ok": false,
+      "ms": 268.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0001635856911855,
-        "normalized_score": 0.5000817928455927,
+        "score": 1.8701926680299814,
+        "normalized_score": 0.9350963340149907,
         "probabilities": {
-          "0": 6.240470085585536e-05,
-          "1": 0.9997116049051032,
-          "2": 0.00022599039304106733
+          "0": 0.025662811859401655,
+          "1": 0.07848170824942335,
+          "2": 0.895855479890279
         },
         "legend": {
           "0": "Calm",
@@ -3170,7 +3170,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9995674073576548,
+        "confidence": 0.8437832198354185,
         "backend": "ollama"
       },
       "expect": {
@@ -3181,18 +3181,18 @@
     },
     {
       "id": "f05d",
-      "ok": true,
-      "ms": 393.3,
+      "ok": false,
+      "ms": 286.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0001551759207652,
-        "normalized_score": 0.5000775879603826,
+        "score": 1.7973013713216492,
+        "normalized_score": 0.8986506856608246,
         "probabilities": {
-          "0": 2.5448005792611658e-05,
-          "1": 0.9997939280656498,
-          "2": 0.00018062392755767561
+          "0": 0.06316287608676602,
+          "1": 0.07637287650309774,
+          "2": 0.8604642474092757
         },
         "legend": {
           "0": "Calm",
@@ -3200,7 +3200,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9996908920984748,
+        "confidence": 0.7906963711139137,
         "backend": "ollama"
       },
       "expect": {
@@ -3211,18 +3211,18 @@
     },
     {
       "id": "f06",
-      "ok": true,
-      "ms": 54.1,
+      "ok": false,
+      "ms": 246.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9999924868977611,
-        "normalized_score": 0.49999624344888055,
+        "score": 1.6987504006899163,
+        "normalized_score": 0.8493752003449582,
         "probabilities": {
-          "0": 2.2641638436268098e-05,
-          "1": 0.9999622298233659,
-          "2": 1.512853719759806e-05
+          "0": 0.06655367116414496,
+          "1": 0.16814225698026303,
+          "2": 0.7653040718548266
         },
         "legend": {
           "0": "Calm",
@@ -3230,7 +3230,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.999943344735049,
+        "confidence": 0.64795610778224,
         "backend": "ollama"
       },
       "expect": {
@@ -3241,18 +3241,18 @@
     },
     {
       "id": "f06b",
-      "ok": true,
-      "ms": 49.8,
+      "ok": false,
+      "ms": 261.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9999947831896152,
-        "normalized_score": 0.4999973915948076,
+        "score": 1.6913612329571648,
+        "normalized_score": 0.8456806164785824,
         "probabilities": {
-          "0": 6.210805133072748e-05,
-          "1": 0.999881000705723,
-          "2": 5.6891241946104855e-05
+          "0": 0.05740730330257121,
+          "1": 0.19382416043619502,
+          "2": 0.7487685362604849
         },
         "legend": {
           "0": "Calm",
@@ -3260,7 +3260,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9998215010585847,
+        "confidence": 0.6231528043907273,
         "backend": "ollama"
       },
       "expect": {
@@ -3271,18 +3271,18 @@
     },
     {
       "id": "f06c",
-      "ok": true,
-      "ms": 375.6,
+      "ok": false,
+      "ms": 260.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.999835696596709,
-        "normalized_score": 0.4999178482983545,
+        "score": 1.7076539001853952,
+        "normalized_score": 0.8538269500926976,
         "probabilities": {
-          "0": 0.0001920792067630695,
-          "1": 0.9997801449877654,
-          "2": 2.7775804471856814e-05
+          "0": 0.04331684235003134,
+          "1": 0.20571241511303998,
+          "2": 0.7509707425361776
         },
         "legend": {
           "0": "Calm",
@@ -3290,7 +3290,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9996702174816481,
+        "confidence": 0.6264561138042664,
         "backend": "ollama"
       },
       "expect": {
@@ -3301,18 +3301,18 @@
     },
     {
       "id": "f06d",
-      "ok": true,
-      "ms": 375.0,
+      "ok": false,
+      "ms": 251.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9999956817315936,
-        "normalized_score": 0.4999978408657968,
+        "score": 1.4653364133030071,
+        "normalized_score": 0.7326682066515036,
         "probabilities": {
-          "0": 7.553252147141314e-05,
-          "1": 0.9998532532234635,
-          "2": 7.121425406503378e-05
+          "0": 0.10551346687079771,
+          "1": 0.32363665295425575,
+          "2": 0.5708498801743757
         },
         "legend": {
           "0": "Calm",
@@ -3320,7 +3320,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9997798798351953,
+        "confidence": 0.35627482026156354,
         "backend": "ollama"
       },
       "expect": {
@@ -3331,18 +3331,18 @@
     },
     {
       "id": "f07",
-      "ok": true,
-      "ms": 329.0,
+      "ok": false,
+      "ms": 228.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9999804084277149,
-        "normalized_score": 0.4999902042138574,
+        "score": 1.7401676135877806,
+        "normalized_score": 0.8700838067938903,
         "probabilities": {
-          "0": 0.00014791480521906725,
-          "1": 0.9997237619598471,
-          "2": 0.00012832323393387212
+          "0": 0.09639110035154592,
+          "1": 0.06705018570745437,
+          "2": 0.8365587139401631
         },
         "legend": {
           "0": "Calm",
@@ -3350,7 +3350,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9995856429397707,
+        "confidence": 0.7548380709102447,
         "backend": "ollama"
       },
       "expect": {
@@ -3361,18 +3361,18 @@
     },
     {
       "id": "f07b",
-      "ok": true,
-      "ms": 57.0,
+      "ok": false,
+      "ms": 254.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9992430584533156,
-        "normalized_score": 0.4996215292266578,
+        "score": 1.7753872936048432,
+        "normalized_score": 0.8876936468024216,
         "probabilities": {
-          "0": 0.001260151122604042,
-          "1": 0.9982366392994795,
-          "2": 0.0005032095769180917
+          "0": 0.06562702929394895,
+          "1": 0.09335864780557694,
+          "2": 0.8410143228996331
         },
         "legend": {
           "0": "Calm",
@@ -3380,7 +3380,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9973549589492192,
+        "confidence": 0.7615214843494496,
         "backend": "ollama"
       },
       "expect": {
@@ -3391,18 +3391,18 @@
     },
     {
       "id": "f07c",
-      "ok": true,
-      "ms": 377.5,
+      "ok": false,
+      "ms": 239.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9998869054056756,
-        "normalized_score": 0.4999434527028378,
+        "score": 1.7646942699053183,
+        "normalized_score": 0.8823471349526592,
         "probabilities": {
-          "0": 0.00014074301414163464,
-          "1": 0.9998316085640411,
-          "2": 2.764842081727339e-05
+          "0": 0.049697143298673835,
+          "1": 0.1359114434957051,
+          "2": 0.8143914132048066
         },
         "legend": {
           "0": "Calm",
@@ -3410,7 +3410,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9997474128460615,
+        "confidence": 0.7215871198072099,
         "backend": "ollama"
       },
       "expect": {
@@ -3421,18 +3421,18 @@
     },
     {
       "id": "f07d",
-      "ok": true,
-      "ms": 374.2,
+      "ok": false,
+      "ms": 232.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0000133562992457,
-        "normalized_score": 0.5000066781496229,
+        "score": 1.6048706430122508,
+        "normalized_score": 0.8024353215061254,
         "probabilities": {
-          "0": 0.00016812119853108765,
-          "1": 0.9996504013016927,
-          "2": 0.00018147749877645477
+          "0": 0.13116462603080084,
+          "1": 0.13280010492467537,
+          "2": 0.7360352690437877
         },
         "legend": {
           "0": "Calm",
@@ -3440,7 +3440,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.999475601952539,
+        "confidence": 0.6040529035656816,
         "backend": "ollama"
       },
       "expect": {
@@ -3451,18 +3451,18 @@
     },
     {
       "id": "f08",
-      "ok": true,
-      "ms": 344.5,
+      "ok": false,
+      "ms": 229.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9928021611938705,
-        "normalized_score": 0.4964010805969353,
+        "score": 1.7146050232622705,
+        "normalized_score": 0.8573025116311352,
         "probabilities": {
-          "0": 0.007470284442771687,
-          "1": 0.9922572699186012,
-          "2": 0.0002724456376346519
+          "0": 0.11413901004494505,
+          "1": 0.05711695664618197,
+          "2": 0.8287440333080442
         },
         "legend": {
           "0": "Calm",
@@ -3470,7 +3470,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9883859048779018,
+        "confidence": 0.7431160499620664,
         "backend": "ollama"
       },
       "expect": {
@@ -3481,18 +3481,18 @@
     },
     {
       "id": "f08b",
-      "ok": true,
-      "ms": 376.7,
+      "ok": false,
+      "ms": 254.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9973770983453121,
-        "normalized_score": 0.49868854917265604,
+        "score": 1.8070671417338418,
+        "normalized_score": 0.9035335708669209,
         "probabilities": {
-          "0": 0.003061027238879053,
-          "1": 0.9965008471749368,
-          "2": 0.00043812558518762615
+          "0": 0.07695387311234181,
+          "1": 0.03902511203970646,
+          "2": 0.8840210148470676
         },
         "legend": {
           "0": "Calm",
@@ -3500,7 +3500,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9947512707624053,
+        "confidence": 0.8260315222706014,
         "backend": "ollama"
       },
       "expect": {
@@ -3511,18 +3511,18 @@
     },
     {
       "id": "f08c",
-      "ok": true,
-      "ms": 361.1,
+      "ok": false,
+      "ms": 242.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9975019129397025,
-        "normalized_score": 0.49875095646985124,
+        "score": 1.7849558057337673,
+        "normalized_score": 0.8924779028668837,
         "probabilities": {
-          "0": 0.002840169359242903,
-          "1": 0.9968177483398176,
-          "2": 0.0003420822999424036
+          "0": 0.07112642685405267,
+          "1": 0.07279134055641527,
+          "2": 0.856082232588676
         },
         "legend": {
           "0": "Calm",
@@ -3530,7 +3530,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9952266225097264,
+        "confidence": 0.7841233488830139,
         "backend": "ollama"
       },
       "expect": {
@@ -3541,18 +3541,18 @@
     },
     {
       "id": "f08d",
-      "ok": true,
-      "ms": 353.0,
+      "ok": false,
+      "ms": 240.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9945206271573874,
-        "normalized_score": 0.4972603135786937,
+        "score": 1.5578150505008215,
+        "normalized_score": 0.7789075252504107,
         "probabilities": {
-          "0": 0.005848460567750846,
-          "1": 0.9937824517051232,
-          "2": 0.00036908772613207107
+          "0": 0.1829075262875658,
+          "1": 0.07636989692256534,
+          "2": 0.7407225767891281
         },
         "legend": {
           "0": "Calm",
@@ -3560,7 +3560,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9906736775576848,
+        "confidence": 0.6110838651836921,
         "backend": "ollama"
       },
       "expect": {
@@ -3571,18 +3571,18 @@
     },
     {
       "id": "f09",
-      "ok": false,
-      "ms": 88.6,
+      "ok": true,
+      "ms": 260.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0127847553874407,
-        "normalized_score": 0.5063923776937204,
+        "score": 1.654683103361946,
+        "normalized_score": 0.827341551680973,
         "probabilities": {
-          "0": 0.00036414467940504763,
-          "1": 0.9864869552517762,
-          "2": 0.013148900067832222
+          "0": 0.12355930632484989,
+          "1": 0.0981982839867974,
+          "2": 0.7782424096875743
         },
         "legend": {
           "0": "Calm",
@@ -3590,7 +3590,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9797304328776644,
+        "confidence": 0.6673636145313615,
         "backend": "ollama"
       },
       "expect": {
@@ -3601,18 +3601,18 @@
     },
     {
       "id": "f09b",
-      "ok": false,
-      "ms": 379.4,
+      "ok": true,
+      "ms": 265.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.007411860264769,
-        "normalized_score": 0.5037059301323845,
+        "score": 1.6509672089480654,
+        "normalized_score": 0.8254836044740327,
         "probabilities": {
-          "0": 0.000528935182376574,
-          "1": 0.9915302693684946,
-          "2": 0.007940795448137198
+          "0": 0.12686796330999875,
+          "1": 0.09529686443038134,
+          "2": 0.777835172258842
         },
         "legend": {
           "0": "Calm",
@@ -3620,7 +3620,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.987295404052742,
+        "confidence": 0.6667527583882631,
         "backend": "ollama"
       },
       "expect": {
@@ -3631,18 +3631,18 @@
     },
     {
       "id": "f09c",
-      "ok": false,
-      "ms": 403.5,
+      "ok": true,
+      "ms": 262.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0194174213540725,
-        "normalized_score": 0.5097087106770363,
+        "score": 1.8675671186143767,
+        "normalized_score": 0.9337835593071884,
         "probabilities": {
-          "0": 0.00032763167162541934,
-          "1": 0.9799273153007166,
-          "2": 0.019745053026677974
+          "0": 0.033479038939657965,
+          "1": 0.06547480350450514,
+          "2": 0.9010461575549358
         },
         "legend": {
           "0": "Calm",
@@ -3650,7 +3650,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.969890972951075,
+        "confidence": 0.8515692363324037,
         "backend": "ollama"
       },
       "expect": {
@@ -3661,18 +3661,18 @@
     },
     {
       "id": "f09d",
-      "ok": false,
-      "ms": 406.7,
+      "ok": true,
+      "ms": 258.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.4712635627310986,
-        "normalized_score": 0.7356317813655493,
+        "score": 1.695040421677722,
+        "normalized_score": 0.847520210838861,
         "probabilities": {
-          "0": 0.00032654712479144053,
-          "1": 0.5280833430182623,
-          "2": 0.47159010985641814
+          "0": 0.10501997306507639,
+          "1": 0.09491963219052509,
+          "2": 0.8000603947435985
         },
         "legend": {
           "0": "Calm",
@@ -3680,7 +3680,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.2921250145273935,
+        "confidence": 0.7000905921153977,
         "backend": "ollama"
       },
       "expect": {
@@ -3691,18 +3691,18 @@
     },
     {
       "id": "f10",
-      "ok": false,
-      "ms": 66.1,
+      "ok": true,
+      "ms": 261.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.4415036725967498,
-        "normalized_score": 0.7207518362983749,
+        "score": 1.5990528843373544,
+        "normalized_score": 0.7995264421686772,
         "probabilities": {
-          "0": 8.158181935050902e-05,
-          "1": 0.5583331637634322,
-          "2": 0.44158525441665886
+          "0": 0.1379673584730277,
+          "1": 0.12501239871511605,
+          "2": 0.7370202428111192
         },
         "legend": {
           "0": "Calm",
@@ -3710,7 +3710,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.3374997456451483,
+        "confidence": 0.6055303642166789,
         "backend": "ollama"
       },
       "expect": {
@@ -3721,18 +3721,18 @@
     },
     {
       "id": "f10b",
-      "ok": false,
-      "ms": 53.0,
+      "ok": true,
+      "ms": 278.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0016267924857676,
-        "normalized_score": 0.5008133962428838,
+        "score": 1.6861079413586004,
+        "normalized_score": 0.8430539706793002,
         "probabilities": {
-          "0": 8.98454727195348e-05,
-          "1": 0.9981935165667966,
-          "2": 0.0017166379594855331
+          "0": 0.12938570230935742,
+          "1": 0.055120654021053817,
+          "2": 0.8154936436687733
         },
         "legend": {
           "0": "Calm",
@@ -3740,7 +3740,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9972902748501948,
+        "confidence": 0.7232404655031599,
         "backend": "ollama"
       },
       "expect": {
@@ -3751,18 +3751,18 @@
     },
     {
       "id": "f10c",
-      "ok": false,
-      "ms": 397.5,
+      "ok": true,
+      "ms": 258.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.1796438707512555,
-        "normalized_score": 0.5898219353756278,
+        "score": 1.5873090127422083,
+        "normalized_score": 0.7936545063711041,
         "probabilities": {
-          "0": 5.593801407633029e-05,
-          "1": 0.8202442532189513,
-          "2": 0.17969980876615207
+          "0": 0.077870313522198,
+          "1": 0.2569503602120651,
+          "2": 0.6651793262650716
         },
         "legend": {
           "0": "Calm",
@@ -3770,7 +3770,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.730366379828427,
+        "confidence": 0.4977689893976074,
         "backend": "ollama"
       },
       "expect": {
@@ -3782,17 +3782,17 @@
     {
       "id": "f10d",
       "ok": false,
-      "ms": 392.7,
+      "ms": 267.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.15618102344959,
-        "normalized_score": 0.578090511724795,
+        "score": 1.3043461967724248,
+        "normalized_score": 0.6521730983862124,
         "probabilities": {
-          "0": 0.00019511773740958272,
-          "1": 0.8434287410739038,
-          "2": 0.15637614118784304
+          "0": 0.10426698783343527,
+          "1": 0.4871198275597305,
+          "2": 0.40861318460634716
         },
         "legend": {
           "0": "Calm",
@@ -3800,7 +3800,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.7651431116108556,
+        "confidence": 0.2306797413395958,
         "backend": "ollama"
       },
       "expect": {
@@ -3811,18 +3811,18 @@
     },
     {
       "id": "f11",
-      "ok": false,
-      "ms": 55.7,
+      "ok": true,
+      "ms": 252.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9997042703132099,
-        "normalized_score": 0.4998521351566049,
+        "score": 1.7798560936681465,
+        "normalized_score": 0.8899280468340732,
         "probabilities": {
-          "0": 0.0008254258228894114,
-          "1": 0.9986448780390135,
-          "2": 0.0005296961370981955
+          "0": 0.07863115717116329,
+          "1": 0.06288159198780993,
+          "2": 0.8584872508401683
         },
         "legend": {
           "0": "Calm",
@@ -3830,7 +3830,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9979673170585202,
+        "confidence": 0.7877308762602524,
         "backend": "ollama"
       },
       "expect": {
@@ -3841,18 +3841,18 @@
     },
     {
       "id": "f11b",
-      "ok": false,
-      "ms": 52.2,
+      "ok": true,
+      "ms": 296.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9998655362934866,
-        "normalized_score": 0.4999327681467433,
+        "score": 1.69769066095186,
+        "normalized_score": 0.84884533047593,
         "probabilities": {
-          "0": 0.0003297214816542438,
-          "1": 0.9994750207412056,
-          "2": 0.00019525777614047107
+          "0": 0.10947712307874694,
+          "1": 0.08335509288903153,
+          "2": 0.8071677840314143
         },
         "legend": {
           "0": "Calm",
@@ -3860,7 +3860,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9992125311118085,
+        "confidence": 0.7107516760471215,
         "backend": "ollama"
       },
       "expect": {
@@ -3871,18 +3871,18 @@
     },
     {
       "id": "f11c",
-      "ok": false,
-      "ms": 378.4,
+      "ok": true,
+      "ms": 282.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 0.9994702439295476,
-        "normalized_score": 0.4997351219647738,
+        "score": 1.7063843796493543,
+        "normalized_score": 0.8531921898246771,
         "probabilities": {
-          "0": 0.0006333643468904007,
-          "1": 0.9992630273746731,
-          "2": 0.00010360827743728983
+          "0": 0.055792444172723575,
+          "1": 0.18203073200367398,
+          "2": 0.7621768238228401
         },
         "legend": {
           "0": "Calm",
@@ -3890,7 +3890,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9988945410620096,
+        "confidence": 0.6432652357342601,
         "backend": "ollama"
       },
       "expect": {
@@ -3901,18 +3901,18 @@
     },
     {
       "id": "f11d",
-      "ok": false,
-      "ms": 379.2,
+      "ok": true,
+      "ms": 273.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0001923880723047,
-        "normalized_score": 0.5000961940361524,
+        "score": 1.684380147331452,
+        "normalized_score": 0.842190073665726,
         "probabilities": {
-          "0": 0.0009394473122809354,
-          "1": 0.9979287173011373,
-          "2": 0.001131835385583734
+          "0": 0.10306204224962119,
+          "1": 0.10949576816773046,
+          "2": 0.7874421895818607
         },
         "legend": {
           "0": "Calm",
@@ -3920,7 +3920,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9968930759517058,
+        "confidence": 0.6811632843727911,
         "backend": "ollama"
       },
       "expect": {
@@ -3931,18 +3931,18 @@
     },
     {
       "id": "f12",
-      "ok": false,
-      "ms": 55.7,
+      "ok": true,
+      "ms": 301.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0136335238402852,
-        "normalized_score": 0.5068167619201426,
+        "score": 1.7228626345146467,
+        "normalized_score": 0.8614313172573234,
         "probabilities": {
-          "0": 0.00011306132949361618,
-          "1": 0.986140353498755,
-          "2": 0.013746585170765154
+          "0": 0.0776036315455683,
+          "1": 0.1219301023926155,
+          "2": 0.8004662660610156
         },
         "legend": {
           "0": "Calm",
@@ -3950,7 +3950,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9792105302481324,
+        "confidence": 0.7006993990915233,
         "backend": "ollama"
       },
       "expect": {
@@ -3961,18 +3961,18 @@
     },
     {
       "id": "f12b",
-      "ok": false,
-      "ms": 51.9,
+      "ok": true,
+      "ms": 327.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.07993634961761,
-        "normalized_score": 0.539968174808805,
+        "score": 1.7191198222659865,
+        "normalized_score": 0.8595599111329932,
         "probabilities": {
-          "0": 0.00015949061157192448,
-          "1": 0.9197446691574067,
-          "2": 0.08009584023010165
+          "0": 0.046482064439657654,
+          "1": 0.1879160488531669,
+          "2": 0.7656018867064098
         },
         "legend": {
           "0": "Calm",
@@ -3980,7 +3980,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.8796170037361102,
+        "confidence": 0.6484028300596147,
         "backend": "ollama"
       },
       "expect": {
@@ -3991,18 +3991,18 @@
     },
     {
       "id": "f12c",
-      "ok": false,
-      "ms": 420.0,
+      "ok": true,
+      "ms": 319.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.0001627160375954,
-        "normalized_score": 0.5000813580187977,
+        "score": 1.85442958456566,
+        "normalized_score": 0.92721479228283,
         "probabilities": {
-          "0": 0.00010873996296423708,
-          "1": 0.9996198040344767,
-          "2": 0.0002714560015593849
+          "0": 0.024146385159941542,
+          "1": 0.09727764511269961,
+          "2": 0.8785759697264802
         },
         "legend": {
           "0": "Calm",
@@ -4010,7 +4010,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.999429706051715,
+        "confidence": 0.8178639545897204,
         "backend": "ollama"
       },
       "expect": {
@@ -4021,18 +4021,18 @@
     },
     {
       "id": "f12d",
-      "ok": false,
-      "ms": 389.6,
+      "ok": true,
+      "ms": 335.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "score",
-        "score": 1.009431150035494,
-        "normalized_score": 0.504715575017747,
+        "score": 1.4935158655498242,
+        "normalized_score": 0.7467579327749121,
         "probabilities": {
-          "0": 0.00014769864168693526,
-          "1": 0.9902734526791515,
-          "2": 0.00957884867817122
+          "0": 0.10285986134885833,
+          "1": 0.30076441175126634,
+          "2": 0.596375726899279
         },
         "legend": {
           "0": "Calm",
@@ -4040,7 +4040,7 @@
           "2": "Very angry"
         },
         "status": "ok",
-        "confidence": 0.9854101790187273,
+        "confidence": 0.3945635903489184,
         "backend": "ollama"
       },
       "expect": {
@@ -4051,21 +4051,21 @@
     },
     {
       "id": "n01",
-      "ok": true,
-      "ms": 54.9,
+      "ok": false,
+      "ms": 323.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 76.93257728747778,
+        "value": 52.56954538298054,
         "probabilities": {
-          "0.0": 0.005749477532287959,
-          "50.0": 0.44984949918477957,
-          "100.0": 0.544401023282388
+          "0.0": 0.38982467992301606,
+          "50.0": 0.1689597324934742,
+          "100.0": 0.44121558758306834
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.316601534923582,
+        "confidence": 0.1618233813746025,
         "backend": "ollama"
       },
       "expect": {
@@ -4077,21 +4077,21 @@
     },
     {
       "id": "n01b",
-      "ok": false,
-      "ms": 453.0,
+      "ok": true,
+      "ms": 327.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 94.17600925142986,
+        "value": 62.3625832139519,
         "probabilities": {
-          "0.0": 0.003555209958556276,
-          "50.0": 0.10936939505251597,
-          "100.0": 0.8870753949880407
+          "0.0": 0.34521212334966644,
+          "50.0": 0.062324089020444055,
+          "100.0": 0.592463787629297
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.8306130924820609,
+        "confidence": 0.3886956814439455,
         "backend": "ollama"
       },
       "expect": {
@@ -4104,20 +4104,20 @@
     {
       "id": "n01c",
       "ok": true,
-      "ms": 493.7,
+      "ms": 323.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 71.00485382460674,
+        "value": 61.2456441460745,
         "probabilities": {
-          "0.0": 0.0035391713539264743,
-          "50.0": 0.5728245807988664,
-          "100.0": 0.4236362478466341
+          "0.0": 0.275844224051721,
+          "50.0": 0.22339866897406657,
+          "100.0": 0.5007571069737117
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.3592368711982996,
+        "confidence": 0.25113566046056746,
         "backend": "ollama"
       },
       "expect": {
@@ -4130,20 +4130,20 @@
     {
       "id": "n01d",
       "ok": false,
-      "ms": 519.4,
+      "ms": 310.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 90.35137838267886,
+        "value": 50.828107517057276,
         "probabilities": {
-          "0.0": 0.009669117569258685,
-          "50.0": 0.17363419720627224,
-          "100.0": 0.8166966852236524
+          "0.0": 0.38304200933224863,
+          "50.0": 0.217353830993558,
+          "100.0": 0.39960415967379376
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.7250450278354785,
+        "confidence": 0.09940623951069061,
         "backend": "ollama"
       },
       "expect": {
@@ -4156,20 +4156,20 @@
     {
       "id": "n02",
       "ok": true,
-      "ms": 500.7,
+      "ms": 303.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.000108898204054,
+        "value": 51.55321940805069,
         "probabilities": {
-          "0.0": 3.653480894573254e-06,
-          "50.0": 0.9999905150721298,
-          "100.0": 5.831445975617749e-06
+          "0.0": 0.40284678058519063,
+          "50.0": 0.16324205066773698,
+          "100.0": 0.4339111687466384
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999857726081947,
+        "confidence": 0.15086675311995756,
         "backend": "ollama"
       },
       "expect": {
@@ -4182,20 +4182,20 @@
     {
       "id": "n02b",
       "ok": true,
-      "ms": 60.1,
+      "ms": 300.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.00036298259449,
+        "value": 61.47874643905925,
         "probabilities": {
-          "0.0": 1.6571470466169773e-05,
-          "50.0": 0.9999595974051779,
-          "100.0": 2.383112335593946e-05
+          "0.0": 0.32934514685195687,
+          "50.0": 0.11173477751378313,
+          "100.0": 0.5589200756337009
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999393961077669,
+        "confidence": 0.3383801134505514,
         "backend": "ollama"
       },
       "expect": {
@@ -4208,20 +4208,20 @@
     {
       "id": "n02c",
       "ok": true,
-      "ms": 491.7,
+      "ms": 304.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.00129698304406,
+        "value": 65.58730921981231,
         "probabilities": {
-          "0.0": 2.8584081968866064e-05,
-          "50.0": 0.9999168921731812,
-          "100.0": 5.452374384997598e-05
+          "0.0": 0.24830186438011712,
+          "50.0": 0.19165008684239926,
+          "100.0": 0.5600480487769235
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9998753382597718,
+        "confidence": 0.34007207316538524,
         "backend": "ollama"
       },
       "expect": {
@@ -4234,20 +4234,20 @@
     {
       "id": "n02d",
       "ok": true,
-      "ms": 454.0,
+      "ms": 291.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 49.99992697052435,
+        "value": 42.96967027093148,
         "probabilities": {
-          "0.0": 1.347186311975518e-05,
-          "50.0": 0.9999745168612734,
-          "100.0": 1.2011274606830509e-05
+          "0.0": 0.49280086293644115,
+          "50.0": 0.15500486870750255,
+          "100.0": 0.35219426835556356
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999617752919101,
+        "confidence": 0.23920129440466176,
         "backend": "ollama"
       },
       "expect": {
@@ -4259,21 +4259,21 @@
     },
     {
       "id": "n03",
-      "ok": true,
-      "ms": 55.2,
+      "ok": false,
+      "ms": 306.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 0.37147739815879427,
+        "value": 53.576083671084554,
         "probabilities": {
-          "0.0": 0.9957894226173519,
-          "50.0": 0.0009916068001285827,
-          "100.0": 0.003218970581523651
+          "0.0": 0.45348060110232713,
+          "50.0": 0.021517124372604318,
+          "100.0": 0.5250022745245434
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9936841339260278,
+        "confidence": 0.28750341178681516,
         "backend": "ollama"
       },
       "expect": {
@@ -4285,21 +4285,21 @@
     },
     {
       "id": "n03b",
-      "ok": true,
-      "ms": 52.4,
+      "ok": false,
+      "ms": 312.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 0.30197662510754253,
+        "value": 46.49546098714592,
         "probabilities": {
-          "0.0": 0.9964381237641308,
-          "50.0": 0.0010842199675942215,
-          "100.0": 0.0024776562672783145
+          "0.0": 0.519777153843484,
+          "50.0": 0.030536472569073953,
+          "100.0": 0.4496863735869222
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9946571856461961,
+        "confidence": 0.27966573076522594,
         "backend": "ollama"
       },
       "expect": {
@@ -4311,21 +4311,21 @@
     },
     {
       "id": "n03c",
-      "ok": true,
-      "ms": 462.7,
+      "ok": false,
+      "ms": 307.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 0.6286551540349767,
+        "value": 56.54027325348444,
         "probabilities": {
-          "0.0": 0.9934043917674836,
-          "50.0": 0.0006181133823467179,
-          "100.0": 0.005977494849176408
+          "0.0": 0.41964142379777536,
+          "50.0": 0.02991168733365944,
+          "100.0": 0.5504468888680147
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9901065876512254,
+        "confidence": 0.3256703333020221,
         "backend": "ollama"
       },
       "expect": {
@@ -4337,21 +4337,21 @@
     },
     {
       "id": "n03d",
-      "ok": true,
-      "ms": 452.5,
+      "ok": false,
+      "ms": 309.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 1.1845849157485426,
+        "value": 50.1308587493247,
         "probabilities": {
-          "0.0": 0.9876950362975332,
-          "50.0": 0.0009182290879872489,
-          "100.0": 0.011386734613491802
+          "0.0": 0.48735121292996836,
+          "50.0": 0.022680399152589382,
+          "100.0": 0.4899683879169523
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9815425544462997,
+        "confidence": 0.23495258187542845,
         "backend": "ollama"
       },
       "expect": {
@@ -4364,20 +4364,20 @@
     {
       "id": "n04",
       "ok": true,
-      "ms": 404.3,
+      "ms": 287.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.99765070124191,
+        "value": 93.97728492085358,
         "probabilities": {
-          "0.0": 1.1841349738324261e-05,
-          "50.0": 2.3303273685059503e-05,
-          "100.0": 0.9999648553755766
+          "0.0": 0.0520477423533606,
+          "50.0": 0.016358816874343988,
+          "100.0": 0.9315934407713637
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999472830633649,
+        "confidence": 0.8973901611570456,
         "backend": "ollama"
       },
       "expect": {
@@ -4390,20 +4390,20 @@
     {
       "id": "n04b",
       "ok": true,
-      "ms": 491.8,
+      "ms": 296.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.9968557229053,
+        "value": 90.57064902318554,
         "probabilities": {
-          "0.0": 1.2514710641095227e-05,
-          "50.0": 3.7856118611970063e-05,
-          "100.0": 0.999949629169747
+          "0.0": 0.07934258768755244,
+          "50.0": 0.02990184415940254,
+          "100.0": 0.8907555681521541
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999244437546204,
+        "confidence": 0.836133352228231,
         "backend": "ollama"
       },
       "expect": {
@@ -4415,21 +4415,21 @@
     },
     {
       "id": "n04c",
-      "ok": true,
-      "ms": 441.3,
+      "ok": false,
+      "ms": 299.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.99743225556028,
+        "value": 84.94295125157026,
         "probabilities": {
-          "0.0": 1.6821940490343214e-05,
-          "50.0": 1.7711005813349853e-05,
-          "100.0": 0.9999654670526963
+          "0.0": 0.12979600209981598,
+          "50.0": 0.041548970767305314,
+          "100.0": 0.8286550271320501
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999482005790443,
+        "confidence": 0.7429825406980752,
         "backend": "ollama"
       },
       "expect": {
@@ -4442,20 +4442,20 @@
     {
       "id": "n04d",
       "ok": true,
-      "ms": 421.3,
+      "ms": 298.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.99670664807513,
+        "value": 85.93173284808465,
         "probabilities": {
-          "0.0": 1.5759916418839586e-05,
-          "50.0": 3.434720365973652e-05,
-          "100.0": 0.9999498928789213
+          "0.0": 0.1286109706154178,
+          "50.0": 0.024143401805776607,
+          "100.0": 0.8472456275779583
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9999248393183819,
+        "confidence": 0.7708684413669373,
         "backend": "ollama"
       },
       "expect": {
@@ -4468,20 +4468,20 @@
     {
       "id": "n05",
       "ok": false,
-      "ms": 56.1,
+      "ms": 318.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.37650602125472,
+        "value": 71.12453094545498,
         "probabilities": {
-          "0.0": 0.0886747288926671,
-          "50.0": 0.8151204217879409,
-          "100.0": 0.09620484931857677
+          "0.0": 0.26914478294110317,
+          "50.0": 0.039219815207310826,
+          "100.0": 0.6916354018508943
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.7226806326819113,
+        "confidence": 0.5374531027763414,
         "backend": "ollama"
       },
       "expect": {
@@ -4494,20 +4494,20 @@
     {
       "id": "n05b",
       "ok": false,
-      "ms": 51.4,
+      "ms": 332.6,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 54.33823185151667,
+        "value": 76.83287450461332,
         "probabilities": {
-          "0.0": 0.021397391948931463,
-          "50.0": 0.8704405790700628,
-          "100.0": 0.1081620289801353
+          "0.0": 0.20040562009885463,
+          "50.0": 0.06253126970855012,
+          "100.0": 0.7370631101918581
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.8056608686050941,
+        "confidence": 0.605594665287787,
         "backend": "ollama"
       },
       "expect": {
@@ -4520,20 +4520,20 @@
     {
       "id": "n05c",
       "ok": false,
-      "ms": 472.1,
+      "ms": 317.1,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 48.08400957351997,
+        "value": 71.39866113924141,
         "probabilities": {
-          "0.0": 0.12252329443609633,
-          "50.0": 0.7932732196558212,
-          "100.0": 0.08420348590728913
+          "0.0": 0.24065711554363112,
+          "50.0": 0.09071254612657194,
+          "100.0": 0.6686303383291282
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.6899098294837318,
+        "confidence": 0.5029455074936924,
         "backend": "ollama"
       },
       "expect": {
@@ -4546,20 +4546,20 @@
     {
       "id": "n05d",
       "ok": false,
-      "ms": 485.3,
+      "ms": 316.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 64.31076364387292,
+        "value": 63.62566807891016,
         "probabilities": {
-          "0.0": 0.0795249679213868,
-          "50.0": 0.5547347912786584,
-          "100.0": 0.3657402407994
+          "0.0": 0.3366459112783102,
+          "50.0": 0.05419481586395798,
+          "100.0": 0.6091592728571226
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.33210218691798765,
+        "confidence": 0.4137389092856838,
         "backend": "ollama"
       },
       "expect": {
@@ -4571,21 +4571,21 @@
     },
     {
       "id": "n06",
-      "ok": true,
-      "ms": 55.4,
+      "ok": false,
+      "ms": 303.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.94566325541484,
+        "value": 78.11558555732628,
         "probabilities": {
-          "0.0": 0.00014106701377947567,
-          "50.0": 0.0008046008621460604,
-          "100.0": 0.9990543321230754
+          "0.0": 0.16781082793746463,
+          "50.0": 0.10206663297708468,
+          "100.0": 0.7301225390847205
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9985814981846131,
+        "confidence": 0.5951838086270806,
         "backend": "ollama"
       },
       "expect": {
@@ -4597,21 +4597,21 @@
     },
     {
       "id": "n06b",
-      "ok": true,
-      "ms": 52.5,
+      "ok": false,
+      "ms": 336.2,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.81926724554332,
+        "value": 70.46715558204454,
         "probabilities": {
-          "0.0": 0.0002160856146171389,
-          "50.0": 0.0031824838579058083,
-          "100.0": 0.9966014305264802
+          "0.0": 0.2288311077772694,
+          "50.0": 0.132994672803294,
+          "100.0": 0.6381742194187984
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9949021457897202,
+        "confidence": 0.4572613291281975,
         "backend": "ollama"
       },
       "expect": {
@@ -4624,20 +4624,20 @@
     {
       "id": "n06c",
       "ok": true,
-      "ms": 464.6,
+      "ms": 347.8,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.75710972021676,
+        "value": 85.44177609292012,
         "probabilities": {
-          "0.0": 0.0011554992222332077,
-          "50.0": 0.002546807149205632,
-          "100.0": 0.9962976936275648
+          "0.0": 0.09115437150883428,
+          "50.0": 0.1088557351223286,
+          "100.0": 0.7999898933680369
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9944465404413472,
+        "confidence": 0.6999848400520554,
         "backend": "ollama"
       },
       "expect": {
@@ -4649,21 +4649,21 @@
     },
     {
       "id": "n06d",
-      "ok": true,
-      "ms": 467.0,
+      "ok": false,
+      "ms": 314.5,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 99.7521629574118,
+        "value": 73.43861907543648,
         "probabilities": {
-          "0.0": 0.0010766953369194985,
-          "50.0": 0.002803350175932919,
-          "100.0": 0.9961199544861514
+          "0.0": 0.20690656166603458,
+          "50.0": 0.1174144951578496,
+          "100.0": 0.6756789431754401
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.994179931729227,
+        "confidence": 0.5135184147631602,
         "backend": "ollama"
       },
       "expect": {
@@ -4675,21 +4675,21 @@
     },
     {
       "id": "n07",
-      "ok": true,
-      "ms": 55.3,
+      "ok": false,
+      "ms": 309.9,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 1.7913313146202516,
+        "value": 49.10463056328741,
         "probabilities": {
-          "0.0": 0.967772992610192,
-          "50.0": 0.02862738848527529,
-          "100.0": 0.0035996189035648724
+          "0.0": 0.4958191761831493,
+          "50.0": 0.026269036366961634,
+          "100.0": 0.4779117874493932
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9516594889152881,
+        "confidence": 0.2437287642747239,
         "backend": "ollama"
       },
       "expect": {
@@ -4701,21 +4701,21 @@
     },
     {
       "id": "n07b",
-      "ok": true,
-      "ms": 52.5,
+      "ok": false,
+      "ms": 315.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 2.400089399313127,
+        "value": 57.738675831719235,
         "probabilities": {
-          "0.0": 0.9546362459819182,
-          "50.0": 0.04272572004799142,
-          "100.0": 0.002638033969135559
+          "0.0": 0.3952583039409283,
+          "50.0": 0.05470987548265874,
+          "100.0": 0.550031820575863
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9319543689728773,
+        "confidence": 0.32504773086379446,
         "backend": "ollama"
       },
       "expect": {
@@ -4727,21 +4727,21 @@
     },
     {
       "id": "n07c",
-      "ok": true,
-      "ms": 477.8,
+      "ok": false,
+      "ms": 334.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 3.238320103178329,
+        "value": 50.130391278917244,
         "probabilities": {
-          "0.0": 0.9409648762616006,
-          "50.0": 0.05330384541135027,
-          "100.0": 0.005731278326108153
+          "0.0": 0.47676251624453814,
+          "50.0": 0.04386714193162018,
+          "100.0": 0.47937034182336236
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9114473143924009,
+        "confidence": 0.21905551273504353,
         "backend": "ollama"
       },
       "expect": {
@@ -4753,21 +4753,21 @@
     },
     {
       "id": "n07d",
-      "ok": true,
-      "ms": 469.0,
+      "ok": false,
+      "ms": 316.0,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 2.1694222389124174,
+        "value": 48.816376419788696,
         "probabilities": {
-          "0.0": 0.9602889305616599,
-          "50.0": 0.03603369409651135,
-          "100.0": 0.0036773753408684997
+          "0.0": 0.4919461961311154,
+          "50.0": 0.03978007934101159,
+          "100.0": 0.46827372452738114
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9404333958424897,
+        "confidence": 0.23791929419667313,
         "backend": "ollama"
       },
       "expect": {
@@ -4779,21 +4779,21 @@
     },
     {
       "id": "n08",
-      "ok": true,
-      "ms": 59.2,
+      "ok": false,
+      "ms": 313.7,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.044555749468365,
+        "value": 81.73914223063007,
         "probabilities": {
-          "0.0": 9.728137976258308e-05,
-          "50.0": 0.9989143222491098,
-          "100.0": 0.0009883963701287073
+          "0.0": 0.11697491705715668,
+          "50.0": 0.13126732127158144,
+          "100.0": 0.75175776167051
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9983714833736648,
+        "confidence": 0.6276366425057649,
         "backend": "ollama"
       },
       "expect": {
@@ -4806,20 +4806,20 @@
     {
       "id": "n08b",
       "ok": true,
-      "ms": 61.3,
+      "ms": 325.4,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.4459951370208,
+        "value": 65.98022318787477,
         "probabilities": {
-          "0.0": 0.0014441709778305345,
-          "50.0": 0.9881917553019464,
-          "100.0": 0.010364073719234814
+          "0.0": 0.1418156261807265,
+          "50.0": 0.39676428388012863,
+          "100.0": 0.46142008993868344
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9822876329529195,
+        "confidence": 0.1921301349080251,
         "backend": "ollama"
       },
       "expect": {
@@ -4832,20 +4832,20 @@
     {
       "id": "n08c",
       "ok": true,
-      "ms": 497.1,
+      "ms": 335.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.137980327011455,
+        "value": 71.56132435886964,
         "probabilities": {
-          "0.0": 0.00048802796976519803,
-          "50.0": 0.9962643375182479,
-          "100.0": 0.0032476345109905777
+          "0.0": 0.09437050160957315,
+          "50.0": 0.3800325096024096,
+          "100.0": 0.5255969887874916
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.9943965062773719,
+        "confidence": 0.2883954831812374,
         "backend": "ollama"
       },
       "expect": {
@@ -4857,21 +4857,21 @@
     },
     {
       "id": "n08d",
-      "ok": true,
-      "ms": 474.2,
+      "ok": false,
+      "ms": 317.3,
       "contract_ok": true,
       "contract": [],
       "answer": {
         "type": "numeric",
-        "value": 50.126323066053175,
+        "value": 76.46925610364566,
         "probabilities": {
-          "0.0": 0.0007286000737543728,
-          "50.0": 0.9960163385294354,
-          "100.0": 0.0032550613958140977
+          "0.0": 0.17601030539959076,
+          "50.0": 0.11859426712649436,
+          "100.0": 0.7053954274732095
         },
         "unit": "percent",
         "status": "ok",
-        "confidence": 0.994024507794153,
+        "confidence": 0.5580931412098142,
         "backend": "ollama"
       },
       "expect": {

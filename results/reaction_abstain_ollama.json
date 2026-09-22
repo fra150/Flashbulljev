@@ -1,0 +1,93 @@
+{
+  "backend": "ollama",
+  "model": "qwen2.5:1.5b",
+  "n": 12,
+  "abstained": 0,
+  "abstention_rate": 0.0,
+  "rows": [
+    {
+      "id": "a01",
+      "abstained": false,
+      "confidence": 0.918098781066188,
+      "status": "ok",
+      "state": "the thing is stuff"
+    },
+    {
+      "id": "a02",
+      "abstained": false,
+      "confidence": 0.9987759492728341,
+      "status": "ok",
+      "state": "hello"
+    },
+    {
+      "id": "a03",
+      "abstained": false,
+      "confidence": 0.9143799231844763,
+      "status": "ok",
+      "state": "???"
+    },
+    {
+      "id": "a04",
+      "abstained": false,
+      "confidence": 0.997680922740884,
+      "status": "ok",
+      "state": "update"
+    },
+    {
+      "id": "a05",
+      "abstained": false,
+      "confidence": 0.6498647328841796,
+      "status": "ok",
+      "state": "it depends"
+    },
+    {
+      "id": "a06",
+      "abstained": false,
+      "confidence": 0.9979762625855688,
+      "status": "ok",
+      "state": "maybe later"
+    },
+    {
+      "id": "a07",
+      "abstained": false,
+      "confidence": 0.9605819461996334,
+      "status": "ok",
+      "state": "hmm"
+    },
+    {
+      "id": "a08",
+      "abstained": false,
+      "confidence": 0.9590692938609948,
+      "status": "ok",
+      "state": "see attached (no attachment)"
+    },
+    {
+      "id": "a09",
+      "abstained": false,
+      "confidence": 0.12779928557391962,
+      "status": "ok",
+      "state": "as per my last email"
+    },
+    {
+      "id": "a10",
+      "abstained": false,
+      "confidence": 0.9971237958258421,
+      "status": "ok",
+      "state": "ping"
+    },
+    {
+      "id": "a11",
+      "abstained": false,
+      "confidence": 0.7429749267000914,
+      "status": "ok",
+      "state": "test test"
+    },
+    {
+      "id": "a12",
+      "abstained": false,
+      "confidence": 0.9250154863974824,
+      "status": "ok",
+      "state": "n/a"
+    }
+  ]
+}

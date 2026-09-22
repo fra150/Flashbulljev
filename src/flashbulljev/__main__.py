@@ -11,7 +11,7 @@ from .backends import get_backend
 from .calibration import fit_temperature, save_fit
 from .engine import FlashBullJevEngine
 from .pipeline import run_pipeline
-from .reaction import print_calibration, print_reaction, run_reaction, run_reaction_calibration
+from .reaction import print_calibration, print_reaction, run_abstention, run_baseline, run_position_bias, run_reaction, run_reaction_calibration
 
 
 def demo_questions() -> Dict[str, Any]:
@@ -86,6 +86,27 @@ def cmd_react_calib(which: str = "") -> None:
     print_calibration(out)
 
 
+def cmd_react_bias(which: str = "") -> None:
+    """Position-bias probe: original vs reversed option order."""
+    out = run_position_bias(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    print(f"bias flips={out['flips']}/{out['n']}={out['flip_rate']} acc_orig={out['acc_orig']} acc_rev={out['acc_rev']}")
+
+
+def cmd_react_base(which: str = "") -> None:
+    """Baseline: logit-only vs free-text JSON generation."""
+    out = run_baseline(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    if out.get("skipped"):
+        print(out["skipped"])
+    else:
+        print(f"baseline acc_logit={out['acc_logit']} avg_ms_logit={out['avg_ms_logit']} avg_ms_json={out['avg_ms_json']}")
+
+
+def cmd_react_abstain(which: str = "") -> None:
+    """Abstention probe on vague inputs."""
+    out = run_abstention(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    print(f"abstention={out['abstained']}/{out['n']}={out['abstention_rate']}")
+
+
 def cmd_bench() -> None:
     """Benchmark 5 states x2 rounds."""
     eng = make_engine_from_env()
@@ -149,6 +170,12 @@ def main(argv: List[str] | None = None) -> None:
         cmd_react(args[1] if len(args) > 1 else "")
     elif cmd == "react-calib":
         cmd_react_calib(args[1] if len(args) > 1 else "")
+    elif cmd == "react-bias":
+        cmd_react_bias(args[1] if len(args) > 1 else "")
+    elif cmd == "react-base":
+        cmd_react_base(args[1] if len(args) > 1 else "")
+    elif cmd == "react-abstain":
+        cmd_react_abstain(args[1] if len(args) > 1 else "")
     elif cmd == "bench":
         cmd_bench()
     elif cmd == "calibrate":
@@ -158,7 +185,7 @@ def main(argv: List[str] | None = None) -> None:
 
         uvicorn.run("flashbulljev.api:app", host="127.0.0.1", port=8018, reload=False)
     else:
-        print("usage: python -m flashbulljev [demo|demo-real|react [fake|ollama]|react-calib [fake|ollama]|decide file.json|bench|calibrate|serve]")
+        print("usage: python -m flashbulljev [demo|demo-real|react [fake|ollama]|react-calib|react-bias|react-base|react-abstain|decide|bench|calibrate|serve]")
 
 
 if __name__ == "__main__":

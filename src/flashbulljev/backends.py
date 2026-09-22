@@ -61,7 +61,8 @@ class OllamaBackend:
             "stream": False,
             "options": {"num_predict": 1, "temperature": 0},
             "logprobs": True,
-            "top_logprobs": 20,
+            "top_logprobs": max(5, len(letters) + 2),
+            "keep_alive": "30m",
         }
         r = requests.post(f"{self.base_url}/api/generate", json=body, timeout=120)
         r.raise_for_status()
@@ -85,6 +86,22 @@ class OllamaBackend:
         for letter in letters:
             logits.append(float(m.get(letter, -20.0)))
         return logits, dt_ms
+
+
+    def answer_json(self, prompt: str, max_tokens: int = 32) -> Tuple[str, float]:
+        """Classic baseline: generate free text (JSON) and parse it. Returns (text, latency_ms)."""
+        t0 = time.perf_counter()
+        body = {
+            "model": self.model,
+            "prompt": prompt,
+            "stream": False,
+            "options": {"num_predict": max_tokens, "temperature": 0},
+            "keep_alive": "30m",
+        }
+        r = requests.post(f"{self.base_url}/api/generate", json=body, timeout=120)
+        r.raise_for_status()
+        dt_ms = (time.perf_counter() - t0) * 1000.0
+        return str(r.json().get("response", "")), dt_ms
 
 
 def get_backend(name: str = "") -> Any:

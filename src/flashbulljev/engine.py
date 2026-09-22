@@ -6,6 +6,7 @@ Pure functions, arrays, lists, parallel execution.
 from __future__ import annotations
 
 import hashlib
+import os
 import time
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Dict, List, Tuple
@@ -24,7 +25,7 @@ from .schemas import (
     parse_questions,
 )
 
-MODEL_ID = "flashbulljev-0.3.0"
+MODEL_ID = "flashbulljev-0.4.0"
 
 
 def softmax(logits: List[float], temperature: float = 1.0) -> List[float]:
@@ -202,6 +203,9 @@ class FlashBullJevEngine:
             self.backend = self.backend()
         self.temperature = float(temperature)
         self._is_fake = getattr(self.backend, "name", "fake") == "fake"
+        self.cache_db = os.getenv("FLASHBULLJEV_CACHE_DB", "")
+        if self.cache_db:
+            self.memory.attach_db(self.cache_db)
 
     def decide(self, state: Any, questions: Dict[str, Any]) -> Dict[str, Any]:
         """Decide with cache: ~1ms on hit, real backend latency on miss."""

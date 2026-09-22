@@ -9,6 +9,8 @@ Pure functions + numpy arrays + lists, clean code.
 from __future__ import annotations
 
 import hashlib
+import json
+import sqlite3
 import time
 from typing import Any, Dict, List, Tuple
 
@@ -165,6 +167,7 @@ class FragmentMemory:
         self._hits = 0
         self._misses = 0
         self._saves = 0
+        self._db_path: str = ""
 
     def key(self, state: Any, question_keys: List[str]) -> str:
         """Hash of state + question keys."""
@@ -181,9 +184,19 @@ class FragmentMemory:
         return self.key(state, questions_keys)
 
     def save(self, key: str, payload: Dict[str, Any]) -> None:
-        """Store a copy of the payload."""
+        """Store a copy of the payload (write-through to disk when attached)."""
         self._cache[str(key)] = dict(payload)
         self._saves += 1
+        if self._db_path:
+            try:
+                con = sqlite3.connect(self._db_path)
+                con.execute("CREATE TABLE IF NOT EXISTS fragments (k TEXT PRIMARY KEY, payload TEXT)")
+                con.execute("INSERT OR REPLACE INTO fragments (k, payload) VALUES (?, ?)",
+                            (str(key), json.dumps(dict(payload))))
+                con.commit()
+                con.close()
+            except OSError:
+                pass
 
     # legacy alias
     def salva(self, chiave: str, payload: Dict[str, Any]) -> None:
@@ -219,6 +232,24 @@ class FragmentMemory:
     def keys_list(self) -> List[str]:
         """List of stored keys."""
         return list(self._cache.keys())
+
+    def attach_db(self, path: str) -> int:
+        """Attach a SQLite file: load existing entries, write through on save. Returns loaded count."""
+        self._db_path = str(path)
+        loaded = 0
+        try:
+            con = sqlite3.connect(self._db_path)
+            con.execute("CREATE TABLE IF NOT EXISTS fragments (k TEXT PRIMARY KEY, payload TEXT)")
+            for k, p in con.execute("SELECT k, payload FROM fragments"):
+                try:
+                    self._cache[str(k)] = json.loads(str(p))
+                    loaded += 1
+                except ValueError:
+                    continue
+            con.close()
+        except OSError:
+            pass
+        return loaded
 
 
 # legacy alias
