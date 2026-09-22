@@ -1,0 +1,12 @@
+[project]
+name = "flashbulljev"
+version = "0.1.0"
+description = "flashbulljev - System One veloce e salvato: 50ms miss, 1ms hit"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24", "fastapi>=0.110", "uvicorn>=0.29", "pydantic>=2.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools"]

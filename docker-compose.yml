@@ -1,0 +1,12 @@
+services:
+  flashbulljev:
+    build: .
+    ports:
+      - "8018:8018"
+    environment:
+      - PYTHONPATH=/app/src:/app
+      - FLASHBULLJEV_BACKEND=fake
+      - FLASHBULLJEV_MODEL=qwen2.5:1.5b
+      - OLLAMA_URL=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
