@@ -10,17 +10,19 @@ Inspired by:
 - The logit-only System One pattern (zero useful tokens, Jev-compatible API)
 - `Frammento del veloce` by dr. Bulla Francesco (g0/gx/gy + gf quiescence / certification / zero-cost memory)
 
-## Real results measured on this machine (Ollama Qwen 2B)
+## Test report (measured on this machine, Ollama Qwen 2B)
 
 ```
-[fake]                miss 51.7ms   hit 0.08ms
-[ollama+qwen2.5:1.5b] miss avg 657ms (3 parallel questions)  hit avg 0.04ms
-24 passed
+pytest:              33 passed
+[fake]               miss ~52ms   hit ~0.08ms
+[ollama+qwen2.5:1.5b] miss avg ~715ms (3 parallel questions, warm)  hit avg ~0.07ms
+[ollama cold load]   first call ~3.1s (one-time model load), then warm timings above
+live API:            /health, /v1/decisions, /v1/systemone, /v1/models — all OK, answers certified Q=0.99
 ```
 
 The rule is confirmed:
-- fast but NOT stored = you repay ~650ms on every call
-- fast AND stored = 0.04ms certified hit, ~10,000x faster
+- fast but NOT stored = you repay ~700ms on every call
+- fast AND stored = ~0.07ms certified hit, ~10,000x faster
 
 ## How the real logit-only flow works
 
@@ -28,7 +30,7 @@ The rule is confirmed:
 2. `POST /api/generate` to Ollama with `num_predict=1, temperature=0, logprobs=true, top_logprobs=20`
 3. Read only the letter logprobs A/B/C, apply `exp` + renormalization → probabilities, ignore the token
 4. `quiescence AND quality AND budget` via `certify_fragment`; store in `FragmentMemory` only when certified
-5. Next identical call: `sha256(state+backend+questions)` → `recall()` in ~0.05ms
+5. Next identical call: `sha256(state+backend+questions)` → `recall()` in ~0.07ms
 
 ## Project layout (clean code, functions, arrays, lists)
 
@@ -47,7 +49,7 @@ bulla-jev/
     pipeline.py      # ingest -> route -> decide -> certify -> emit
     api.py           # FastAPI /v1/decisions /v1/systemone /health
   tests/
-    test_memory_gf.py test_engine.py test_api_pipeline.py test_real.py
+    test_memory_gf.py test_engine.py test_api_pipeline.py test_real.py test_extra.py
   Dockerfile
   docker-compose.yml
   requirements.txt
@@ -63,9 +65,9 @@ python run.py demo
 # real backend with Ollama Qwen 2B
 $env:FLASHBULLJEV_BACKEND="ollama"; $env:FLASHBULLJEV_MODEL="qwen2.5:1.5b"
 python run.py demo
-python run.py bench
-python run.py demo-real
-python run.py calibrate
+python run.py demo-real   # fake vs ollama side by side
+python run.py bench       # 5 states x2 rounds (miss vs hit)
+python run.py calibrate   # fit temperature on the demo set
 $env:FLASHBULLJEV_BACKEND="fake"; python -m pytest -q
 ```
 
@@ -76,7 +78,14 @@ $env:FLASHBULLJEV_BACKEND="ollama"; python run.py serve
 # API examples
 # POST /v1/decisions {"state": ..., "questions": ..., "backend": "ollama"}
 # POST /v1/systemone (Jev-compatible)
+# GET  /health, GET /v1/models
 ```
+
+## Calibration note
+
+`python run.py calibrate` fits the temperature on a 6-example demo set (T=3.0 on Qwen 2B, NLL 2.48 / ECE 0.89).
+That only proves the tooling works — real calibration needs a labeled set from your own domain,
+plus a separate calibration split and a held-out test, exactly like the big labs do.
 
 ## Docker
 
@@ -100,6 +109,7 @@ docker compose up --build
 - numpy arrays for state vectors, lists for keys/questions/steps
 - 5-stage pipeline, each stage isolated and testable
 - NEVER certified when quiescence is off (GF rule)
+- Legacy Italian aliases kept for backward compatibility (`MemoriaGF`, `verifica_quiete`, ...)
 
 ## License
 
