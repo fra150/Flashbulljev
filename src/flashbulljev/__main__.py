@@ -11,7 +11,7 @@ from .backends import get_backend
 from .calibration import fit_temperature, save_fit
 from .engine import FlashBullJevEngine
 from .pipeline import run_pipeline
-from .reaction import print_reaction, run_reaction
+from .reaction import print_calibration, print_reaction, run_reaction, run_reaction_calibration
 
 
 def demo_questions() -> Dict[str, Any]:
@@ -80,6 +80,12 @@ def cmd_react(which: str = "") -> None:
     print_reaction(out)
 
 
+def cmd_react_calib(which: str = "") -> None:
+    """Fit temperature on fit split, evaluate on held-out split."""
+    out = run_reaction_calibration(which or os.getenv("FLASHBULLJEV_BACKEND", "fake"))
+    print_calibration(out)
+
+
 def cmd_bench() -> None:
     """Benchmark 5 states x2 rounds."""
     eng = make_engine_from_env()
@@ -141,6 +147,8 @@ def main(argv: List[str] | None = None) -> None:
         cmd_decide(args[1])
     elif cmd == "react":
         cmd_react(args[1] if len(args) > 1 else "")
+    elif cmd == "react-calib":
+        cmd_react_calib(args[1] if len(args) > 1 else "")
     elif cmd == "bench":
         cmd_bench()
     elif cmd == "calibrate":
@@ -150,7 +158,7 @@ def main(argv: List[str] | None = None) -> None:
 
         uvicorn.run("flashbulljev.api:app", host="127.0.0.1", port=8018, reload=False)
     else:
-        print("usage: python -m flashbulljev [demo|demo-real|react [fake|ollama]|decide file.json|bench|calibrate|serve]")
+        print("usage: python -m flashbulljev [demo|demo-real|react [fake|ollama]|react-calib [fake|ollama]|decide file.json|bench|calibrate|serve]")
 
 
 if __name__ == "__main__":

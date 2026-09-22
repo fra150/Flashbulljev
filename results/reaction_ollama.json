@@ -1,0 +1,1237 @@
+{
+  "summary": {
+    "backend": "ollama",
+    "model": "qwen2.5:1.5b",
+    "n": 52,
+    "correct": 44,
+    "accuracy": 0.846,
+    "contract_ok": 52,
+    "avg_ms": 313.1,
+    "cache": {
+      "hits": 0,
+      "misses": 52,
+      "saves": 52,
+      "items": 52,
+      "salvataggi": 52,
+      "elementi": 52
+    }
+  },
+  "rows": [
+    {
+      "id": "u01",
+      "ok": true,
+      "ms": 361.8,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999981583040883,
+        "status": "ok",
+        "confidence": 0.9999963166081767,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "URGENT: server down, all payments failing!"
+    },
+    {
+      "id": "u02",
+      "ok": true,
+      "ms": 311.3,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999373278221763,
+        "status": "ok",
+        "confidence": 0.9998746556443525,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "HELP! database deleted, customers are furious"
+    },
+    {
+      "id": "u03",
+      "ok": true,
+      "ms": 311.7,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9977884983888332,
+        "status": "ok",
+        "confidence": 0.9955769967776664,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "CRITICAL outage, refund everyone NOW"
+    },
+    {
+      "id": "u04",
+      "ok": true,
+      "ms": 316.7,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999610876419534,
+        "status": "ok",
+        "confidence": 0.9999221752839067,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "data breach, passwords leaked, act now"
+    },
+    {
+      "id": "u05",
+      "ok": true,
+      "ms": 307.0,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999859684787699,
+        "status": "ok",
+        "confidence": 0.9999719369575397,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "production is on fire, need you ASAP"
+    },
+    {
+      "id": "u06",
+      "ok": true,
+      "ms": 265.9,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9997485554827276,
+        "status": "ok",
+        "confidence": 0.9994971109654551,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "my account was hacked this morning"
+    },
+    {
+      "id": "u07",
+      "ok": true,
+      "ms": 282.9,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.003100404914302331,
+        "status": "ok",
+        "confidence": 0.9937991901694014,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "thanks, all good, see you tomorrow"
+    },
+    {
+      "id": "u08",
+      "ok": false,
+      "ms": 284.9,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9964521371131337,
+        "status": "ok",
+        "confidence": 0.9929042742262675,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "Reminder: your invoice is due next week"
+    },
+    {
+      "id": "u09",
+      "ok": true,
+      "ms": 272.7,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.21067684104236384,
+        "status": "ok",
+        "confidence": 0.5786463179136934,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "hi, a quick question about pricing"
+    },
+    {
+      "id": "u10",
+      "ok": true,
+      "ms": 272.6,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.0007013402490066931,
+        "status": "ok",
+        "confidence": 0.9985973194999875,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "just checking the docs, no rush"
+    },
+    {
+      "id": "u11",
+      "ok": true,
+      "ms": 276.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.005248329190188839,
+        "status": "ok",
+        "confidence": 0.9895033416176329,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "love the new feature, well done"
+    },
+    {
+      "id": "u12",
+      "ok": true,
+      "ms": 286.4,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.19358171784763903,
+        "status": "ok",
+        "confidence": 0.6128365643031091,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "see you at the meeting tomorrow"
+    },
+    {
+      "id": "s01",
+      "ok": true,
+      "ms": 269.9,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999996589003368,
+        "status": "ok",
+        "confidence": 0.9999993178006736,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "absolutely love it, best tool ever"
+    },
+    {
+      "id": "s02",
+      "ok": true,
+      "ms": 321.0,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999972183335294,
+        "status": "ok",
+        "confidence": 0.9999944366670588,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "great support, solved in minutes"
+    },
+    {
+      "id": "s03",
+      "ok": true,
+      "ms": 286.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999943397598804,
+        "status": "ok",
+        "confidence": 0.9999886795197608,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "works perfectly, thank you"
+    },
+    {
+      "id": "s04",
+      "ok": true,
+      "ms": 288.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 0.9999989352005194,
+        "status": "ok",
+        "confidence": 0.9999978704010388,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_yes"
+      },
+      "state": "five stars, highly recommended"
+    },
+    {
+      "id": "s05",
+      "ok": true,
+      "ms": 275.4,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 3.012131293090384e-05,
+        "status": "ok",
+        "confidence": 0.9999397573721382,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "terrible experience, never again"
+    },
+    {
+      "id": "s06",
+      "ok": true,
+      "ms": 274.2,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 1.9884420610741465e-05,
+        "status": "ok",
+        "confidence": 0.9999602311567781,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "this update ruined everything"
+    },
+    {
+      "id": "s07",
+      "ok": true,
+      "ms": 260.8,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 3.166510566887973e-05,
+        "status": "ok",
+        "confidence": 0.9999366697866618,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "worst support I have ever seen"
+    },
+    {
+      "id": "s08",
+      "ok": true,
+      "ms": 273.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "noul",
+        "noul": 1.7026796868205864e-05,
+        "status": "ok",
+        "confidence": 0.9999659464042634,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "bool_no"
+      },
+      "state": "complete waste of money"
+    },
+    {
+      "id": "d01",
+      "ok": true,
+      "ms": 353.4,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9998595734915116,
+          "technical": 0.0001326720606862687,
+          "sales": 7.754446802155879e-06
+        },
+        "status": "ok",
+        "confidence": 0.9997893602372674,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "billing"
+      },
+      "state": "my card was charged twice, I need a refund"
+    },
+    {
+      "id": "d02",
+      "ok": true,
+      "ms": 319.8,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9902614066519647,
+          "technical": 0.008849723820674785,
+          "sales": 0.0008888695263702017
+        },
+        "status": "ok",
+        "confidence": 0.985392109977947,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "billing"
+      },
+      "state": "the invoice has the wrong VAT amount"
+    },
+    {
+      "id": "d03",
+      "ok": true,
+      "ms": 337.2,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.9999965162084942,
+          "technical": 2.855472676460318e-06,
+          "sales": 6.283178293374706e-07
+        },
+        "status": "ok",
+        "confidence": 0.9999947743127413,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "billing"
+      },
+      "state": "please send the receipt for my last payment"
+    },
+    {
+      "id": "d04",
+      "ok": true,
+      "ms": 326.1,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.999278562208419,
+          "technical": 0.0005171856417692438,
+          "sales": 0.00020425214881236042
+        },
+        "status": "ok",
+        "confidence": 0.9989178433126287,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "billing"
+      },
+      "state": "cancel my subscription and refund this month"
+    },
+    {
+      "id": "d05",
+      "ok": true,
+      "ms": 342.7,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "billing": 3.453284741193626e-07,
+          "technical": 0.9999989085027542,
+          "sales": 7.461677715125612e-07
+        },
+        "status": "ok",
+        "confidence": 0.9999983627541313,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "technical"
+      },
+      "state": "the app crashes on login since the update"
+    },
+    {
+      "id": "d06",
+      "ok": true,
+      "ms": 342.4,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "billing": 0.00010672302669700034,
+          "technical": 0.9998852717530216,
+          "sales": 8.005219281446298e-06
+        },
+        "status": "ok",
+        "confidence": 0.9998279076295322,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "technical"
+      },
+      "state": "the API returns 500 on POST /pay"
+    },
+    {
+      "id": "d07",
+      "ok": true,
+      "ms": 350.6,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "billing": 2.6292121692108777e-05,
+          "technical": 0.9999644206951805,
+          "sales": 9.287182127355941e-06
+        },
+        "status": "ok",
+        "confidence": 0.9999466310427709,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "technical"
+      },
+      "state": "sync is stuck at 99% for hours"
+    },
+    {
+      "id": "d08",
+      "ok": true,
+      "ms": 313.0,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "technical",
+        "probabilities": {
+          "billing": 4.815012397297912e-06,
+          "technical": 0.9999930585059423,
+          "sales": 2.126480660269943e-06
+        },
+        "status": "ok",
+        "confidence": 0.9999895877589136,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "technical"
+      },
+      "state": "my microphone is not detected on calls"
+    },
+    {
+      "id": "d09",
+      "ok": true,
+      "ms": 316.6,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "sales",
+        "probabilities": {
+          "billing": 0.12154753116755032,
+          "technical": 0.005942014683603676,
+          "sales": 0.8725104541479735
+        },
+        "status": "ok",
+        "confidence": 0.8087656812219601,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "sales"
+      },
+      "state": "do you offer discounts for large teams?"
+    },
+    {
+      "id": "d10",
+      "ok": false,
+      "ms": 326.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.5788920558997979,
+          "technical": 0.38154713976724647,
+          "sales": 0.039560804332376805
+        },
+        "status": "ok",
+        "confidence": 0.3683380838496968,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "sales"
+      },
+      "state": "do you have an enterprise plan?"
+    },
+    {
+      "id": "d11",
+      "ok": true,
+      "ms": 371.8,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "sales",
+        "probabilities": {
+          "billing": 0.01752545896349756,
+          "technical": 0.0005314078330816548,
+          "sales": 0.9819431332024388
+        },
+        "status": "ok",
+        "confidence": 0.9729146998036582,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "sales"
+      },
+      "state": "can I trial premium for a month?"
+    },
+    {
+      "id": "d12",
+      "ok": true,
+      "ms": 344.3,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "choice",
+        "choice": "sales",
+        "probabilities": {
+          "billing": 0.0004910592474268321,
+          "technical": 0.0023997281319990188,
+          "sales": 0.9971092126195769
+        },
+        "status": "ok",
+        "confidence": 0.9956638189293652,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "choice",
+        "value": "sales"
+      },
+      "state": "I need a quote for 200 seats"
+    },
+    {
+      "id": "f01",
+      "ok": false,
+      "ms": 55.8,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.7241363462956203,
+        "normalized_score": 0.36206817314781015,
+        "probabilities": {
+          "0": 0.2759807576953346,
+          "1": 0.7239021383122624,
+          "2": 0.00011710399167899166
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.5858532074683935,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 0
+      },
+      "state": "thanks for the quick fix, great job!"
+    },
+    {
+      "id": "f02",
+      "ok": true,
+      "ms": 395.6,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.04885844720780865,
+        "normalized_score": 0.024429223603904326,
+        "probabilities": {
+          "0": 0.9516140651868988,
+          "1": 0.04791342241649031,
+          "2": 0.00047251239565916945
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9274210977803483,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 0
+      },
+      "state": "no worries, take your time"
+    },
+    {
+      "id": "f03",
+      "ok": true,
+      "ms": 431.0,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.006845521503677485,
+        "normalized_score": 0.0034227607518387427,
+        "probabilities": {
+          "0": 0.9937282118738343,
+          "1": 0.005698054746666525,
+          "2": 0.0005737333785054803
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9905923178107514,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 0
+      },
+      "state": "all good, appreciate the help"
+    },
+    {
+      "id": "f04",
+      "ok": false,
+      "ms": 425.1,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.9466213021437769,
+        "normalized_score": 0.47331065107188847,
+        "probabilities": {
+          "0": 0.05659000615284033,
+          "1": 0.9401986855486621,
+          "2": 0.0032113082975574153
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9102980283229933,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 0
+      },
+      "state": "perfect, that solved it"
+    },
+    {
+      "id": "f05",
+      "ok": true,
+      "ms": 60.2,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 1.0000777885118632,
+        "normalized_score": 0.5000388942559316,
+        "probabilities": {
+          "0": 1.650879376743035e-05,
+          "1": 0.9998891938986018,
+          "2": 9.429730663073362e-05
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9998337908479027,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 1
+      },
+      "state": "this is the third time, I am losing patience"
+    },
+    {
+      "id": "f06",
+      "ok": true,
+      "ms": 424.9,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.9999995634595408,
+        "normalized_score": 0.4999997817297704,
+        "probabilities": {
+          "0": 2.1051180581400845e-05,
+          "1": 0.9999583341772965,
+          "2": 2.061464112214594e-05
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9999375012659448,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 1
+      },
+      "state": "been waiting two days for an answer"
+    },
+    {
+      "id": "f07",
+      "ok": true,
+      "ms": 387.3,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.9999380781721099,
+        "normalized_score": 0.49996903908605494,
+        "probabilities": {
+          "0": 0.00022242799598207552,
+          "1": 0.9996170658339266,
+          "2": 0.00016050616909165245
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.99942559875089,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 1
+      },
+      "state": "this keeps happening every week"
+    },
+    {
+      "id": "f08",
+      "ok": true,
+      "ms": 347.2,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.9947220214168087,
+        "normalized_score": 0.4973610107084043,
+        "probabilities": {
+          "0": 0.0056436022140148355,
+          "1": 0.9939907741531735,
+          "2": 0.0003656236318176054
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9909861612297601,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 1
+      },
+      "state": "I explained this already twice"
+    },
+    {
+      "id": "f09",
+      "ok": false,
+      "ms": 54.7,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 1.0130245931669615,
+        "normalized_score": 0.5065122965834807,
+        "probabilities": {
+          "0": 0.0005156516899291847,
+          "1": 0.9859441034512081,
+          "2": 0.01354024485787674
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9789161551768122,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 2
+      },
+      "state": "UNACCEPTABLE! I am leaving and telling everyone"
+    },
+    {
+      "id": "f10",
+      "ok": true,
+      "ms": 391.3,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 1.614034968945339,
+        "normalized_score": 0.8070174844726695,
+        "probabilities": {
+          "0": 7.068931661178746e-05,
+          "1": 0.38582365242020894,
+          "2": 0.614105658262565
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.42115848739384754,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 2
+      },
+      "state": "I want a manager NOW, this is a disgrace"
+    },
+    {
+      "id": "f11",
+      "ok": false,
+      "ms": 380.2,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 0.9999479631717977,
+        "normalized_score": 0.49997398158589884,
+        "probabilities": {
+          "0": 0.0008629370087485916,
+          "1": 0.9983261628087087,
+          "2": 0.0008109001815444976
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.997489244213063,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 2
+      },
+      "state": "filing a chargeback and reporting you"
+    },
+    {
+      "id": "f12",
+      "ok": false,
+      "ms": 407.7,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "score",
+        "score": 1.0123254701688262,
+        "normalized_score": 0.5061627350844131,
+        "probabilities": {
+          "0": 0.00031281959915029653,
+          "1": 0.9870488906308985,
+          "2": 0.012638289768963857
+        },
+        "legend": {
+          "0": "Calm",
+          "1": "Frustrated",
+          "2": "Very angry"
+        },
+        "status": "ok",
+        "confidence": 0.9805733359463478,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "score",
+        "value": 2
+      },
+      "state": "you lost my data, this is unforgivable"
+    },
+    {
+      "id": "n01",
+      "ok": true,
+      "ms": 51.4,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 77.03979416243058,
+        "probabilities": {
+          "0.0": 0.005404546321124396,
+          "50.0": 0.4483950241080471,
+          "100.0": 0.5462004295702823
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.3193006443554234,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 60.0,
+        "high": 90.0
+      },
+      "state": "the tank is at three quarters"
+    },
+    {
+      "id": "n02",
+      "ok": true,
+      "ms": 57.4,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 50.0000571507707,
+        "probabilities": {
+          "0.0": 5.785658301004e-06,
+          "50.0": 0.9999872856659838,
+          "100.0": 6.928674715102468e-06
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.9999809284989758,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 30.0,
+        "high": 70.0
+      },
+      "state": "the glass is half full"
+    },
+    {
+      "id": "n03",
+      "ok": true,
+      "ms": 50.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 0.09170590703303388,
+        "probabilities": {
+          "0.0": 0.9987741691352955,
+          "50.0": 0.0006175435867506026,
+          "100.0": 0.0006082872769550376
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.9981612537029432,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 0.0,
+        "high": 20.0
+      },
+      "state": "empty tank, zero fuel left"
+    },
+    {
+      "id": "n04",
+      "ok": true,
+      "ms": 447.1,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 99.99688812867133,
+        "probabilities": {
+          "0.0": 1.528574277370798e-05,
+          "50.0": 3.166593902608604e-05,
+          "100.0": 0.9999530483172002
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.9999295724758004,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 85.0,
+        "high": 100.0
+      },
+      "state": "the tank is completely full"
+    },
+    {
+      "id": "n05",
+      "ok": false,
+      "ms": 550.0,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 50.25705114934763,
+        "probabilities": {
+          "0.0": 0.11094321648100207,
+          "50.0": 0.7729725440494974,
+          "100.0": 0.11608423946872762
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.6594588160742463,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 10.0,
+        "high": 35.0
+      },
+      "state": "about a quarter left in the bottle"
+    },
+    {
+      "id": "n06",
+      "ok": true,
+      "ms": 467.6,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 99.88555071054917,
+        "probabilities": {
+          "0.0": 0.0004233492289833826,
+          "50.0": 0.0014422873290533059,
+          "100.0": 0.9981343634409651
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.9972015451614475,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 80.0,
+        "high": 100.0
+      },
+      "state": "nearly full, around ninety percent"
+    },
+    {
+      "id": "n07",
+      "ok": true,
+      "ms": 505.9,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 2.7086308259033443,
+        "probabilities": {
+          "0.0": 0.9490712108623702,
+          "50.0": 0.04768496175529419,
+          "100.0": 0.003243827381386345
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.9236068162935553,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 0.0,
+        "high": 15.0
+      },
+      "state": "just a drop left, almost empty"
+    },
+    {
+      "id": "n08",
+      "ok": true,
+      "ms": 543.5,
+      "contract_ok": true,
+      "contract": [],
+      "answer": {
+        "type": "numeric",
+        "value": 50.01857512503792,
+        "probabilities": {
+          "0.0": 0.0001635780016616497,
+          "50.0": 0.9993013414939192,
+          "100.0": 0.000535080503419596
+        },
+        "unit": "percent",
+        "status": "ok",
+        "confidence": 0.9989520122408788,
+        "backend": "ollama"
+      },
+      "expect": {
+        "kind": "range",
+        "low": 45.0,
+        "high": 75.0
+      },
+      "state": "a bit more than half, sixty percent?"
+    }
+  ]
+}

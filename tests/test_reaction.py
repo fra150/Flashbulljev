@@ -4,16 +4,53 @@ import pytest
 from src.flashbulljev.backends import get_backend
 from src.flashbulljev.engine import FlashBullJevEngine
 from src.flashbulljev.pipeline import run_pipeline
-from src.flashbulljev.reaction import check_case, check_contract, reaction_cases
+from src.flashbulljev.reaction import (
+    case_label_index,
+    check_case,
+    check_contract,
+    eval_metrics,
+    reaction_cases,
+    split_cases,
+)
 
 
-def test_battery_has_16_cases():
+def test_battery_has_52_cases():
     cases = reaction_cases()
-    assert len(cases) == 16
+    assert len(cases) == 52
     ids = [c["id"] for c in cases]
-    assert len(set(ids)) == 16
+    assert len(set(ids)) == 52
     for c in cases:
         assert "state" in c and "question" in c and "expect" in c
+    groups = {}
+    for c in cases:
+        groups[c["id"][:1]] = groups.get(c["id"][:1], 0) + 1
+    assert groups == {"u": 12, "s": 8, "d": 12, "f": 12, "n": 8}
+
+
+def test_split_fit_eval_coverage():
+    fit, ev = split_cases(reaction_cases())
+    assert len(fit) + len(ev) == 52
+    assert len(ev) == 4 + 2 + 4 + 4 + 2  # every 3rd per group (8-sized groups give 2)
+    fit_ids = {c["id"] for c in fit}
+    assert not (fit_ids & {c["id"] for c in ev})
+
+
+def test_label_index_mapping():
+    cases = {c["id"]: c for c in reaction_cases()}
+    assert case_label_index(cases["u01"]) == 0
+    assert case_label_index(cases["u07"]) == 1
+    assert case_label_index(cases["d01"]) == 0  # billing first
+    assert case_label_index(cases["d05"]) == 1  # technical second
+    assert case_label_index(cases["d09"]) == 2  # sales third
+    assert case_label_index(cases["f09"]) == 2
+    assert case_label_index(cases["n01"]) is None
+
+
+def test_eval_metrics_shape():
+    m = eval_metrics([[2.0, 0.5], [0.2, 1.5]], [0, 1], 1.0)
+    assert m["accuracy"] == 1.0
+    assert m["n"] == 2
+    assert 0.0 <= m["ece"] <= 1.0
 
 
 def test_check_case_unit_logic():
